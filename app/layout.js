@@ -29,7 +29,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'ar_AR',
-    url: 'https://yourdomain.com',
+    url: 'https://doroos-tn.vercel.app/',
     siteName: 'مدونتي',
     title: 'مدونتي - أحدث المقالات والإرشادات',
     description: 'اكتشف مقالات وإرشادات مفيدة في مختلف المجالات',

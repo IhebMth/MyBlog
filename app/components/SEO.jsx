@@ -15,7 +15,7 @@ export default function SEO({
   noindex = false,
   nofollow = false,
 }) {
-  const siteUrl = 'https://yourdomain.com' // ⚠️ Change this to your actual domain
+  const siteUrl = 'https://doroos-tn.vercel.app' // ⚠️ Change this to your actual domain
   const siteName = 'مدونتي'
   
   // Construct full title
