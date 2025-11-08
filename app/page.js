@@ -1,65 +1,263 @@
-import Image from "next/image";
+import Link from 'next/link'
+import Image from 'next/image'
+import { posts, getFeaturedPosts } from './posts/data'
+import { FaRocket, FaBookOpen, FaLightbulb, FaChartLine, FaClock, FaUser, FaTag, FaArrowLeft } from 'react-icons/fa'
 
 export default function Home() {
+  const featuredPosts = getFeaturedPosts()
+  const allPosts = posts
+
+  const features = [
+    {
+      icon: FaBookOpen,
+      title: 'محتوى تعليمي',
+      description: 'مقالات وإرشادات شاملة في مختلف المجالات',
+      color: 'bg-blue-500'
+    },
+    {
+      icon: FaLightbulb,
+      title: 'أفكار مبتكرة',
+      description: 'اكتشف طرق جديدة للتعلم والنمو',
+      color: 'bg-yellow-500'
+    },
+    {
+      icon: FaChartLine,
+      title: 'تطوير مستمر',
+      description: 'محتوى محدث باستمرار لمواكبة التطورات',
+      color: 'bg-green-500'
+    },
+  ]
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}></div>
+        </div>
+
+        <div className="container mx-auto px-4 py-20 md:py-32 relative">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-white/20">
+              <FaRocket className="text-yellow-300" />
+              <span className="text-sm font-medium">مرحباً بك في مدونتي</span>
+            </div>
+
+            {/* Main Heading */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
+              اكتشف عالماً من
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-400">
+                المعرفة والإلهام
+              </span>
+            </h1>
+
+            {/* Subtitle */}
+            <p className="text-xl md:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto leading-relaxed">
+              مقالات وإرشادات شاملة تساعدك على التعلم والنمو في مختلف المجالات
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="#posts"
+                className="px-8 py-4 bg-white text-blue-600 rounded-xl font-bold text-lg hover:bg-blue-50 transform hover:scale-105 transition-all duration-200 shadow-xl hover:shadow-2xl"
+              >
+                استكشف المقالات
+              </a>
+              <Link
+                href="/about"
+                className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-bold text-lg hover:bg-white/10 transition-all duration-200"
+              >
+                تعرف علينا
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Wave Divider */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="#F9FAFB"/>
+          </svg>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {features.map((feature, index) => {
+              const Icon = feature.icon
+              return (
+                <div
+                  key={index}
+                  className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+                >
+                  <div className={`${feature.color} w-16 h-16 rounded-xl flex items-center justify-center mb-6 shadow-lg`}>
+                    <Icon className="text-3xl text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Posts Section */}
+      {featuredPosts.length > 0 && (
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                المقالات المميزة
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                أفضل المقالات التي يجب عليك قراءتها
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+              {featuredPosts.map((post) => (
+                <PostCard key={post.id} post={post} featured={true} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* All Posts Section */}
+      <section id="posts" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              جميع المقالات
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              تصفح مجموعتنا المتنوعة من المقالات المفيدة
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {allPosts.map((post) => (
+              <PostCard key={post.id} post={post} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            ابقَ على اطلاع دائم
+          </h2>
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            تابعنا على منصات التواصل الاجتماعي لتحصل على آخر التحديثات
           </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-xl font-bold transition-all duration-200 transform hover:scale-105"
+            >
+              تابعنا على فيسبوك
+            </a>
+            <a
+              href="https://t.me/yourchannel"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-blue-500 hover:bg-blue-600 rounded-xl font-bold transition-all duration-200 transform hover:scale-105"
+            >
+              انضم لقناة تيليجرام
+            </a>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
     </div>
-  );
+  )
+}
+
+// Post Card Component
+function PostCard({ post, featured = false }) {
+  return (
+    <article className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group border border-gray-100 flex flex-col h-full">
+      {/* Image */}
+      <Link href={`/posts/${post.slug}`} className="relative h-56 overflow-hidden">
+        <Image
+          src={post.coverImage}
+          alt={post.title}
+          fill
+          className="object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+        {featured && (
+          <div className="absolute top-4 right-4 bg-yellow-400 text-gray-900 px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+            مميز ⭐
+          </div>
+        )}
+        <div className="absolute top-4 left-4 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+          {post.category}
+        </div>
+      </Link>
+
+      {/* Content */}
+      <div className="p-6 flex flex-col flex-grow">
+        {/* Meta Info */}
+        <div className="flex items-center gap-4 text-sm text-gray-500 mb-3 flex-wrap">
+          <div className="flex items-center gap-1">
+            <FaUser className="text-blue-500" />
+            <span>{post.author}</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <FaClock className="text-green-500" />
+            <span>{post.readTime}</span>
+          </div>
+        </div>
+
+        {/* Title */}
+        <Link href={`/posts/${post.slug}`}>
+          <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
+            {post.title}
+          </h3>
+        </Link>
+
+        {/* Excerpt */}
+        <p className="text-gray-600 mb-4 line-clamp-3 flex-grow">
+          {post.excerpt}
+        </p>
+
+        {/* Tags */}
+        <div className="flex items-center gap-2 mb-4 flex-wrap">
+          <FaTag className="text-gray-400 text-sm" />
+          {post.tags.slice(0, 2).map((tag, index) => (
+            <span
+              key={index}
+              className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Read More Button */}
+        <Link
+          href={`/posts/${post.slug}`}
+          className="inline-flex items-center gap-2 text-blue-600 font-bold hover:gap-4 transition-all duration-200 mt-auto"
+        >
+          <span>اقرأ المزيد</span>
+          <FaArrowLeft className="group-hover:translate-x-1 transition-transform" />
+        </Link>
+      </div>
+    </article>
+  )
 }
