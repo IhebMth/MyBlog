@@ -1,49 +1,52 @@
 import { posts } from './posts/data'
 
-export default function sitemap() {
-  const baseUrl = 'https://doroos-tn.vercel.app' 
+const baseUrl = 'https://doroos-tn.vercel.app'
 
-  // Homepage
+export default function generateSitemap() {
   const routes = [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1,
-    },
-  ]
-
-  // Static pages (add more as you create them)
-  const staticPages = ['about', 'contact', 'privacy', 'terms']
-  staticPages.forEach(page => {
-    routes.push({
+    { url: baseUrl, lastModified: new Date(), changeFrequency: 'daily', priority: 1 },
+    ...['about', 'contact', 'privacy', 'terms'].map(page => ({
       url: `${baseUrl}/${page}`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,
+    })),
+    ...posts.flatMap(post => {
+      const items = [
+        {
+          url: `${baseUrl}/posts/${post.slug}`,
+          lastModified: new Date(post.publishedDate),
+          changeFrequency: 'weekly',
+          priority: 0.8,
+        }
+      ]
+      if (post.externalLink) {
+        items.push({
+          url: `${baseUrl}/redirect/${post.slug}`,
+          lastModified: new Date(post.publishedDate),
+          changeFrequency: 'weekly',
+          priority: 0.6,
+        })
+      }
+      return items
     })
-  })
+  ]
 
-  // All posts
-  posts.forEach(post => {
-    // Regular post page
-    routes.push({
-      url: `${baseUrl}/posts/${post.slug}`,
-      lastModified: new Date(post.publishedDate),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    })
+  // Convert routes to XML
+  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${routes
+  .map(
+    route => `
+  <url>
+    <loc>${route.url}</loc>
+    <lastmod>${route.lastModified.toISOString()}</lastmod>
+    <changefreq>${route.changeFrequency}</changefreq>
+    <priority>${route.priority}</priority>
+  </url>`
+  )
+  .join('')}
+</urlset>`
 
-    // Redirect page if external link exists
-    if (post.externalLink) {
-      routes.push({
-        url: `${baseUrl}/redirect/${post.slug}`,
-        lastModified: new Date(post.publishedDate),
-        changeFrequency: 'weekly',
-        priority: 0.6,
-      })
-    }
-  })
-
-  return routes
+  return sitemapXml
 }
