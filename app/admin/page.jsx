@@ -1,390 +1,330 @@
-'use client'
-
+"use client"
 import { useState } from 'react'
-import { FaCopy, FaCheck, FaEye, FaCode, FaPlus } from 'react-icons/fa'
+import { FaCopy, FaEye, FaPlus, FaCheck } from 'react-icons/fa'
 
-export default function AdminPage() {
-  const [copied, setCopied] = useState(false)
-  const [showPreview, setShowPreview] = useState(false)
+export default function AdminPostCreator() {
   const [formData, setFormData] = useState({
     title: '',
+    slug: '',
     excerpt: '',
+    externalLink: '',
     content: '',
-    coverImage: '',
-    author: '',
-    category: '',
+    coverImage: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80',
+    author: 'محمد العربي',
+    category: 'تعليم',
     tags: '',
-    readTime: '',
+    readTime: '5 دقائق',
     featured: false
   })
 
-  // Generate slug from title
- const generateSlug = (title) => {
-  return title
-    .trim()
-    .toLowerCase()
-    .replace(/\s+/g, '-')  // Replace spaces with hyphens
-    .replace(/[^\u0600-\u06FFa-zA-Z0-9-]/g, '')  // Keep Arabic, English letters, numbers, and hyphens
-    .replace(/--+/g, '-')  // Replace multiple hyphens with single hyphen
-    .replace(/^-+|-+$/g, '')  // Remove leading/trailing hyphens
-}
+  const [generatedCode, setGeneratedCode] = useState('')
+  const [showPreview, setShowPreview] = useState(false)
+  const [copied, setCopied] = useState(false)
 
-  // Get next post ID
-  const getNextId = () => {
-    return Date.now() // Using timestamp as unique ID
-  }
-
-  // Generate post object code
-  const generatePostCode = () => {
-    const slug = generateSlug(formData.title)
-    const id = getNextId()
-    const tagsArray = formData.tags.split(',').map(tag => tag.trim()).filter(tag => tag)
-    const today = new Date().toISOString().split('T')[0]
-
-    return `{
-  id: ${id},
-  slug: '${slug}',
-  title: '${formData.title}',
-  excerpt: '${formData.excerpt}',
-  content: \`
-${formData.content}
-  \`,
-  coverImage: '${formData.coverImage}',
-  author: '${formData.author}',
-  publishedDate: '${today}',
-  category: '${formData.category}',
-  tags: ${JSON.stringify(tagsArray)},
-  readTime: '${formData.readTime}',
-  featured: ${formData.featured}
-}`
-  }
-
-  // Copy to clipboard
-  const copyToClipboard = () => {
-    const code = generatePostCode()
-    navigator.clipboard.writeText(code)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
-
-  // Handle input change
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target
     setFormData(prev => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value
     }))
+
+    // Auto-generate slug from title
+    if (name === 'title' && !formData.slug) {
+      const slug = value
+        .toLowerCase()
+        .replace(/[^\u0600-\u06FFa-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+      setFormData(prev => ({ ...prev, slug }))
+    }
   }
 
-  // Reset form
-  const resetForm = () => {
-    setFormData({
-      title: '',
-      excerpt: '',
-      content: '',
-      coverImage: '',
-      author: '',
-      category: '',
-      tags: '',
-      readTime: '',
-      featured: false
-    })
-    setShowPreview(false)
+  const generatePostObject = () => {
+    const tagsArray = formData.tags.split(',').map(tag => tag.trim()).filter(Boolean)
+    
+    const postObject = {
+      id: Date.now(),
+      slug: formData.slug,
+      title: formData.title,
+      excerpt: formData.excerpt,
+      externalLink: formData.externalLink || undefined,
+      content: formData.content,
+      coverImage: formData.coverImage,
+      author: formData.author,
+      publishedDate: new Date().toISOString().split('T')[0],
+      category: formData.category,
+      tags: tagsArray,
+      readTime: formData.readTime,
+      featured: formData.featured
+    }
+
+    // Remove undefined values
+    Object.keys(postObject).forEach(key => 
+      postObject[key] === undefined && delete postObject[key]
+    )
+
+    const code = `  {
+    id: ${postObject.id},
+    slug: '${postObject.slug}',
+    title: '${postObject.title}',
+    excerpt: '${postObject.excerpt}',${postObject.externalLink ? `
+    externalLink: '${postObject.externalLink}',` : ''}
+    content: \`${postObject.content}\`,
+    coverImage: '${postObject.coverImage}',
+    author: '${postObject.author}',
+    publishedDate: '${postObject.publishedDate}',
+    category: '${postObject.category}',
+    tags: ${JSON.stringify(postObject.tags)},
+    readTime: '${postObject.readTime}',
+    featured: ${postObject.featured}
+  }`
+
+    setGeneratedCode(code)
+    setShowPreview(true)
+  }
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(generatedCode)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="container mx-auto px-4 max-w-6xl">
-        {/* Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 mb-8 text-white shadow-xl">
-          <h1 className="text-4xl font-bold mb-2 flex items-center gap-3">
-            <FaPlus className="text-3xl" />
-            لوحة إنشاء المقالات
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 py-12 px-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-black text-white mb-4">
+            🚀 Admin Post Creator
           </h1>
-          <p className="text-blue-100 text-lg">
-            أنشئ مقالاً جديداً وانسخ الكود لإضافته إلى data.js
+          <p className="text-xl text-gray-300">
+            Create new posts and copy the code to data.js
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Form Section */}
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-              <FaCode />
-              معلومات المقالة
+          {/* Form */}
+          <div className="bg-white rounded-3xl shadow-2xl p-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+              <FaPlus className="text-purple-600" />
+              Post Details
             </h2>
 
-            <form className="space-y-6">
-              {/* Title */}
+            <div className="space-y-4">
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">
-                  عنوان المقالة *
-                </label>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Title *</label>
                 <input
                   type="text"
                   name="title"
                   value={formData.title}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition"
-                  placeholder="مثال: دليل شامل لتعلم البرمجة"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none"
+                  placeholder="عنوان المقالة"
                   required
                 />
               </div>
 
-              {/* Author */}
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">
-                  اسم الكاتب *
-                </label>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Slug *</label>
                 <input
                   type="text"
-                  name="author"
-                  value={formData.author}
+                  name="slug"
+                  value={formData.slug}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition"
-                  placeholder="مثال: محمد أحمد"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none font-mono text-sm"
+                  placeholder="article-slug-here"
                   required
                 />
               </div>
 
-              {/* Excerpt */}
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">
-                  الوصف القصير *
-                </label>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Excerpt *</label>
                 <textarea
                   name="excerpt"
                   value={formData.excerpt}
                   onChange={handleChange}
                   rows="3"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition resize-none"
-                  placeholder="وصف مختصر يظهر في بطاقة المقالة (100-150 حرف)"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none"
+                  placeholder="ملخص قصير للمقالة"
                   required
                 />
               </div>
 
-              {/* Content */}
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">
-                  محتوى المقالة (HTML) *
+                <label className="block text-sm font-bold text-gray-700 mb-2">
+                  External Link (Optional - for redirect)
                 </label>
+                <input
+                  type="url"
+                  name="externalLink"
+                  value={formData.externalLink}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none"
+                  placeholder="https://example.com"
+                />
+                <p className="text-xs text-gray-500 mt-1">
+                  If provided, users will be redirected to this URL
+                </p>
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Content (HTML) *</label>
                 <textarea
                   name="content"
                   value={formData.content}
                   onChange={handleChange}
-                  rows="10"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition resize-none font-mono text-sm"
-                  placeholder="<h2>عنوان</h2>
-<p>فقرة نصية...</p>
-<ul>
-  <li>نقطة 1</li>
-  <li>نقطة 2</li>
-</ul>"
+                  rows="8"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none font-mono text-sm"
+                  placeholder="<h2>Heading</h2><p>Content here...</p>"
                   required
                 />
-                <p className="text-sm text-gray-500 mt-2">
-                  💡 استخدم HTML tags: &lt;h2&gt;, &lt;p&gt;, &lt;ul&gt;, &lt;li&gt;, &lt;strong&gt;
-                </p>
               </div>
 
-              {/* Cover Image */}
-              <div>
-                <label className="block text-gray-700 font-semibold mb-2">
-                  رابط صورة الغلاف *
-                </label>
-                <input
-                  type="url"
-                  name="coverImage"
-                  value={formData.coverImage}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition"
-                  placeholder="https://images.unsplash.com/photo-xxxxx?w=800&q=80"
-                  required
-                />
-                <p className="text-sm text-gray-500 mt-2">
-                  🖼️ استخدم <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Unsplash</a> للصور المجانية
-                </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-bold text-gray-700 mb-2">Category *</label>
+                  <select
+                    name="category"
+                    value={formData.category}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none"
+                  >
+                    <option>تعليم</option>
+                    <option>تقنية</option>
+                    <option>تسويق</option>
+                    <option>تطوير ذاتي</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-bold text-gray-700 mb-2">Read Time</label>
+                  <input
+                    type="text"
+                    name="readTime"
+                    value={formData.readTime}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none"
+                    placeholder="5 دقائق"
+                  />
+                </div>
               </div>
 
-              {/* Category */}
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">
-                  التصنيف *
-                </label>
-                <select
-                  name="category"
-                  value={formData.category}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition"
-                  required
-                >
-                  <option value="">اختر التصنيف</option>
-                  <option value="تعليم">تعليم</option>
-                  <option value="تقنية">تقنية</option>
-                  <option value="تسويق">تسويق</option>
-                  <option value="تطوير ذاتي">تطوير ذاتي</option>
-                  <option value="ثقافة">ثقافة</option>
-                </select>
-              </div>
-
-              {/* Tags */}
-              <div>
-                <label className="block text-gray-700 font-semibold mb-2">
-                  الوسوم (Tags)
+                <label className="block text-sm font-bold text-gray-700 mb-2">
+                  Tags (comma-separated)
                 </label>
                 <input
                   type="text"
                   name="tags"
                   value={formData.tags}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition"
-                  placeholder="برمجة, تعلم, Python (افصل بفاصلة)"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none"
+                  placeholder="تعليم, برمجة, تطوير"
                 />
               </div>
 
-              {/* Read Time */}
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">
-                  وقت القراءة
-                </label>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Cover Image URL</label>
+                <input
+                  type="url"
+                  name="coverImage"
+                  value={formData.coverImage}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none"
+                  placeholder="https://images.unsplash.com/..."
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Author</label>
                 <input
                   type="text"
-                  name="readTime"
-                  value={formData.readTime}
+                  name="author"
+                  value={formData.author}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none transition"
-                  placeholder="5 دقائق"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none"
                 />
               </div>
 
-              {/* Featured */}
               <div className="flex items-center gap-3">
                 <input
                   type="checkbox"
-                  name="featured"
                   id="featured"
+                  name="featured"
                   checked={formData.featured}
                   onChange={handleChange}
-                  className="w-5 h-5 text-blue-600 rounded focus:ring-2 focus:ring-blue-500"
+                  className="w-5 h-5 text-purple-600 rounded"
                 />
-                <label htmlFor="featured" className="text-gray-700 font-semibold cursor-pointer">
-                  مقالة مميزة ⭐
+                <label htmlFor="featured" className="text-sm font-bold text-gray-700">
+                  Featured Post ⭐
                 </label>
               </div>
 
-              {/* Buttons */}
-              <div className="flex gap-4 pt-4">
-                <button
-                  type="button"
-                  onClick={() => setShowPreview(!showPreview)}
-                  className="flex-1 bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition flex items-center justify-center gap-2"
-                >
-                  <FaEye />
-                  {showPreview ? 'إخفاء المعاينة' : 'معاينة'}
-                </button>
-                <button
-                  type="button"
-                  onClick={resetForm}
-                  className="flex-1 bg-gray-500 text-white py-3 rounded-lg font-bold hover:bg-gray-600 transition"
-                >
-                  مسح
-                </button>
-              </div>
-            </form>
+              <button
+                onClick={generatePostObject}
+                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3"
+              >
+                <FaEye />
+                Generate Post Code
+              </button>
+            </div>
           </div>
 
-          {/* Code Output Section */}
+          {/* Preview */}
           <div className="space-y-6">
-            {/* Generated Code */}
-            <div className="bg-gray-900 rounded-2xl shadow-lg p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                  <FaCode />
-                  الكود المُنتج
-                </h2>
-                <button
-                  onClick={copyToClipboard}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg font-bold transition ${
-                    copied
-                      ? 'bg-green-500 text-white'
-                      : 'bg-blue-500 text-white hover:bg-blue-600'
-                  }`}
-                >
-                  {copied ? <FaCheck /> : <FaCopy />}
-                  {copied ? 'تم النسخ!' : 'نسخ الكود'}
-                </button>
-              </div>
-              <pre className="bg-black text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono max-h-96 overflow-y-auto">
-                {generatePostCode()}
-              </pre>
-            </div>
-
-            {/* Instructions */}
-            <div className="bg-blue-50 border-2 border-blue-200 rounded-2xl p-6">
-              <h3 className="text-xl font-bold text-blue-800 mb-4">
-                📝 خطوات الإضافة
-              </h3>
-              <ol className="space-y-3 text-gray-700">
-                <li className="flex gap-3">
-                  <span className="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 font-bold">1</span>
-                  <span>املأ جميع الحقول في النموذج</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 font-bold">2</span>
-                  <span>اضغط &quot;نسخ الكود&quot; في الأعلى</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 font-bold">3</span>
-                  <span>افتح ملف <code className="bg-gray-200 px-2 py-1 rounded">app/posts/data.js</code></span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 font-bold">4</span>
-                  <span>الصق الكود داخل مصفوفة <code className="bg-gray-200 px-2 py-1 rounded">posts</code></span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 font-bold">5</span>
-                  <span>احفظ الملف - المقالة ستظهر تلقائياً! 🎉</span>
-                </li>
-              </ol>
-            </div>
-
-            {/* Preview */}
-            {showPreview && formData.title && (
-              <div className="bg-white rounded-2xl shadow-lg p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-                  <FaEye />
-                  معاينة المقالة
-                </h3>
-                <div className="border-2 border-gray-200 rounded-lg p-6">
-                  {formData.coverImage && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={formData.coverImage}
-                      alt={formData.title}
-                      className="w-full h-48 object-cover rounded-lg mb-4"
-                    />
-                  )}
-                  <h4 className="text-2xl font-bold text-gray-800 mb-2">
-                    {formData.title}
-                  </h4>
-                  <p className="text-gray-600 mb-4">{formData.excerpt}</p>
-                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                    <span>✍️ {formData.author}</span>
-                    <span>📁 {formData.category}</span>
-                    {formData.readTime && <span>⏱️ {formData.readTime}</span>}
+            {showPreview ? (
+              <>
+                <div className="bg-white rounded-3xl shadow-2xl p-8">
+                  <div className="flex items-center justify-between mb-6">
+                    <h2 className="text-3xl font-bold text-gray-900 flex items-center gap-3">
+                      <FaEye className="text-purple-600" />
+                      Generated Code
+                    </h2>
+                    <button
+                      onClick={copyToClipboard}
+                      className={`flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all ${
+                        copied 
+                          ? 'bg-green-500 text-white' 
+                          : 'bg-purple-600 text-white hover:bg-purple-700'
+                      }`}
+                    >
+                      {copied ? <FaCheck /> : <FaCopy />}
+                      {copied ? 'Copied!' : 'Copy'}
+                    </button>
                   </div>
-                  {formData.tags && (
-                    <div className="flex gap-2 flex-wrap">
-                      {formData.tags.split(',').map((tag, idx) => (
-                        <span
-                          key={idx}
-                          className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
-                        >
-                          {tag.trim()}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+
+                  <pre className="bg-gray-900 text-green-400 p-6 rounded-2xl overflow-x-auto text-sm font-mono max-h-[600px] overflow-y-auto">
+                    {generatedCode}
+                  </pre>
+
+                  <div className="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg">
+                    <p className="text-sm text-gray-700">
+                      <strong>Instructions:</strong> Copy the code above and paste it into your 
+                      <code className="bg-yellow-100 px-2 py-1 rounded mx-1">app/posts/data.js</code> 
+                      file in the <code className="bg-yellow-100 px-2 py-1 rounded">posts</code> array.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-3xl shadow-2xl p-8 text-white">
+                  <h3 className="text-2xl font-bold mb-4">📋 Next Steps:</h3>
+                  <ol className="space-y-3 text-lg">
+                    <li>1. Copy the generated code</li>
+                    <li>2. Open <code className="bg-white/20 px-2 py-1 rounded">app/posts/data.js</code></li>
+                    <li>3. Add it to the posts array</li>
+                    <li>4. Save the file</li>
+                    <li>5. Post will appear automatically!</li>
+                  </ol>
+                </div>
+              </>
+            ) : (
+              <div className="bg-white rounded-3xl shadow-2xl p-8 h-full flex items-center justify-center text-center">
+                <div>
+                  <div className="text-6xl mb-4">📝</div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    Fill the form
+                  </h3>
+                  <p className="text-gray-600">
+                    Complete the form and click &quot;Generate Post Code&quot; to see the preview
+                  </p>
                 </div>
               </div>
             )}

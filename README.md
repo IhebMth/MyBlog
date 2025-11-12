@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+<<<<<<< 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -99,3 +99,4 @@ A full-featured **Next.js 15 blog scaffold** optimized for **SEO**, **AdSense mo
 git clone https://github.com/<your-username>/nextjs-adsense-seo-blog.git
 cd nextjs-adsense-seo-blog
 >>>>>>> 47b8871944143830d585a26ab95bdbd33c594206
+

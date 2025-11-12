@@ -1,15 +1,18 @@
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import { posts, getPostBySlug, getRelatedPosts } from '../data'
 import PostContent from './PostContent'
 
 export default async function PostPage({ params }) {
-  // Await params in Next.js 15
   const { slug } = await params
   const post = getPostBySlug(slug)
 
-  // If post not found, show 404
   if (!post) {
     notFound()
+  }
+
+  // If post has external link, redirect to redirect page
+  if (post.externalLink) {
+    redirect(`/redirect/${slug}`)
   }
 
   const relatedPosts = getRelatedPosts(post.id, post.category, 3)
@@ -19,7 +22,6 @@ export default async function PostPage({ params }) {
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }) {
-  // Await params in Next.js 15
   const { slug } = await params
   const post = getPostBySlug(slug)
   

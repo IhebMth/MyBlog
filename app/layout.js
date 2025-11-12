@@ -2,8 +2,9 @@ import { Tajawal } from 'next/font/google'
 import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import GoogleAnalytics from './components/GoogleAnalytics'
+import AdSenseScript from './components/AdSense'
 
-// Better Arabic font
 const tajawal = Tajawal({ 
   weight: ['300', '400', '500', '700', '900'],
   subsets: ['arabic'],
@@ -11,16 +12,16 @@ const tajawal = Tajawal({
 })
 
 export const metadata = {
-  metadataBase: new URL('https://doroos-tn.vercel.app/'), 
+  metadataBase: new URL('https://doroos-tn.vercel.app'),
   title: {
-    default: 'مدونتي - أحدث المقالات والإرشادات',
-    template: '%s | مدونتي'
+    default: 'دروس - مدونة تعليمية شاملة',
+    template: '%s | دروس'
   },
-  description: 'اكتشف مقالات وإرشادات مفيدة في مختلف المجالات - دليلك الشامل للمعلومات القيمة',
-  keywords: ['مدونة', 'مقالات', 'إرشادات', 'تعليم', 'معلومات'],
-  authors: [{ name: 'مدونتي' }],
-  creator: 'مدونتي',
-  publisher: 'مدونتي',
+  description: 'اكتشف مقالات وإرشادات مفيدة في مختلف المجالات - تعليم، تقنية، تطوير ذاتي، وأكثر',
+  keywords: ['مدونة تعليمية', 'دروس', 'تعلم', 'IELTS', 'برمجة', 'تسويق', 'تطوير ذاتي'],
+  authors: [{ name: 'دروس' }],
+  creator: 'دروس',
+  publisher: 'دروس',
   formatDetection: {
     email: false,
     address: false,
@@ -29,22 +30,22 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'ar_AR',
-    url: 'https://doroos-tn.vercel.app/',
-    siteName: 'مدونتي',
-    title: 'مدونتي - أحدث المقالات والإرشادات',
+    url: 'https://doroos-tn.vercel.app',
+    siteName: 'دروس',
+    title: 'دروس - مدونة تعليمية شاملة',
     description: 'اكتشف مقالات وإرشادات مفيدة في مختلف المجالات',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'مدونتي',
+        alt: 'دروس',
       }
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'مدونتي - أحدث المقالات والإرشادات',
+    title: 'دروس - مدونة تعليمية شاملة',
     description: 'اكتشف مقالات وإرشادات مفيدة في مختلف المجالات',
     images: ['/og-image.jpg'],
   },
@@ -69,6 +70,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl" className="scroll-smooth">
       <body className={`${tajawal.className} antialiased bg-gray-50`}>
+        {/* Google Analytics */}
+        <GoogleAnalytics />
+        
+        {/* AdSense Script */}
+        <AdSenseScript />
+        
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">
