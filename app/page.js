@@ -63,13 +63,17 @@ export default function Home() {
 
   return (
     <>
-     {/* Google AdSense script */}
-      <Script
-        strategy="afterInteractive"
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6805451149859247"
-        crossOrigin="anonymous"
-      />
+     <meta 
+    name="google-site-verification" 
+    content="z9prJxT0bs9g0MUjqa2oMrxho3LdvnsRueKvyjH2O3s" 
+  />
+      {/* Google AdSense Script */}
+  <Script
+    strategy="afterInteractive"
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6805451149859247"
+    crossOrigin="anonymous"
+  />
     <div className="min-h-screen">
       
       {/* Hero Section */}
