@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { posts, getFeaturedPosts } from './posts/data'
 import { FaRocket, FaBookOpen, FaLightbulb, FaChartLine, FaClock, FaUser, FaTag, FaArrowLeft } from 'react-icons/fa'
+import Script from 'next/script'
 
 // SEO Metadata
 export const metadata = {
@@ -61,7 +62,16 @@ export default function Home() {
   ]
 
   return (
+    <>
+     {/* Google AdSense script */}
+      <Script
+        strategy="afterInteractive"
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6805451149859247"
+        crossOrigin="anonymous"
+      />
     <div className="min-h-screen">
+      
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -211,6 +221,7 @@ export default function Home() {
         </div>
       </section>
     </div>
+    </>
   )
 }
 

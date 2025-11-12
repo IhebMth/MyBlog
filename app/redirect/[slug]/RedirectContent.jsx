@@ -67,17 +67,14 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
   }, [countdown])
 
   // Interstitial countdown
-  useEffect(() => {
-    if (showInterstitial && interstitialCountdown > 0) {
-      const timer = setInterval(() => {
-        setInterstitialCountdown(prev => prev - 1)
-      }, 1000)
-      return () => clearInterval(timer)
-    } else if (showInterstitial && interstitialCountdown === 0) {
-      // Auto redirect after interstitial
-      window.location.href = targetUrl
-    }
-  }, [showInterstitial, interstitialCountdown, targetUrl])
+useEffect(() => {
+  if (showInterstitial && interstitialCountdown > 0) {
+    const timer = setInterval(() => {
+      setInterstitialCountdown(prev => prev - 1)
+    }, 1000)
+    return () => clearInterval(timer)
+  }
+}, [showInterstitial, interstitialCountdown])
 
   const goToCourse = () => {
     // Show interstitial ad
@@ -86,7 +83,10 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
 
   const skipInterstitial = () => {
     if (interstitialCountdown === 0) {
-      window.location.href = targetUrl
+      // Open in new tab/window
+      window.open(targetUrl, '_blank', 'noopener,noreferrer')
+      // Close interstitial
+      setShowInterstitial(false)
     }
   }
 
@@ -127,7 +127,7 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                 adSlot="4296350147"
                 adFormat="fluid"
                 style={{ minHeight: '400px' }}
-                label="إعلان - سيتم التوجيه تلقائياً"
+                label="إعلان - سيفتح الرابط في نافذة جديدة"
               />
             </div>
 

@@ -11,19 +11,30 @@ export default function AdSense({
   const adSenseId = process.env.NEXT_PUBLIC_ADSENSE_ID
 
   useEffect(() => {
-    if (process.env.NODE_ENV === 'development' || !adSenseId) return
+    // Only run in production AND if AdSense ID exists
+    if (process.env.NODE_ENV !== 'production' || !adSenseId) return
+    
     try {
-      if (window.adsbygoogle) window.adsbygoogle.push({})
+      if (window.adsbygoogle) {
+        window.adsbygoogle.push({})
+      }
     } catch (error) {
       console.error('AdSense error:', error)
     }
   }, [adSenseId])
 
-  if (process.env.NODE_ENV === 'development' || !adSenseId) {
+  // Show placeholder if no AdSense ID OR in development
+  if (!adSenseId || process.env.NODE_ENV === 'development') {
     return (
-      <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-xl p-6 text-center">
+      <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-xl p-6 text-center my-6">
         <p className="text-gray-500 text-sm mb-2">مساحة إعلانية</p>
-        <p className="text-gray-400 text-xs">Ad Slot: {adSlot || 'Not specified'}</p>
+        <p className="text-gray-400 text-xs">
+          Ad Slot: {adSlot || 'Not specified'}
+          <br />
+          <span className="text-red-500">
+            {!adSenseId ? '⚠️ NEXT_PUBLIC_ADSENSE_ID not set' : '✅ Development Mode'}
+          </span>
+        </p>
       </div>
     )
   }
@@ -44,13 +55,13 @@ export default function AdSense({
 
 // Predefined ad placements
 export function AdBanner() {
-  return <AdSense adSlot="YOUR_BANNER_SLOT_ID" adFormat="horizontal" style={{ minHeight: '90px' }} />
+  return <AdSense adSlot="2150792287" adFormat="horizontal" style={{ minHeight: '90px' }} />
 }
 
 export function AdSidebar() {
-  return <AdSense adSlot="YOUR_SIDEBAR_SLOT_ID" adFormat="rectangle" style={{ minHeight: '250px' }} />
+  return <AdSense adSlot="8221376618" adFormat="rectangle" style={{ minHeight: '250px' }} />
 }
 
 export function AdInArticle() {
-  return <AdSense adSlot="YOUR_ARTICLE_SLOT_ID" adFormat="fluid" style={{ minHeight: '200px' }} />
+  return <AdSense adSlot="2444761165" adFormat="fluid" style={{ minHeight: '200px' }} />
 }
