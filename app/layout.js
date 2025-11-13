@@ -1,9 +1,9 @@
-// app/layout.js
 import { Tajawal } from 'next/font/google'
 import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Script from 'next/script'
+import GoogleAnalytics from './components/GoogleAnalytics'
+import AdSenseScript from './components/AdSenseScript'
 
 const tajawal = Tajawal({ 
   weight: ['300', '400', '500', '700', '900'],
@@ -28,7 +28,7 @@ export const metadata = {
     telephone: false,
   },
   verification: {
-    google: 'z9prJxT0bs9g0MUjqa2oMrxho3LdvnsRueKvyjH2O3s', // ← Replace with your code
+    google: 'z9prJxT0bs9g0MUjqa2oMrxho3LdvnsRueKvyjH2O3s',
   },
   openGraph: {
     type: 'website',
@@ -72,16 +72,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl" className="scroll-smooth">
-      <head>
-        {/* Google AdSense Script */}
-        <Script
-          strategy="afterInteractive"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6805451149859247"
-          crossOrigin="anonymous"
-        />
-      </head>
       <body className={`${tajawal.className} antialiased bg-gray-50`}>
+        {/* Google Analytics */}
+        <GoogleAnalytics />
+        
+        {/* AdSense Script */}
+        <AdSenseScript />
+        
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">
