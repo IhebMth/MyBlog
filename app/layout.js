@@ -9,24 +9,20 @@ const tajawal = Tajawal({
   weight: ['300', '400', '500', '700', '900'],
   subsets: ['arabic'],
   display: 'swap',
+  variable: '--font-tajawal',
 })
 
 export const metadata = {
   metadataBase: new URL('https://doroos-tn.vercel.app'),
   title: {
-    default: 'دروس - مدونة تعليمية شاملة',
+    default: 'دروس | مدونة تعليمية شاملة',
     template: '%s | دروس'
   },
-  description: 'اكتشف مقالات وإرشادات مفيدة في مختلف المجالات - تعليم، تقنية، تطوير ذاتي، وأكثر',
+  description: 'اكتشف مقالات وإرشادات مفيدة في مختلف المجالات',
   keywords: ['مدونة تعليمية', 'دروس', 'تعلم', 'IELTS', 'برمجة', 'تسويق', 'تطوير ذاتي'],
   authors: [{ name: 'دروس' }],
   creator: 'دروس',
   publisher: 'دروس',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   verification: {
     google: 'z9prJxT0bs9g0MUjqa2oMrxho3LdvnsRueKvyjH2O3s',
   },
@@ -35,7 +31,7 @@ export const metadata = {
     locale: 'ar_AR',
     url: 'https://doroos-tn.vercel.app',
     siteName: 'دروس',
-    title: 'دروس - مدونة تعليمية شاملة',
+    title: 'دروس | مدونة تعليمية شاملة',
     description: 'اكتشف مقالات وإرشادات مفيدة في مختلف المجالات',
     images: [
       {
@@ -48,7 +44,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'دروس - مدونة تعليمية شاملة',
+    title: 'دروس | مدونة تعليمية شاملة',
     description: 'اكتشف مقالات وإرشادات مفيدة في مختلف المجالات',
     images: ['/og-image.jpg'],
   },
@@ -73,10 +69,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl" className="scroll-smooth">
       <body className={`${tajawal.className} antialiased bg-gray-50`}>
-        {/* Google Analytics */}
         <GoogleAnalytics />
-        
-        {/* AdSense Script */}
         <AdSenseScript />
         
         <div className="flex flex-col min-h-screen">

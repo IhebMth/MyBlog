@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function AdSense({ 
   adSlot, 
@@ -8,9 +8,16 @@ export default function AdSense({
   fullWidthResponsive = true,
   style = {}
 }) {
+  const [mounted, setMounted] = useState(false)
   const adSenseId = process.env.NEXT_PUBLIC_ADSENSE_ID
 
   useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!mounted) return
+    
     // Only run in production AND if AdSense ID exists
     if (process.env.NODE_ENV !== 'production' || !adSenseId) return
     
@@ -21,20 +28,33 @@ export default function AdSense({
     } catch (error) {
       console.error('AdSense error:', error)
     }
-  }, [adSenseId])
+  }, [mounted, adSenseId])
+
+  // Don't render anything until mounted (fixes hydration)
+  if (!mounted) {
+    return (
+      <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-xl p-6 text-center my-6">
+        <div className="h-32 md:h-64 flex items-center justify-center">
+          <p className="text-gray-400 text-sm">Loading...</p>
+        </div>
+      </div>
+    )
+  }
 
   // Show placeholder if no AdSense ID OR in development
   if (!adSenseId || process.env.NODE_ENV === 'development') {
     return (
       <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-xl p-6 text-center my-6">
-        <p className="text-gray-500 text-sm mb-2">مساحة إعلانية</p>
-        <p className="text-gray-400 text-xs">
-          Ad Slot: {adSlot || 'Not specified'}
-          <br />
-          <span className="text-red-500">
-            {!adSenseId ? '⚠️ NEXT_PUBLIC_ADSENSE_ID not set' : '✅ Development Mode'}
-          </span>
-        </p>
+        <p className="text-gray-500 text-xs mb-2">مساحة إعلانية</p>
+        <div className="bg-gray-200 rounded-xl h-32 md:h-64 flex items-center justify-center">
+          <p className="text-gray-400 text-sm">
+            Ad Slot: {adSlot || 'Not specified'}
+            <br />
+            <span className="text-red-500">
+              {!adSenseId ? '⚠️ NEXT_PUBLIC_ADSENSE_ID not set' : '✅ Development Mode'}
+            </span>
+          </p>
+        </div>
       </div>
     )
   }
