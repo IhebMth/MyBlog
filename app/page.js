@@ -3,36 +3,9 @@ import Image from 'next/image'
 import { posts, getFeaturedPosts } from './posts/data'
 import { FaRocket, FaBookOpen, FaLightbulb, FaChartLine, FaClock, FaUser, FaTag, FaArrowLeft } from 'react-icons/fa'
 
-// SEO Metadata
 export const metadata = {
   title: 'دروس | مدونة تعليمية شاملة',
-  description: 'اكتشف مقالات وإرشادات مفيدة في مختلف المجالات - تعليم، تقنية، تطوير ذاتي، وأكثر',
-  keywords: 'مدونة تعليمية, دروس, تعلم, IELTS, برمجة, تسويق رقمي, تطوير ذاتي',
-  openGraph: {
-    title: 'دروس | مدونة تعليمية شاملة',
-    description: 'اكتشف مقالات وإرشادات مفيدة في مختلف المجالات',
-    type: 'website',
-    locale: 'ar_AR',
-    url: 'https://doroos-tn.vercel.app',
-    siteName: 'دروس',
-    images: [
-      {
-        url: 'https://doroos-tn.vercel.app/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'دروس - مدونة تعليمية',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'دروس | مدونة تعليمية شاملة',
-    description: 'اكتشف مقالات وإرشادات مفيدة في مختلف المجالات',
-    images: ['https://doroos-tn.vercel.app/og-image.jpg'],
-  },
-  alternates: {
-    canonical: 'https://doroos-tn.vercel.app',
-  },
+  description: 'اكتشف مقالات وإرشادات مفيدة في مختلف المجالات',
 }
 
 export default function Home() {

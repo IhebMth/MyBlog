@@ -3,6 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
+  env: {
+    NEXT_PUBLIC_GA_ID: 'G-M8ZREBT88T',
+    NEXT_PUBLIC_ADSENSE_ID: 'ca-pub-6805451149859247',
+    NEXT_PUBLIC_SITE_URL: 'https://doroos-tn.vercel.app',
+  },
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com' },
@@ -12,7 +17,9 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
-  experimental: { optimizeCss: true },
+  experimental: { 
+    optimizeCss: true,
+  },
   async headers() {
     return [
       {
@@ -35,4 +42,4 @@ const nextConfig = {
   turbopack: {}, // ✅ Required to avoid Turbopack/Webpack conflict
 }
 
-module.exports = nextConfig
+export default nextConfig;

@@ -7,6 +7,7 @@ import { FaHome, FaInfoCircle, FaEnvelope, FaBars, FaTimes, FaNewspaper } from '
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  // Navigation links
   const navLinks = [
     { href: '/', label: 'الرئيسية', icon: FaHome },
     { href: '/about', label: 'من نحن', icon: FaInfoCircle },
@@ -17,33 +18,29 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white shadow-md border-b border-gray-200">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo/Brand */}
-          <Link 
-            href="/" 
-            className="flex items-center gap-3 group"
-          >
-            <div className="bg-gradient-to-br from-blue-600 to-blue-700 p-2.5 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+
+          {/* Logo / Brand */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="bg-gradient-to-br from-blue-600 to-blue-700 p-2.5 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex items-center justify-center">
               <FaNewspaper className="text-white text-2xl" />
             </div>
             <div className="flex flex-col">
               <span className="text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">
                 مدونتي
               </span>
-              <span className="text-xs text-gray-500">
-                دليلك للمعرفة
-              </span>
+              <span className="text-xs text-gray-500">دليلك للمعرفة</span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex gap-2 items-center">
+          <ul className="hidden md:flex gap-4 items-center">
             {navLinks.map((link) => {
               const Icon = link.icon
               return (
                 <li key={link.href}>
-                  <Link 
+                  <Link
                     href={link.href}
-                    className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 font-medium"
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 font-medium"
                   >
                     <Icon className="text-lg" />
                     <span>{link.label}</span>
@@ -59,11 +56,7 @@ export default function Header() {
             className="md:hidden p-2.5 rounded-lg hover:bg-gray-100 transition-colors"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? (
-              <FaTimes className="text-2xl text-gray-700" />
-            ) : (
-              <FaBars className="text-2xl text-gray-700" />
-            )}
+            {isMenuOpen ? <FaTimes className="text-2xl text-gray-700" /> : <FaBars className="text-2xl text-gray-700" />}
           </button>
         </div>
 
@@ -75,7 +68,7 @@ export default function Header() {
                 const Icon = link.icon
                 return (
                   <li key={link.href}>
-                    <Link 
+                    <Link
                       href={link.href}
                       onClick={() => setIsMenuOpen(false)}
                       className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 font-medium"

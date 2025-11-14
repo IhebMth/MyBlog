@@ -1,9 +1,9 @@
 import { notFound, redirect } from 'next/navigation'
-import { posts, getPostBySlug, getRelatedPosts } from '../../posts/data'
+import { posts, getPostBySlug, getRelatedPosts } from '../data'
 import PostContent from './PostContent'
 
 export default async function PostPage({ params }) {
-  const { slug, locale } = params
+  const { slug } = params
   const post = getPostBySlug(slug)
 
   if (!post) {
@@ -12,12 +12,12 @@ export default async function PostPage({ params }) {
 
   // If post has external link, redirect to redirect page
   if (post.externalLink) {
-    redirect(`/${locale}/redirect/${slug}`)
+    redirect(`/redirect/${slug}`)
   }
 
   const relatedPosts = getRelatedPosts(post.id, post.category, 3)
 
-  return <PostContent post={post} relatedPosts={relatedPosts} locale={locale} />
+  return <PostContent post={post} relatedPosts={relatedPosts} />
 }
 
 // Generate metadata for SEO
@@ -54,17 +54,7 @@ export async function generateMetadata({ params }) {
 
 // Generate static params for all posts
 export async function generateStaticParams() {
-  const locales = ['ar', 'en', 'fr']
-  const params = []
-  
-  locales.forEach(locale => {
-    posts.forEach(post => {
-      params.push({
-        locale,
-        slug: post.slug
-      })
-    })
-  })
-  
-  return params
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
 }
