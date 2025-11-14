@@ -1,5 +1,6 @@
 "use client"
-import { useState } from 'react'
+
+import { useState, useEffect } from 'react'
 import { FaCopy, FaEye, FaPlus, FaCheck } from 'react-icons/fa'
 
 export default function AdminPostCreator() {
@@ -20,6 +21,11 @@ export default function AdminPostCreator() {
   const [generatedCode, setGeneratedCode] = useState('')
   const [showPreview, setShowPreview] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [mounted, setMounted] = useState(false) // To avoid hydration issues
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target
@@ -40,9 +46,13 @@ export default function AdminPostCreator() {
 
   const generatePostObject = () => {
     const tagsArray = formData.tags.split(',').map(tag => tag.trim()).filter(Boolean)
-    
+
+    // Generate dynamic values only on the client
+    const id = Date.now()
+    const publishedDate = new Date().toISOString().split('T')[0]
+
     const postObject = {
-      id: Date.now(),
+      id,
       slug: formData.slug,
       title: formData.title,
       excerpt: formData.excerpt,
@@ -50,7 +60,7 @@ export default function AdminPostCreator() {
       content: formData.content,
       coverImage: formData.coverImage,
       author: formData.author,
-      publishedDate: new Date().toISOString().split('T')[0],
+      publishedDate,
       category: formData.category,
       tags: tagsArray,
       readTime: formData.readTime,
@@ -58,25 +68,22 @@ export default function AdminPostCreator() {
     }
 
     // Remove undefined values
-    Object.keys(postObject).forEach(key => 
-      postObject[key] === undefined && delete postObject[key]
-    )
+    Object.keys(postObject).forEach(key => postObject[key] === undefined && delete postObject[key])
 
-    const code = `  {
-    id: ${postObject.id},
-    slug: '${postObject.slug}',
-    title: '${postObject.title}',
-    excerpt: '${postObject.excerpt}',${postObject.externalLink ? `
-    externalLink: '${postObject.externalLink}',` : ''}
-    content: \`${postObject.content}\`,
-    coverImage: '${postObject.coverImage}',
-    author: '${postObject.author}',
-    publishedDate: '${postObject.publishedDate}',
-    category: '${postObject.category}',
-    tags: ${JSON.stringify(postObject.tags)},
-    readTime: '${postObject.readTime}',
-    featured: ${postObject.featured}
-  }`
+    const code = `{
+  id: ${postObject.id},
+  slug: '${postObject.slug}',
+  title: '${postObject.title}',
+  excerpt: '${postObject.excerpt}',${postObject.externalLink ? `\n  externalLink: '${postObject.externalLink}',` : ''}
+  content: \`${postObject.content}\`,
+  coverImage: '${postObject.coverImage}',
+  author: '${postObject.author}',
+  publishedDate: '${postObject.publishedDate}',
+  category: '${postObject.category}',
+  tags: ${JSON.stringify(postObject.tags)},
+  readTime: '${postObject.readTime}',
+  featured: ${postObject.featured}
+}`
 
     setGeneratedCode(code)
     setShowPreview(true)
@@ -87,6 +94,8 @@ export default function AdminPostCreator() {
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
+
+  if (!mounted) return null // Avoid SSR/client mismatch
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 py-12 px-4">
@@ -109,6 +118,7 @@ export default function AdminPostCreator() {
             </h2>
 
             <div className="space-y-4">
+              {/* Title */}
               <div>
                 <label className="block text-sm font-bold text-gray-700 mb-2">Title *</label>
                 <input
@@ -122,6 +132,7 @@ export default function AdminPostCreator() {
                 />
               </div>
 
+              {/* Slug */}
               <div>
                 <label className="block text-sm font-bold text-gray-700 mb-2">Slug *</label>
                 <input
@@ -135,6 +146,7 @@ export default function AdminPostCreator() {
                 />
               </div>
 
+              {/* Excerpt */}
               <div>
                 <label className="block text-sm font-bold text-gray-700 mb-2">Excerpt *</label>
                 <textarea
@@ -148,9 +160,10 @@ export default function AdminPostCreator() {
                 />
               </div>
 
+              {/* External Link */}
               <div>
                 <label className="block text-sm font-bold text-gray-700 mb-2">
-                  External Link (Optional - for redirect)
+                  External Link (Optional)
                 </label>
                 <input
                   type="url"
@@ -165,6 +178,7 @@ export default function AdminPostCreator() {
                 </p>
               </div>
 
+              {/* Content */}
               <div>
                 <label className="block text-sm font-bold text-gray-700 mb-2">Content (HTML) *</label>
                 <textarea
@@ -178,6 +192,7 @@ export default function AdminPostCreator() {
                 />
               </div>
 
+              {/* Category & Read Time */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-2">Category *</label>
@@ -207,10 +222,9 @@ export default function AdminPostCreator() {
                 </div>
               </div>
 
+              {/* Tags */}
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2">
-                  Tags (comma-separated)
-                </label>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Tags (comma-separated)</label>
                 <input
                   type="text"
                   name="tags"
@@ -221,6 +235,7 @@ export default function AdminPostCreator() {
                 />
               </div>
 
+              {/* Cover Image */}
               <div>
                 <label className="block text-sm font-bold text-gray-700 mb-2">Cover Image URL</label>
                 <input
@@ -233,6 +248,7 @@ export default function AdminPostCreator() {
                 />
               </div>
 
+              {/* Author */}
               <div>
                 <label className="block text-sm font-bold text-gray-700 mb-2">Author</label>
                 <input
@@ -244,6 +260,7 @@ export default function AdminPostCreator() {
                 />
               </div>
 
+              {/* Featured */}
               <div className="flex items-center gap-3">
                 <input
                   type="checkbox"
@@ -258,6 +275,7 @@ export default function AdminPostCreator() {
                 </label>
               </div>
 
+              {/* Generate Button */}
               <button
                 onClick={generatePostObject}
                 className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3"
@@ -271,7 +289,7 @@ export default function AdminPostCreator() {
           {/* Preview */}
           <div className="space-y-6">
             {showPreview ? (
-              <>
+              <div className="space-y-6">
                 <div className="bg-white rounded-3xl shadow-2xl p-8">
                   <div className="flex items-center justify-between mb-6">
                     <h2 className="text-3xl font-bold text-gray-900 flex items-center gap-3">
@@ -281,8 +299,8 @@ export default function AdminPostCreator() {
                     <button
                       onClick={copyToClipboard}
                       className={`flex items-center gap-2 px-6 py-3 rounded-xl font-bold transition-all ${
-                        copied 
-                          ? 'bg-green-500 text-white' 
+                        copied
+                          ? 'bg-green-500 text-white'
                           : 'bg-purple-600 text-white hover:bg-purple-700'
                       }`}
                     >
@@ -294,14 +312,6 @@ export default function AdminPostCreator() {
                   <pre className="bg-gray-900 text-green-400 p-6 rounded-2xl overflow-x-auto text-sm font-mono max-h-[600px] overflow-y-auto">
                     {generatedCode}
                   </pre>
-
-                  <div className="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg">
-                    <p className="text-sm text-gray-700">
-                      <strong>Instructions:</strong> Copy the code above and paste it into your 
-                      <code className="bg-yellow-100 px-2 py-1 rounded mx-1">app/posts/data.js</code> 
-                      file in the <code className="bg-yellow-100 px-2 py-1 rounded">posts</code> array.
-                    </p>
-                  </div>
                 </div>
 
                 <div className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-3xl shadow-2xl p-8 text-white">
@@ -314,7 +324,7 @@ export default function AdminPostCreator() {
                     <li>5. Post will appear automatically!</li>
                   </ol>
                 </div>
-              </>
+              </div>
             ) : (
               <div className="bg-white rounded-3xl shadow-2xl p-8 h-full flex items-center justify-center text-center">
                 <div>
