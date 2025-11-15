@@ -16,6 +16,7 @@ import {
   FaCheckCircle,
   FaArrowRight
 } from 'react-icons/fa'
+import ShareButtons from './ShareButtons'
 
 // AdSense Component
 function AdSenseUnit({ adSlot, adFormat = 'auto', style = {}, label = 'مساحة إعلانية' }) {
@@ -61,16 +62,11 @@ function AdSenseUnit({ adSlot, adFormat = 'auto', style = {}, label = 'مساح�
 }
 
 export default function RedirectPage({ targetUrl, postSlug, post }) {
-  // Page state: 'first' or 'second'
   const [currentPage, setCurrentPage] = useState('first')
-  
-  // Auto ad timer (30 seconds) - shows ad automatically
   const [adTimer, setAdTimer] = useState(30)
   const [showContinueButton, setShowContinueButton] = useState(false)
-  
   const [readProgress, setReadProgress] = useState(0)
 
-  // Auto ad timer countdown
   useEffect(() => {
     if (currentPage === 'first' && adTimer > 0) {
       const timer = setInterval(() => {
@@ -82,7 +78,6 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
     }
   }, [adTimer, currentPage])
 
-  // Reading progress (for both pages)
   useEffect(() => {
     const handleScroll = () => {
       const windowHeight = window.innerHeight
@@ -112,13 +107,9 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
     { icon: FaUsers, text: 'مجتمع نشط ومفيد' }
   ]
 
-  // ============================================
-  // FIRST PAGE - Full Content + Auto Ad
-  // ============================================
   if (currentPage === 'first') {
     return (
       <>
-        {/* Reading Progress Bar */}
         <div className="fixed top-0 left-0 right-0 h-1 bg-gray-200 z-50">
           <div 
             className="h-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 transition-all duration-150"
@@ -127,8 +118,6 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
         </div>
 
         <article className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-          
-          {/* Sticky Info Bar */}
           <div className="sticky top-0 z-40 bg-gradient-to-r from-purple-600 via-pink-600 to-red-500 text-white shadow-lg">
             <div className="container mx-auto px-4 py-3">
               <div className="flex items-center justify-between max-w-6xl mx-auto">
@@ -150,14 +139,9 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
             </div>
           </div>
 
-          {/* Main Content */}
           <div className="container mx-auto px-4 py-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-              
-              {/* Main Article Content */}
               <div className="lg:col-span-2 space-y-6">
-                
-                {/* Hero Image */}
                 <div className="relative h-64 md:h-96 rounded-3xl overflow-hidden shadow-2xl">
                   <Image
                     src={post.coverImage}
@@ -177,7 +161,6 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                   </div>
                 </div>
 
-                {/* Post Meta */}
                 <div className="bg-white rounded-2xl shadow-lg p-6">
                   <div className="flex flex-wrap items-center gap-4 text-gray-600">
                     <div className="flex items-center gap-2">
@@ -197,7 +180,6 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                   </div>
                 </div>
 
-                {/* Auto Ad - Top Banner */}
                 <AdSenseUnit 
                   adSlot="2150792287"
                   adFormat="horizontal"
@@ -205,14 +187,12 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                   label="إعلان تلقائي - يظهر لمدة 30 ثانية"
                 />
 
-                {/* Excerpt Box */}
                 <div className="bg-gradient-to-br from-blue-50 to-purple-50 border-r-4 border-purple-500 rounded-2xl p-6 shadow-lg">
                   <p className="text-xl text-gray-700 leading-relaxed font-medium">
                     {post.excerpt}
                   </p>
                 </div>
 
-                {/* First Page Content */}
                 <div className="bg-white rounded-3xl shadow-lg p-8 md:p-12">
                   <div 
                     className="prose prose-lg max-w-none
@@ -229,7 +209,6 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                     dangerouslySetInnerHTML={{ __html: post.firstPageContent }}
                   />
 
-                  {/* In-Article Auto Ad */}
                   <AdSenseUnit 
                     adSlot="2444761165"
                     adFormat="fluid"
@@ -237,7 +216,6 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                     label="إعلان"
                   />
 
-                  {/* Tags */}
                   <div className="mt-8 pt-6 border-t-2 border-gray-100">
                     <div className="flex items-center gap-3 flex-wrap">
                       <FaTag className="text-purple-500 text-lg" />
@@ -254,7 +232,8 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                   </div>
                 </div>
 
-                {/* CTA to Continue */}
+                <ShareButtons post={post} variant="purple" />
+
                 <div className="bg-gradient-to-br from-purple-600 via-pink-600 to-red-500 rounded-3xl shadow-2xl p-8 text-white text-center relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl" />
                   <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full -ml-32 -mb-32 blur-3xl" />
@@ -305,7 +284,6 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                   </div>
                 </div>
 
-                {/* Bottom Auto Ad */}
                 <AdSenseUnit 
                   adSlot="6389420190"
                   adFormat="rectangle"
@@ -313,17 +291,13 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                 />
               </div>
 
-              {/* Sidebar */}
               <div className="lg:col-span-1 space-y-6">
-                
-                {/* Quick Info Card */}
                 <div className="bg-white rounded-3xl shadow-xl p-6 sticky top-24">
                   <div className="flex items-center gap-2 mb-4">
                     <FaStar className="text-yellow-500 text-xl" />
                     <h2 className="text-2xl font-black text-gray-900">معلومات سريعة</h2>
                   </div>
 
-                  {/* Highlights */}
                   <div className="space-y-3 mb-6">
                     {highlights.map((item, index) => (
                       <div key={index} className="flex items-center gap-3 text-gray-700">
@@ -335,7 +309,6 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                     ))}
                   </div>
 
-                  {/* What You'll Learn */}
                   <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-4 mb-6">
                     <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
                       <FaBook className="text-purple-600" />
@@ -351,7 +324,6 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                     </ul>
                   </div>
 
-                  {/* Stats */}
                   <div className="grid grid-cols-2 gap-3">
                     <div className="bg-purple-50 rounded-xl p-4 text-center border-2 border-purple-200">
                       <FaClock className="text-3xl text-purple-600 mx-auto mb-2" />
@@ -366,7 +338,6 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                   </div>
                 </div>
 
-                {/* Sidebar Auto Ad */}
                 <AdSenseUnit 
                   adSlot="8221376618"
                   adFormat="rectangle"
@@ -380,12 +351,8 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
     )
   }
 
-  // ============================================
-  // SECOND PAGE - Specific Details + Participate
-  // ============================================
   return (
     <>
-      {/* Reading Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-gray-200 z-50">
         <div 
           className="h-full bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 transition-all duration-150"
@@ -394,8 +361,6 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
       </div>
 
       <article className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-        
-        {/* Sticky Participate Bar */}
         <div className="sticky top-0 z-40 bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 text-white shadow-lg">
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between max-w-6xl mx-auto">
@@ -419,14 +384,9 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
           </div>
         </div>
 
-        {/* Main Content */}
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            
-            {/* Main Article Content */}
             <div className="lg:col-span-2 space-y-6">
-              
-              {/* Hero Image */}
               <div className="relative h-64 md:h-96 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src={post.coverImage}
@@ -445,14 +405,12 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                 </div>
               </div>
 
-              {/* Top Banner Ad */}
               <AdSenseUnit 
                 adSlot="2150792287"
                 adFormat="horizontal"
                 style={{ minHeight: '90px' }}
               />
 
-              {/* Info Box */}
               <div className="bg-gradient-to-br from-green-50 to-blue-50 border-r-4 border-green-500 rounded-2xl p-6 shadow-lg">
                 <div className="flex items-start gap-4">
                   <FaCheckCircle className="text-green-600 text-3xl flex-shrink-0 mt-1" />
@@ -465,7 +423,6 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                 </div>
               </div>
 
-              {/* Second Page Content */}
               <div className="bg-white rounded-3xl shadow-lg p-8 md:p-12">
                 <div 
                   className="prose prose-lg max-w-none
@@ -482,7 +439,6 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                   dangerouslySetInnerHTML={{ __html: post.secondPageContent }}
                 />
 
-                {/* In-Article Ad */}
                 <AdSenseUnit 
                   adSlot="2444761165"
                   adFormat="fluid"
@@ -491,7 +447,8 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                 />
               </div>
 
-              {/* CTA to External Link */}
+              <ShareButtons post={post} variant="green" />
+
               <div className="bg-gradient-to-br from-green-600 via-blue-600 to-purple-600 rounded-3xl shadow-2xl p-8 md:p-12 text-white text-center relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl" />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full -ml-32 -mb-32 blur-3xl" />
@@ -534,7 +491,6 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                 </div>
               </div>
 
-              {/* Bottom Ad */}
               <AdSenseUnit 
                 adSlot="6389420190"
                 adFormat="rectangle"
@@ -542,10 +498,7 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
               />
             </div>
 
-            {/* Sidebar */}
             <div className="lg:col-span-1 space-y-6">
-              
-              {/* Participate Card */}
               <div className="bg-gradient-to-br from-green-500 to-blue-500 text-white rounded-3xl shadow-xl p-6 sticky top-24">
                 <FaGraduationCap className="text-5xl mx-auto mb-4" />
                 <h3 className="text-2xl font-black mb-3 text-center">
@@ -563,7 +516,6 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                 </button>
               </div>
 
-              {/* Sidebar Ad */}
               <AdSenseUnit 
                 adSlot="8221376618"
                 adFormat="rectangle"
