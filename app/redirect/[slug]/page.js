@@ -50,7 +50,7 @@ export async function generateMetadata({ params }) {
       canonical: `https://doroos-tn.vercel.app/redirect/${post.slug}`,
     },
     robots: {
-      index: true, // Allow indexing redirect pages
+      index: true,
       follow: true,
     },
   }

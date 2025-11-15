@@ -9,19 +9,20 @@ export default function AdminPostCreator() {
     slug: '',
     excerpt: '',
     externalLink: '',
-    content: '',
+    firstPageContent: '',
+    secondPageContent: '',
     coverImage: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80',
     author: 'محمد العربي',
     category: 'تعليم',
     tags: '',
-    readTime: '5 دقائق',
+    readTime: '12 دقيقة',
     featured: false
   })
 
   const [generatedCode, setGeneratedCode] = useState('')
   const [showPreview, setShowPreview] = useState(false)
   const [copied, setCopied] = useState(false)
-  const [mounted, setMounted] = useState(false) // To avoid hydration issues
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
@@ -46,8 +47,6 @@ export default function AdminPostCreator() {
 
   const generatePostObject = () => {
     const tagsArray = formData.tags.split(',').map(tag => tag.trim()).filter(Boolean)
-
-    // Generate dynamic values only on the client
     const id = Date.now()
     const publishedDate = new Date().toISOString().split('T')[0]
 
@@ -57,7 +56,8 @@ export default function AdminPostCreator() {
       title: formData.title,
       excerpt: formData.excerpt,
       externalLink: formData.externalLink || undefined,
-      content: formData.content,
+      firstPageContent: formData.firstPageContent || undefined,
+      secondPageContent: formData.secondPageContent || undefined,
       coverImage: formData.coverImage,
       author: formData.author,
       publishedDate,
@@ -67,7 +67,6 @@ export default function AdminPostCreator() {
       featured: formData.featured
     }
 
-    // Remove undefined values
     Object.keys(postObject).forEach(key => postObject[key] === undefined && delete postObject[key])
 
     const code = `{
@@ -75,7 +74,8 @@ export default function AdminPostCreator() {
   slug: '${postObject.slug}',
   title: '${postObject.title}',
   excerpt: '${postObject.excerpt}',${postObject.externalLink ? `\n  externalLink: '${postObject.externalLink}',` : ''}
-  content: \`${postObject.content}\`,
+  ${postObject.firstPageContent ? `\n  firstPageContent: \`${postObject.firstPageContent}\`,` : ''}
+  ${postObject.secondPageContent ? `\n  secondPageContent: \`${postObject.secondPageContent}\`,` : ''}
   coverImage: '${postObject.coverImage}',
   author: '${postObject.author}',
   publishedDate: '${postObject.publishedDate}',
@@ -95,23 +95,23 @@ export default function AdminPostCreator() {
     setTimeout(() => setCopied(false), 2000)
   }
 
-  if (!mounted) return null // Avoid SSR/client mismatch
+  if (!mounted) return null
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 py-12 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-black text-white mb-4">
             🚀 Admin Post Creator
           </h1>
           <p className="text-xl text-gray-300">
-            Create new posts and copy the code to data.js
+            Page 1: Full content + Auto ad (30s) → Page 2: Specific details + Participate link
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Form */}
-          <div className="bg-white rounded-3xl shadow-2xl p-8">
+          <div className="bg-white rounded-3xl shadow-2xl p-8 max-h-[90vh] overflow-y-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
               <FaPlus className="text-purple-600" />
               Post Details
@@ -163,7 +163,7 @@ export default function AdminPostCreator() {
               {/* External Link */}
               <div>
                 <label className="block text-sm font-bold text-gray-700 mb-2">
-                  External Link (Optional)
+                  External Link (Participate Link) *
                 </label>
                 <input
                   type="url"
@@ -171,25 +171,50 @@ export default function AdminPostCreator() {
                   value={formData.externalLink}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none"
-                  placeholder="https://example.com"
+                  placeholder="https://practicepteonline.com/"
+                  required
                 />
                 <p className="text-xs text-gray-500 mt-1">
-                  If provided, users will be redirected to this URL
+                  🔗 Link to participate/register (opens in new tab from page 2)
                 </p>
               </div>
 
-              {/* Content */}
-              <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2">Content (HTML) *</label>
+              {/* First Page Content */}
+              <div className="border-2 border-purple-300 rounded-xl p-4 bg-purple-50">
+                <label className="block text-sm font-bold text-gray-700 mb-2">
+                  📄 First Page Content (Full Details) *
+                </label>
                 <textarea
-                  name="content"
-                  value={formData.content}
+                  name="firstPageContent"
+                  value={formData.firstPageContent}
                   onChange={handleChange}
-                  rows="8"
+                  rows="10"
                   className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none font-mono text-sm"
-                  placeholder="<h2>Heading</h2><p>Content here...</p>"
+                  placeholder="<h2>Heading</h2><p>Full content with details...</p>"
                   required
                 />
+                <p className="text-xs text-purple-700 mt-2 font-semibold">
+                  ✨ Page 1: Shows full content + auto ads for 30 seconds + Continue button
+                </p>
+              </div>
+
+              {/* Second Page Content */}
+              <div className="border-2 border-green-300 rounded-xl p-4 bg-green-50">
+                <label className="block text-sm font-bold text-gray-700 mb-2">
+                  📝 Second Page Content (Specific Details) *
+                </label>
+                <textarea
+                  name="secondPageContent"
+                  value={formData.secondPageContent}
+                  onChange={handleChange}
+                  rows="10"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none font-mono text-sm"
+                  placeholder="<h2>Specific Details</h2><p>More technical info...</p>"
+                  required
+                />
+                <p className="text-xs text-green-700 mt-2 font-semibold">
+                  ✨ Page 2: Shows specific details + ads + "Participate Now" button
+                </p>
               </div>
 
               {/* Category & Read Time */}
@@ -217,7 +242,7 @@ export default function AdminPostCreator() {
                     value={formData.readTime}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none"
-                    placeholder="5 دقائق"
+                    placeholder="12 دقيقة"
                   />
                 </div>
               </div>
@@ -231,7 +256,7 @@ export default function AdminPostCreator() {
                   value={formData.tags}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none"
-                  placeholder="تعليم, برمجة, تطوير"
+                  placeholder="IELTS, تعلم الإنجليزية, اختبارات"
                 />
               </div>
 
@@ -287,7 +312,7 @@ export default function AdminPostCreator() {
           </div>
 
           {/* Preview */}
-          <div className="space-y-6">
+          <div className="space-y-6 max-h-[90vh] overflow-y-auto">
             {showPreview ? (
               <div className="space-y-6">
                 <div className="bg-white rounded-3xl shadow-2xl p-8">
@@ -309,7 +334,7 @@ export default function AdminPostCreator() {
                     </button>
                   </div>
 
-                  <pre className="bg-gray-900 text-green-400 p-6 rounded-2xl overflow-x-auto text-sm font-mono max-h-[600px] overflow-y-auto">
+                  <pre className="bg-gray-900 text-green-400 p-6 rounded-2xl overflow-x-auto text-sm font-mono max-h-[500px] overflow-y-auto">
                     {generatedCode}
                   </pre>
                 </div>
@@ -317,12 +342,21 @@ export default function AdminPostCreator() {
                 <div className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-3xl shadow-2xl p-8 text-white">
                   <h3 className="text-2xl font-bold mb-4">📋 Next Steps:</h3>
                   <ol className="space-y-3 text-lg">
-                    <li>1. Copy the generated code</li>
-                    <li>2. Open <code className="bg-white/20 px-2 py-1 rounded">app/posts/data.js</code></li>
-                    <li>3. Add it to the posts array</li>
-                    <li>4. Save the file</li>
-                    <li>5. Post will appear automatically!</li>
+                    <li>1. ✅ Copy the generated code</li>
+                    <li>2. 📂 Open <code className="bg-white/20 px-2 py-1 rounded">app/posts/data.js</code></li>
+                    <li>3. ➕ Add it to the posts array</li>
+                    <li>4. 💾 Save the file</li>
+                    <li>5. 🎉 Post will use the 2-page system!</li>
                   </ol>
+                </div>
+
+                <div className="bg-gradient-to-br from-green-600 to-blue-600 rounded-3xl shadow-2xl p-8 text-white">
+                  <h3 className="text-2xl font-bold mb-4">🔄 How it Works:</h3>
+                  <ul className="space-y-3 text-lg">
+                    <li>📄 <strong>Page 1:</strong> Full content + auto ads (30s) + Continue button</li>
+                    <li>📝 <strong>Page 2:</strong> Specific details + ads + Participate button</li>
+                    <li>🔗 <strong>Final:</strong> Opens external link in new tab</li>
+                  </ul>
                 </div>
               </div>
             ) : (
@@ -332,9 +366,19 @@ export default function AdminPostCreator() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     Fill the form
                   </h3>
-                  <p className="text-gray-600">
-                    Complete the form and click &quot;Generate Post Code&quot; to see the preview
+                  <p className="text-gray-600 mb-4">
+                    Complete the form and click &quot;Generate Post Code&quot;
                   </p>
+                  <div className="bg-purple-50 rounded-xl p-4 text-right">
+                    <p className="text-sm text-purple-700 font-semibold">
+                      ⚠️ Required fields:
+                    </p>
+                    <ul className="text-sm text-purple-600 mt-2 space-y-1">
+                      <li>✓ External Link (participate)</li>
+                      <li>✓ First Page Content (full)</li>
+                      <li>✓ Second Page Content (specific)</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             )}
