@@ -15,7 +15,8 @@ import {
   FaCheck,
   FaTag,
   FaBookmark,
-  FaShareAlt
+  FaShareAlt,
+  FaArrowRight
 } from 'react-icons/fa'
 
 export default function PostContent({ post, relatedPosts }) {
@@ -252,21 +253,22 @@ export default function PostContent({ post, relatedPosts }) {
             </div>
 
             {/* Related Posts */}
-            {relatedPosts.length > 0 && (
+            {relatedPosts && relatedPosts.length > 0 && (
               <div className="mb-12">
                 <div className="text-center mb-10">
                   <h2 className="text-4xl font-black text-gray-900 mb-3">
                     مقالات ذات صلة
                   </h2>
                   <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full" />
+                  <p className="text-gray-600 mt-4 text-lg">اكتشف المزيد من المحتوى المشابه</p>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {relatedPosts.map((rp) => (
                     <Link 
                       key={rp.id}
-                      href={`/posts/${rp.slug}`}
-                      className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                      href={rp.externalLink ? `/redirect/${rp.slug}` : `/posts/${rp.slug}`}
+                      className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
                     >
                       <div className="relative h-48 overflow-hidden">
                         <Image
@@ -276,17 +278,26 @@ export default function PostContent({ post, relatedPosts }) {
                           className="object-cover group-hover:scale-110 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </div>
-                      <div className="p-6">
-                        <div className="inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-bold mb-3">
+                        <div className="absolute top-3 right-3 bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
                           {rp.category}
                         </div>
-                        <h3 className="font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-purple-600 transition-colors text-lg">
+                      </div>
+                      <div className="p-6">
+                        <h3 className="font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-purple-600 transition-colors text-lg leading-tight">
                           {rp.title}
                         </h3>
-                        <div className="flex items-center gap-2 text-sm text-gray-500">
-                          <FaClock className="text-purple-500" />
-                          <span>{rp.readTime}</span>
+                        <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                          {rp.excerpt}
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2 text-sm text-gray-500">
+                            <FaClock className="text-purple-500" />
+                            <span>{rp.readTime}</span>
+                          </div>
+                          <div className="flex items-center gap-2 text-purple-600 font-bold text-sm group-hover:gap-3 transition-all">
+                            <span>اقرأ المزيد</span>
+                            <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                          </div>
                         </div>
                       </div>
                     </Link>
