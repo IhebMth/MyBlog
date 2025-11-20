@@ -1,83 +1,48 @@
 "use client"
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { 
   FaCalendar, 
   FaUser, 
   FaClock, 
   FaTag,
   FaBook,
-  FaTrophy,
-  FaUsers,
-  FaStar,
-  FaExternalLinkAlt,
   FaGraduationCap,
   FaCheckCircle,
-  FaArrowRight
+  FaArrowRight,
+  FaExternalLinkAlt,
+  FaStar,
+  FaLightbulb,
+  FaDownload,
+  FaLink
 } from 'react-icons/fa'
 import ShareButtons from './ShareButtons'
 
-// AdSense Component
-function AdSenseUnit({ adSlot, adFormat = 'auto', style = {}, label = 'مساحة إعلانية' }) {
-  const adSenseId = process.env.NEXT_PUBLIC_ADSENSE_ID
-  const adRef = useRef(null)
-
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'production' && adSenseId && adRef.current) {
-      try {
-        if (window.adsbygoogle) {
-          window.adsbygoogle.push({})
-        }
-      } catch (error) {
-        console.error('AdSense error:', error)
-      }
-    }
-  }, [adSenseId])
-
-  if (process.env.NODE_ENV === 'development' || !adSenseId) {
-    return (
-      <div className="bg-gray-100 rounded-2xl p-4 md:p-6">
-        <p className="text-gray-500 text-xs md:text-sm text-center mb-3">{label}</p>
-        <div className="bg-gray-200 rounded-xl h-32 md:h-64 flex items-center justify-center">
-          <p className="text-gray-400 text-sm">Ad Slot: {adSlot || 'Not Set'}</p>
-        </div>
-      </div>
-    )
-  }
-
-  return (
-    <div className="bg-gray-50 rounded-2xl p-4 my-6" ref={adRef}>
-      <p className="text-gray-500 text-xs text-center mb-3">{label}</p>
-      <ins
-        className="adsbygoogle"
-        style={{ display: 'block', ...style }}
-        data-ad-client={adSenseId}
-        data-ad-slot={adSlot}
-        data-ad-format={adFormat}
-        data-full-width-responsive="true"
-      />
-    </div>
-  )
-}
-
 export default function RedirectPage({ targetUrl, postSlug, post }) {
   const [currentPage, setCurrentPage] = useState('first')
-  const [adTimer, setAdTimer] = useState(30)
+  const [continueTimer, setContinueTimer] = useState(10)
   const [showContinueButton, setShowContinueButton] = useState(false)
   const [readProgress, setReadProgress] = useState(0)
 
+  // Check if post has multiple links or single link
+  const hasMultipleLinks = post.externalLinks && post.externalLinks.length > 0
+  const links = hasMultipleLinks ? post.externalLinks : [{ label: 'زيارة الرابط', url: targetUrl, icon: '🔗' }]
+
+  // Timer for continue button
   useEffect(() => {
-    if (currentPage === 'first' && adTimer > 0) {
+    if (currentPage === 'first' && continueTimer > 0) {
       const timer = setInterval(() => {
-        setAdTimer(prev => prev - 1)
+        setContinueTimer(prev => prev - 1)
       }, 1000)
       return () => clearInterval(timer)
-    } else if (currentPage === 'first' && adTimer === 0) {
+    } else if (currentPage === 'first' && continueTimer === 0) {
       setShowContinueButton(true)
     }
-  }, [adTimer, currentPage])
+  }, [continueTimer, currentPage])
 
+  // Reading progress
   useEffect(() => {
     const handleScroll = () => {
       const windowHeight = window.innerHeight
@@ -93,23 +58,29 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
 
   const handleContinueToSecondPage = () => {
     setCurrentPage('second')
-    window.scrollTo(0, 0)
+    setContinueTimer(10)
+    setShowContinueButton(false)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const handleGoToExternalLink = () => {
-    window.open(targetUrl, '_blank', 'noopener,noreferrer')
+  const handleLinkClick = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer')
   }
 
   const highlights = [
-    { icon: FaGraduationCap, text: 'محتوى تعليمي متميز' },
-    { icon: FaBook, text: 'مواد شاملة ومنظمة' },
-    { icon: FaTrophy, text: 'شهادات معترف بها' },
-    { icon: FaUsers, text: 'مجتمع نشط ومفيد' }
+    { icon: FaGraduationCap, text: 'محتوى تعليمي متميز', color: 'purple' },
+    { icon: FaBook, text: 'مواد شاملة ومنظمة', color: 'blue' },
+    { icon: FaCheckCircle, text: 'سهولة الوصول', color: 'green' },
+    { icon: FaLightbulb, text: 'استخدام عملي', color: 'yellow' }
   ]
 
+  // ============================================
+  // FIRST PAGE
+  // ============================================
   if (currentPage === 'first') {
     return (
       <>
+        {/* Progress Bar */}
         <div className="fixed top-0 left-0 right-0 h-1 bg-gray-200 z-50">
           <div 
             className="h-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 transition-all duration-150"
@@ -117,31 +88,35 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
           />
         </div>
 
-        <article className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-          <div className="sticky top-0 z-40 bg-gradient-to-r from-purple-600 via-pink-600 to-red-500 text-white shadow-lg">
-            <div className="container mx-auto px-4 py-3">
-              <div className="flex items-center justify-between max-w-6xl mx-auto">
-                <div className="flex items-center gap-3">
-                  <FaBook className="text-xl" />
-                  <span className="text-sm md:text-base font-medium">اقرأ المقال للوصول إلى التفاصيل الإضافية</span>
-                </div>
-                {showContinueButton && (
-                  <button
-                    onClick={handleContinueToSecondPage}
-                    className="bg-white text-purple-600 px-4 md:px-6 py-2 rounded-xl font-bold hover:scale-105 transition-all flex items-center gap-2 text-sm md:text-base animate-pulse"
-                  >
-                    <span className="hidden md:inline">المتابعة</span>
-                    <span className="md:hidden">المتابعة</span>
-                    <FaArrowRight />
-                  </button>
-                )}
+        {/* Sticky Header */}
+        <div className="sticky top-0 z-40 bg-gradient-to-r from-purple-600 via-pink-600 to-red-500 text-white shadow-lg">
+          <div className="container mx-auto px-4 py-3">
+            <div className="flex items-center justify-between max-w-6xl mx-auto">
+              <div className="flex items-center gap-3">
+                <FaBook className="text-xl" />
+                <span className="text-sm md:text-base font-medium">
+                  اقرأ المقال الكامل
+                </span>
               </div>
+              {showContinueButton && (
+                <button
+                  onClick={handleContinueToSecondPage}
+                  className="bg-white text-purple-600 px-4 md:px-6 py-2 rounded-xl font-bold hover:scale-105 transition-all flex items-center gap-2 text-sm md:text-base shadow-lg"
+                >
+                  <span>التفاصيل الإضافية</span>
+                  <FaArrowRight />
+                </button>
+              )}
             </div>
           </div>
+        </div>
 
+        <article className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4 py-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+              {/* Main Content */}
               <div className="lg:col-span-2 space-y-6">
+                {/* Cover Image */}
                 <div className="relative h-64 md:h-96 rounded-3xl overflow-hidden shadow-2xl">
                   <Image
                     src={post.coverImage}
@@ -152,7 +127,7 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6">
-                    <div className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-3">
+                    <div className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-3 shadow-lg">
                       {post.category}
                     </div>
                     <h1 className="text-3xl md:text-4xl font-black text-white leading-tight">
@@ -161,6 +136,7 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                   </div>
                 </div>
 
+                {/* Meta Info */}
                 <div className="bg-white rounded-2xl shadow-lg p-6">
                   <div className="flex flex-wrap items-center gap-4 text-gray-600">
                     <div className="flex items-center gap-2">
@@ -171,7 +147,7 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                     </div>
                     <div className="flex items-center gap-2">
                       <FaCalendar className="text-purple-500" />
-                      <span>{new Date(post.publishedDate).toLocaleDateString('ar-EG', { year:'numeric', month:'long', day:'numeric' })}</span>
+                      <span>{new Date(post.publishedDate).toLocaleDateString('ar-EG')}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <FaClock className="text-pink-500" />
@@ -180,20 +156,15 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                   </div>
                 </div>
 
-                <AdSenseUnit 
-                  adSlot="2150792287"
-                  adFormat="horizontal"
-                  style={{ minHeight: '90px' }}
-                  label="إعلان تلقائي - يظهر لمدة 30 ثانية"
-                />
-
+                {/* Excerpt */}
                 <div className="bg-gradient-to-br from-blue-50 to-purple-50 border-r-4 border-purple-500 rounded-2xl p-6 shadow-lg">
                   <p className="text-xl text-gray-700 leading-relaxed font-medium">
                     {post.excerpt}
                   </p>
                 </div>
 
-                <div className="bg-white rounded-3xl shadow-lg p-8 md:p-12">
+                {/* First Page Content */}
+                <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">
                   <div 
                     className="prose prose-lg max-w-none
                       prose-headings:text-gray-900 prose-headings:font-bold
@@ -204,18 +175,12 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                       prose-ol:my-4 prose-ol:space-y-2
                       prose-li:text-gray-700 prose-li:leading-relaxed
                       prose-li:marker:text-purple-500 prose-li:marker:font-bold
-                      prose-strong:text-gray-900 prose-strong:font-bold prose-strong:text-purple-600
+                      prose-strong:text-purple-600 prose-strong:font-bold
                       prose-a:text-purple-600 prose-a:no-underline hover:prose-a:underline"
                     dangerouslySetInnerHTML={{ __html: post.firstPageContent }}
                   />
 
-                  <AdSenseUnit 
-                    adSlot="2444761165"
-                    adFormat="fluid"
-                    style={{ minHeight: '250px' }}
-                    label="إعلان"
-                  />
-
+                  {/* Tags */}
                   <div className="mt-8 pt-6 border-t-2 border-gray-100">
                     <div className="flex items-center gap-3 flex-wrap">
                       <FaTag className="text-purple-500 text-lg" />
@@ -232,8 +197,9 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                   </div>
                 </div>
 
-                <ShareButtons post={post} variant="purple" />
+                <ShareButtons post={post} />
 
+                {/* Continue CTA */}
                 <div className="bg-gradient-to-br from-purple-600 via-pink-600 to-red-500 rounded-3xl shadow-2xl p-8 text-white text-center relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl" />
                   <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full -ml-32 -mb-32 blur-3xl" />
@@ -243,14 +209,14 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                     <h3 className="text-3xl font-black mb-3">
                       هل تريد معرفة المزيد؟
                     </h3>
-                    <p className="text-xl text-white/90 mb-6 max-w-2xl mx-auto">
-                      تابع القراءة للحصول على تفاصيل إضافية ونصائح محددة لتحسين أدائك في الاختبار
+                    <p className="text-xl text-white/90 mb-6 max-w-2xl mx-auto leading-relaxed">
+                      تابع القراءة للحصول على تفاصيل إضافية ونصائح محددة
                     </p>
                     
                     {showContinueButton ? (
                       <button
                         onClick={handleContinueToSecondPage}
-                        className="bg-white text-purple-600 px-10 py-5 rounded-2xl font-bold text-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 inline-flex items-center gap-3 animate-pulse"
+                        className="bg-white text-purple-600 px-10 py-5 rounded-2xl font-bold text-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 inline-flex items-center gap-3"
                       >
                         <span>المتابعة للتفاصيل الإضافية</span>
                         <FaArrowRight className="text-2xl" />
@@ -267,82 +233,60 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                                 strokeWidth="6"
                                 fill="none"
                                 strokeDasharray={`${2 * Math.PI * 40}`}
-                                strokeDashoffset={`${2 * Math.PI * 40 * (adTimer / 30)}`}
+                                strokeDashoffset={`${2 * Math.PI * 40 * (continueTimer / 10)}`}
                                 strokeLinecap="round"
                                 className="transition-all duration-1000"
                               />
                             </svg>
                             <div className="absolute inset-0 flex items-center justify-center">
-                              <div className="text-3xl font-black">{adTimer}</div>
+                              <div className="text-3xl font-black">{continueTimer}</div>
                             </div>
                           </div>
-                          <p className="text-lg font-bold">جاري عرض الإعلان...</p>
-                          <p className="text-sm opacity-80 mt-2">الزر سيظهر خلال {adTimer} ثانية</p>
+                          <p className="text-lg font-bold">يرجى الانتظار...</p>
+                          <p className="text-sm opacity-80 mt-2">الزر سيظهر خلال {continueTimer} ثانية</p>
                         </div>
                       </div>
                     )}
                   </div>
                 </div>
-
-                <AdSenseUnit 
-                  adSlot="6389420190"
-                  adFormat="rectangle"
-                  style={{ minHeight: '250px' }}
-                />
               </div>
 
-              <div className="lg:col-span-1 space-y-6">
+              {/* Sidebar */}
+              <div className="lg:col-span-1">
                 <div className="bg-white rounded-3xl shadow-xl p-6 sticky top-24">
-                  <div className="flex items-center gap-2 mb-4">
-                    <FaStar className="text-yellow-500 text-xl" />
-                    <h2 className="text-2xl font-black text-gray-900">معلومات سريعة</h2>
+                  <div className="flex items-center gap-2 mb-6">
+                    <FaStar className="text-yellow-500 text-2xl" />
+                    <h2 className="text-2xl font-black text-gray-900">نقاط مهمة</h2>
                   </div>
 
-                  <div className="space-y-3 mb-6">
+                  <div className="space-y-4 mb-6">
                     {highlights.map((item, index) => (
-                      <div key={index} className="flex items-center gap-3 text-gray-700">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center flex-shrink-0">
-                          <item.icon className="text-purple-600" />
+                      <div key={index} className="flex items-start gap-3">
+                        <div className={`w-10 h-10 rounded-xl bg-${item.color}-100 flex items-center justify-center flex-shrink-0`}>
+                          <item.icon className={`text-${item.color}-600`} />
                         </div>
-                        <span className="font-medium">{item.text}</span>
+                        <div className="flex-1">
+                          <p className="font-semibold text-gray-800">{item.text}</p>
+                        </div>
                       </div>
                     ))}
                   </div>
 
-                  <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-4 mb-6">
+                  <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-4">
                     <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
                       <FaBook className="text-purple-600" />
                       ما ستتعلمه:
                     </h4>
                     <ul className="space-y-2">
-                      {post.tags.map((tag, index) => (
+                      {post.tags.slice(0, 4).map((tag, index) => (
                         <li key={index} className="flex items-start gap-2 text-gray-700 text-sm">
-                          <span className="text-purple-600 mt-1 text-lg">✓</span>
+                          <span className="text-purple-600 mt-1">✓</span>
                           <span>{tag}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-purple-50 rounded-xl p-4 text-center border-2 border-purple-200">
-                      <FaClock className="text-3xl text-purple-600 mx-auto mb-2" />
-                      <div className="text-lg font-black text-purple-600">{post.readTime}</div>
-                      <div className="text-xs text-gray-600">وقت القراءة</div>
-                    </div>
-                    <div className="bg-pink-50 rounded-xl p-4 text-center border-2 border-pink-200">
-                      <FaBook className="text-3xl text-pink-600 mx-auto mb-2" />
-                      <div className="text-lg font-black text-pink-600">{post.category}</div>
-                      <div className="text-xs text-gray-600">التصنيف</div>
-                    </div>
-                  </div>
                 </div>
-
-                <AdSenseUnit 
-                  adSlot="8221376618"
-                  adFormat="rectangle"
-                  style={{ minHeight: '600px' }}
-                />
               </div>
             </div>
           </div>
@@ -351,6 +295,9 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
     )
   }
 
+  // ============================================
+  // SECOND PAGE - With Multiple Links
+  // ============================================
   return (
     <>
       <div className="fixed top-0 left-0 right-0 h-1 bg-gray-200 z-50">
@@ -360,33 +307,35 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
         />
       </div>
 
-      <article className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-        <div className="sticky top-0 z-40 bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 text-white shadow-lg">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex items-center justify-between max-w-6xl mx-auto">
-              <div className="flex items-center gap-3">
-                <FaGraduationCap className="text-2xl" />
-                <div>
-                  <p className="text-sm md:text-base font-medium">جاهز للبدء؟</p>
-                  <p className="text-xs opacity-75 hidden md:block">انضم إلى المنصة الآن</p>
-                </div>
+      <div className="sticky top-0 z-40 bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 text-white shadow-lg">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between max-w-6xl mx-auto">
+            <div className="flex items-center gap-3">
+              <FaGraduationCap className="text-2xl" />
+              <div>
+                <p className="text-sm md:text-base font-medium">التفاصيل الإضافية</p>
               </div>
-              
+            </div>
+            
+            {hasMultipleLinks && links.length > 0 && (
               <button
-                onClick={handleGoToExternalLink}
-                className="bg-white text-green-600 px-4 md:px-8 py-2 md:py-3 rounded-xl font-bold hover:scale-105 transition-all shadow-xl flex items-center gap-2 text-sm md:text-base"
+                onClick={() => handleLinkClick(links[0].url)}
+                className="bg-white text-green-600 px-4 md:px-6 py-2 md:py-3 rounded-xl font-bold hover:scale-105 transition-all shadow-xl flex items-center gap-2 text-sm md:text-base"
               >
-                <span className="hidden md:inline">ابدأ التدريب الآن</span>
-                <span className="md:hidden">ابدأ</span>
+                <span className="hidden md:inline">{links[0].label}</span>
+                <span className="md:hidden">الروابط</span>
                 <FaExternalLinkAlt />
               </button>
-            </div>
+            )}
           </div>
         </div>
+      </div>
 
+      <article className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <div className="lg:col-span-2 space-y-6">
+              {/* Cover */}
               <div className="relative h-64 md:h-96 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src={post.coverImage}
@@ -405,25 +354,20 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                 </div>
               </div>
 
-              <AdSenseUnit 
-                adSlot="2150792287"
-                adFormat="horizontal"
-                style={{ minHeight: '90px' }}
-              />
-
               <div className="bg-gradient-to-br from-green-50 to-blue-50 border-r-4 border-green-500 rounded-2xl p-6 shadow-lg">
                 <div className="flex items-start gap-4">
                   <FaCheckCircle className="text-green-600 text-3xl flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">معلومات إضافية محددة</h3>
                     <p className="text-gray-700 leading-relaxed">
-                      تعرف على التفاصيل الدقيقة لكل قسم من أقسام الاختبار والاستراتيجيات المتقدمة للنجاح
+                      تعرف على التفاصيل الدقيقة والاستراتيجيات المتقدمة للنجاح
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-3xl shadow-lg p-8 md:p-12">
+              {/* Second Page Content */}
+              <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">
                 <div 
                   className="prose prose-lg max-w-none
                     prose-headings:text-gray-900 prose-headings:font-bold
@@ -434,93 +378,81 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
                     prose-ol:my-4 prose-ol:space-y-2
                     prose-li:text-gray-700 prose-li:leading-relaxed
                     prose-li:marker:text-green-500 prose-li:marker:font-bold
-                    prose-strong:text-gray-900 prose-strong:font-bold prose-strong:text-green-600
+                    prose-strong:text-green-600 prose-strong:font-bold
                     prose-a:text-green-600 prose-a:no-underline hover:prose-a:underline"
                   dangerouslySetInnerHTML={{ __html: post.secondPageContent }}
-                />
-
-                <AdSenseUnit 
-                  adSlot="2444761165"
-                  adFormat="fluid"
-                  style={{ minHeight: '250px' }}
-                  label="إعلان"
                 />
               </div>
 
               <ShareButtons post={post} variant="green" />
 
+              {/* Multiple Links CTA */}
               <div className="bg-gradient-to-br from-green-600 via-blue-600 to-purple-600 rounded-3xl shadow-2xl p-8 md:p-12 text-white text-center relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl" />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full -ml-32 -mb-32 blur-3xl" />
                 
                 <div className="relative z-10">
-                  <FaGraduationCap className="text-7xl mx-auto mb-6" />
+                  <FaDownload className="text-7xl mx-auto mb-6" />
                   <h3 className="text-4xl font-black mb-4">
-                    🎯 جاهز للبدء؟
+                    🎯 الروابط المتاحة
                   </h3>
                   <p className="text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-                    انضم إلى <strong>PracticePTEOnline</strong> الآن واحصل على الوصول الكامل إلى اختبارات محاكاة، مواد تعليمية، وتقييمات فورية لتحسين أدائك في IELTS
+                    اختر المنصة المناسبة لك وابدأ الآن
                   </p>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 text-right">
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                      <div className="text-4xl mb-2">✅</div>
-                      <p className="font-bold">اختبارات محاكاة</p>
-                    </div>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                      <div className="text-4xl mb-2">📚</div>
-                      <p className="font-bold">مواد تعليمية شاملة</p>
-                    </div>
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                      <div className="text-4xl mb-2">🎓</div>
-                      <p className="font-bold">تقييم فوري ودقيق</p>
-                    </div>
+                  {/* Links Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+                    {links.map((link, index) => (
+                      <button
+                        key={index}
+                        onClick={() => handleLinkClick(link.url)}
+                        className="group bg-white/10 backdrop-blur-sm hover:bg-white/20 border-2 border-white/30 hover:border-white text-white px-6 py-4 rounded-2xl font-bold text-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-3"
+                      >
+                        <span className="text-3xl">{link.icon}</span>
+                        <span>{link.label}</span>
+                        <FaExternalLinkAlt className="text-xl group-hover:translate-x-2 transition-transform" />
+                      </button>
+                    ))}
                   </div>
 
-                  <button
-                    onClick={handleGoToExternalLink}
-                    className="group bg-white text-green-600 px-12 py-6 rounded-2xl font-bold text-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 inline-flex items-center gap-4"
-                  >
-                    <span>ابدأ التدريب الآن</span>
-                    <FaExternalLinkAlt className="text-3xl group-hover:translate-x-2 transition-transform" />
-                  </button>
-                  
-                  <p className="text-sm text-white/70 mt-4">
-                    * سيتم فتح الموقع في نافذة جديدة
+                  <p className="text-sm mt-6 opacity-75">
+                    سيتم فتح الروابط في نوافذ جديدة
                   </p>
                 </div>
               </div>
-
-              <AdSenseUnit 
-                adSlot="6389420190"
-                adFormat="rectangle"
-                style={{ minHeight: '250px' }}
-              />
             </div>
 
-            <div className="lg:col-span-1 space-y-6">
+            {/* Sidebar */}
+            <div className="lg:col-span-1">
               <div className="bg-gradient-to-br from-green-500 to-blue-500 text-white rounded-3xl shadow-xl p-6 sticky top-24">
-                <FaGraduationCap className="text-5xl mx-auto mb-4" />
+                <FaDownload className="text-5xl mx-auto mb-4" />
                 <h3 className="text-2xl font-black mb-3 text-center">
-                  انضم الآن!
+                  الروابط المتاحة
                 </h3>
                 <p className="text-white/90 mb-6 text-center leading-relaxed">
-                  ابدأ رحلتك نحو النجاح في IELTS مع أفضل المواد التدريبية
+                  احصل على الوصول الكامل من المنصة المناسبة لك
                 </p>
-                <button
-                  onClick={handleGoToExternalLink}
-                  className="w-full bg-white text-green-600 py-4 rounded-xl font-bold hover:shadow-2xl transition-all flex items-center justify-center gap-2 hover:scale-105"
-                >
-                  <span>ابدأ الآن</span>
-                  <FaExternalLinkAlt />
-                </button>
+                
+                <div className="space-y-3">
+                  {links.slice(0, 3).map((link, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleLinkClick(link.url)}
+                      className="w-full bg-white/20 hover:bg-white/30 backdrop-blur-sm py-3 px-4 rounded-xl font-bold transition-all flex items-center justify-between group"
+                    >
+                      <span className="flex items-center gap-2">
+                        <span className="text-2xl">{link.icon}</span>
+                        <span className="text-sm">{link.label}</span>
+                      </span>
+                      <FaExternalLinkAlt className="group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  ))}
+                </div>
+                
+                <p className="text-xs mt-4 text-center opacity-75">
+                  روابط موثوقة وآمنة
+                </p>
               </div>
-
-              <AdSenseUnit 
-                adSlot="8221376618"
-                adFormat="rectangle"
-                style={{ minHeight: '600px' }}
-              />
             </div>
           </div>
         </div>

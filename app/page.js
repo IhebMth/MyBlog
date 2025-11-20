@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { posts, getFeaturedPosts } from './posts/data'
 import { FaRocket, FaBookOpen, FaLightbulb, FaChartLine, FaClock, FaUser, FaTag, FaArrowLeft } from 'react-icons/fa'
+import { AdBanner } from './components/AdSense'
 
 export const metadata = {
   title: 'دروس | مدونة تعليمية شاملة',
@@ -109,6 +110,11 @@ export default function Home() {
               )
             })}
           </div>
+
+          {/* Ad Banner after Features */}
+          <div className="max-w-4xl mx-auto mt-12">
+            <AdBanner />
+          </div>
         </div>
       </section>
 
@@ -144,6 +150,11 @@ export default function Home() {
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               تصفح مجموعتنا المتنوعة من المقالات المفيدة
             </p>
+          </div>
+
+          {/* Ad Banner before posts */}
+          <div className="max-w-4xl mx-auto mb-12">
+            <AdBanner />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">

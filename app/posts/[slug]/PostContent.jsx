@@ -18,6 +18,7 @@ import {
   FaShareAlt,
   FaArrowRight
 } from 'react-icons/fa'
+import { AdBanner, AdInArticle } from '@/app/components/AdSense'
 
 export default function PostContent({ post, relatedPosts }) {
   const [readProgress, setReadProgress] = useState(0)
@@ -177,6 +178,11 @@ export default function PostContent({ post, relatedPosts }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               </div>
 
+              {/* Ad Banner - Top of Article */}
+              <div className="px-8 pt-8">
+                <AdBanner />
+              </div>
+
               {/* Content */}
               <div className="p-8 md:p-12 lg:p-16">
                 {/* Article Body */}
@@ -195,6 +201,9 @@ export default function PostContent({ post, relatedPosts }) {
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 />
 
+                {/* Ad In Article - Middle */}
+                <AdInArticle />
+
                 {/* Tags Section */}
                 <div className="mt-16 pt-8 border-t-2 border-gray-100">
                   <div className="flex items-center gap-3 flex-wrap">
@@ -210,6 +219,11 @@ export default function PostContent({ post, relatedPosts }) {
                     ))}
                   </div>
                 </div>
+              </div>
+
+              {/* Ad Banner - Bottom of Article */}
+              <div className="px-8 pb-8">
+                <AdBanner />
               </div>
             </div>
 
@@ -302,7 +316,7 @@ export default function PostContent({ post, relatedPosts }) {
                       </div>
                     </Link>
                   ))}
-                </div>
+                    </div>
               </div>
             )}
 

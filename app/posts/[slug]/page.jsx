@@ -2,15 +2,20 @@ import { notFound, redirect } from 'next/navigation'
 import { posts, getPostBySlug, getRelatedPosts } from '../data'
 import PostContent from './PostContent'
 
-export default async function PostPage({ params }) {
-  const { slug } = params
+// ===============================
+// PAGE RENDER
+// ===============================
+export default async function PostPage(props) {
+  // ⬅ FIXED: params is a Promise in Next.js 15
+  const { slug } = await props.params
+
   const post = getPostBySlug(slug)
 
   if (!post) {
     notFound()
   }
 
-  // If post has external link, redirect to redirect page
+  // Redirect posts with external links
   if (post.externalLink) {
     redirect(`/redirect/${slug}`)
   }
@@ -20,11 +25,15 @@ export default async function PostPage({ params }) {
   return <PostContent post={post} relatedPosts={relatedPosts} />
 }
 
-// Generate metadata for SEO
-export async function generateMetadata({ params }) {
-  const { slug } = params
+// ===============================
+// SEO METADATA
+// ===============================
+export async function generateMetadata(props) {
+  // ⬅ FIXED: params must be awaited
+  const { slug } = await props.params
+
   const post = getPostBySlug(slug)
-  
+
   if (!post) {
     return {
       title: 'مقالة غير موجودة'
@@ -52,7 +61,9 @@ export async function generateMetadata({ params }) {
   }
 }
 
-// Generate static params for all posts
+// ===============================
+// STATIC PARAMS FOR BUILD
+// ===============================
 export async function generateStaticParams() {
   return posts.map((post) => ({
     slug: post.slug,
