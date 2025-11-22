@@ -1,4 +1,3 @@
-
 "use client"
 
 import { useEffect, useState } from 'react'
@@ -30,6 +29,9 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
     return () => clearInterval(timer)
   }, [targetUrl])
 
+  // ✅ Check if post has multiple external links
+  const hasMultipleLinks = post.externalLinks && post.externalLinks.length > 1
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-gray-100 flex items-center justify-center p-4">
       <div className="max-w-2xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden">
@@ -48,25 +50,27 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
             <div className="text-center">
               <FaExternalLinkAlt className="text-white text-6xl mx-auto mb-4 animate-bounce" />
               <h1 className="text-3xl md:text-4xl font-bold text-white">
-                جاري التحويل...
+                {hasMultipleLinks ? 'اختر رابطك المفضل' : 'جاري التحويل...'}
               </h1>
             </div>
           </div>
         </div>
 
-        {/* Main Content - NO ADS */}
+        {/* Main Content */}
         <div className="p-8 md:p-12">
           
-          {/* Countdown Timer */}
-          <div className="text-center mb-8">
-            <p className="text-lg text-gray-600 mb-6">
-              سيتم تحويلك إلى المقالة الكاملة خلال:
-            </p>
+          {/* Countdown Timer - Only show if single link */}
+          {!hasMultipleLinks && (
+            <div className="text-center mb-8">
+              <p className="text-lg text-gray-600 mb-6">
+                سيتم تحويلك إلى المقالة الكاملة خلال:
+              </p>
 
-            <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-full text-white text-5xl font-bold shadow-2xl animate-pulse">
-              {countdown}
+              <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-full text-white text-5xl font-bold shadow-2xl animate-pulse">
+                {countdown}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Post Preview */}
           <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 mb-6 border-2 border-blue-100">
@@ -116,31 +120,68 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
             )}
           </div>
 
-          {/* Action Buttons */}
-          <div className="space-y-3">
-            <a
-              href={targetUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
-            >
-              <FaExternalLinkAlt />
-              <span>الانتقال الآن إلى المقالة</span>
-            </a>
+          {/* ✅ FIXED: Multiple Links Section - Shows ALL links with scroll */}
+          {hasMultipleLinks ? (
+            <div className="space-y-3 mb-6">
+              <h3 className="text-lg font-bold text-gray-900 mb-4 text-center">
+                اختر المنصة المناسبة لك:
+              </h3>
+              
+              {/* ✅ Scrollable container for many links */}
+              <div className="max-h-96 overflow-y-auto space-y-3 pr-2 custom-scrollbar">
+                {post.externalLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white px-6 py-4 rounded-xl font-bold text-lg hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  >
+                    <span className="flex items-center gap-3">
+                      <span className="text-2xl">{link.icon || '🔗'}</span>
+                      <span>{link.label}</span>
+                    </span>
+                    <FaExternalLinkAlt />
+                  </a>
+                ))}
+              </div>
+              
+              {/* ✅ Link counter */}
+              <p className="text-xs text-gray-500 text-center mt-3">
+                📊 عدد الروابط المتاحة: {post.externalLinks.length}
+              </p>
+            </div>
+          ) : (
+            /* Single Link Button */
+            <div className="space-y-3">
+              <a
+                href={targetUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                <FaExternalLinkAlt />
+                <span>الانتقال الآن إلى المقالة</span>
+              </a>
+            </div>
+          )}
 
-            <Link
-              href="/"
-              className="flex items-center justify-center gap-3 w-full bg-gray-200 text-gray-700 px-8 py-4 rounded-xl font-bold hover:bg-gray-300 transition-all"
-            >
-              <FaArrowLeft />
-              <span>العودة للرئيسية</span>
-            </Link>
-          </div>
+          {/* Back Button */}
+          <Link
+            href="/"
+            className="flex items-center justify-center gap-3 w-full bg-gray-200 text-gray-700 px-8 py-4 rounded-xl font-bold hover:bg-gray-300 transition-all mt-3"
+          >
+            <FaArrowLeft />
+            <span>العودة للرئيسية</span>
+          </Link>
 
           {/* Helper Text */}
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-500">
-              إذا لم يتم التحويل تلقائياً، انقر على زر "الانتقال الآن"
+              {hasMultipleLinks 
+                ? '✨ اختر الرابط الأنسب لجهازك أو تفضيلاتك'
+                : 'إذا لم يتم التحويل تلقائياً، انقر على زر "الانتقال الآن"'
+              }
             </p>
           </div>
         </div>
@@ -152,6 +193,24 @@ export default function RedirectPage({ targetUrl, postSlug, post }) {
           </p>
         </div>
       </div>
+      
+      {/* ✅ Custom scrollbar styles */}
+      <style jsx>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: linear-gradient(135deg, #5568d3 0%, #6a3f92 100%);
+        }
+      `}</style>
     </div>
   )
 }

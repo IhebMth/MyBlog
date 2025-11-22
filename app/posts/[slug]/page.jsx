@@ -6,7 +6,6 @@ import PostContent from './PostContent'
 // PAGE RENDER
 // ===============================
 export default async function PostPage(props) {
-  // ⬅ FIXED: params is a Promise in Next.js 15
   const { slug } = await props.params
 
   const post = getPostBySlug(slug)
@@ -15,11 +14,14 @@ export default async function PostPage(props) {
     notFound()
   }
 
-  // Redirect posts with external links
-  if (post.externalLink) {
+  // ✅ FIXED: Redirect if post has external links (either format)
+  const hasExternalLinks = (post.externalLinks && post.externalLinks.length > 0) || post.externalLink
+  
+  if (hasExternalLinks) {
     redirect(`/redirect/${slug}`)
   }
 
+  // ✅ Get related posts (ensure they're filtered properly)
   const relatedPosts = getRelatedPosts(post.id, post.category, 3)
 
   return <PostContent post={post} relatedPosts={relatedPosts} />
@@ -29,7 +31,6 @@ export default async function PostPage(props) {
 // SEO METADATA
 // ===============================
 export async function generateMetadata(props) {
-  // ⬅ FIXED: params must be awaited
   const { slug } = await props.params
 
   const post = getPostBySlug(slug)
@@ -43,6 +44,7 @@ export async function generateMetadata(props) {
   return {
     title: post.title,
     description: post.excerpt,
+    keywords: post.tags.join(', '),
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -51,12 +53,21 @@ export async function generateMetadata(props) {
       publishedTime: post.publishedDate,
       authors: [post.author],
       tags: post.tags,
+      locale: 'ar_AR',
+      url: `https://doroos-tn.vercel.app/posts/${post.slug}`,
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
       images: [post.coverImage],
+    },
+    alternates: {
+      canonical: `https://doroos-tn.vercel.app/posts/${post.slug}`,
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   }
 }

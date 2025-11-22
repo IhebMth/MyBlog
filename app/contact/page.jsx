@@ -42,16 +42,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <FaPhone className="text-blue-600 text-xl" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-gray-900 mb-1">الهاتف</h3>
-                      <p className="text-gray-600">متاح من السبت - الخميس: 9:00 ص - 5:00 م</p>
-                    </div>
-                  </div>
-
+                
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
                       <FaMapMarkerAlt className="text-green-600 text-xl" />

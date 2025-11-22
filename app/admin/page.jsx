@@ -1,14 +1,14 @@
 "use client"
 
 import { useState, useEffect } from 'react'
-import { FaCopy, FaEye, FaPlus, FaCheck } from 'react-icons/fa'
+import { FaCopy, FaEye, FaPlus, FaCheck, FaTrash } from 'react-icons/fa'
 
 export default function AdminPostCreator() {
   const [formData, setFormData] = useState({
     title: '',
     slug: '',
     excerpt: '',
-    externalLink: '',
+    externalLinks: [{ label: '', url: '', icon: '🔗', platform: 'web' }],
     firstPageContent: '',
     secondPageContent: '',
     coverImage: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80',
@@ -45,17 +45,46 @@ export default function AdminPostCreator() {
     }
   }
 
+  // ✅ Handle external links array
+  const handleLinkChange = (index, field, value) => {
+    const newLinks = [...formData.externalLinks]
+    newLinks[index][field] = value
+    setFormData(prev => ({ ...prev, externalLinks: newLinks }))
+  }
+
+  const addLink = () => {
+    setFormData(prev => ({
+      ...prev,
+      externalLinks: [...prev.externalLinks, { label: '', url: '', icon: '🔗', platform: 'web' }]
+    }))
+  }
+
+  const removeLink = (index) => {
+    if (formData.externalLinks.length > 1) {
+      setFormData(prev => ({
+        ...prev,
+        externalLinks: prev.externalLinks.filter((_, i) => i !== index)
+      }))
+    }
+  }
+
   const generatePostObject = () => {
     const tagsArray = formData.tags.split(',').map(tag => tag.trim()).filter(Boolean)
     const id = Date.now()
     const publishedDate = new Date().toISOString().split('T')[0]
+
+    // ✅ Filter valid external links
+    const validLinks = formData.externalLinks.filter(link => link.url && link.label)
 
     const postObject = {
       id,
       slug: formData.slug,
       title: formData.title,
       excerpt: formData.excerpt,
-      externalLink: formData.externalLink || undefined,
+      // ✅ Only add externalLink if there's exactly ONE link
+      ...(validLinks.length === 1 && { externalLink: validLinks[0].url }),
+      // ✅ Always add externalLinks array if any links exist
+      ...(validLinks.length > 0 && { externalLinks: validLinks }),
       firstPageContent: formData.firstPageContent || undefined,
       secondPageContent: formData.secondPageContent || undefined,
       coverImage: formData.coverImage,
@@ -69,14 +98,14 @@ export default function AdminPostCreator() {
 
     Object.keys(postObject).forEach(key => postObject[key] === undefined && delete postObject[key])
 
+    // ✅ Generate clean code
     const code = `{
   id: ${postObject.id},
   slug: '${postObject.slug}',
   title: '${postObject.title}',
   excerpt: '${postObject.excerpt}',${postObject.externalLink ? `\n  externalLink: '${postObject.externalLink}',` : ''}
-  ${postObject.firstPageContent ? `\n  firstPageContent: \`${postObject.firstPageContent}\`,` : ''}
-  ${postObject.secondPageContent ? `\n  secondPageContent: \`${postObject.secondPageContent}\`,` : ''}
-  coverImage: '${postObject.coverImage}',
+  ${postObject.externalLinks ? `externalLinks: ${JSON.stringify(postObject.externalLinks, null, 4).replace(/^/gm, '  ')},` : ''}
+  ${postObject.firstPageContent ? `firstPageContent: \`${postObject.firstPageContent}\`,\n  ` : ''}${postObject.secondPageContent ? `secondPageContent: \`${postObject.secondPageContent}\`,\n  ` : ''}coverImage: '${postObject.coverImage}',
   author: '${postObject.author}',
   publishedDate: '${postObject.publishedDate}',
   category: '${postObject.category}',
@@ -102,10 +131,10 @@ export default function AdminPostCreator() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-black text-white mb-4">
-            🚀 Admin Post Creator
+            🚀 Admin Post Creator v2.0
           </h1>
           <p className="text-xl text-gray-300">
-            Page 1: Full content + Auto ad (30s) → Page 2: Specific details + Participate link
+            ✨ Now supports multiple external links per post!
           </p>
         </div>
 
@@ -160,67 +189,105 @@ export default function AdminPostCreator() {
                 />
               </div>
 
-              {/* External Link */}
-              <div>
+              {/* ✅ External Links Section */}
+              <div className="border-2 border-green-300 rounded-xl p-4 bg-green-50">
                 <label className="block text-sm font-bold text-gray-700 mb-2">
-                  External Link (Participate Link) *
+                  🔗 External Links (Optional - for redirect posts)
                 </label>
-                <input
-                  type="url"
-                  name="externalLink"
-                  value={formData.externalLink}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none"
-                  placeholder="https://practicepteonline.com/"
-                  required
-                />
-                <p className="text-xs text-gray-500 mt-1">
-                  🔗 Link to participate/register (opens in new tab from page 2)
+                {formData.externalLinks.map((link, index) => (
+                  <div key={index} className="space-y-2 mb-4 p-3 bg-white rounded-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs font-bold text-gray-600">Link {index + 1}</span>
+                      {formData.externalLinks.length > 1 && (
+                        <button
+                          type="button"
+                          onClick={() => removeLink(index)}
+                          className="text-red-500 hover:text-red-700"
+                        >
+                          <FaTrash />
+                        </button>
+                      )}
+                    </div>
+                    <input
+                      type="text"
+                      value={link.label}
+                      onChange={(e) => handleLinkChange(index, 'label', e.target.value)}
+                      className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-green-500 focus:outline-none text-sm"
+                      placeholder="Label (e.g., تحميل للأندرويد)"
+                    />
+                    <input
+                      type="url"
+                      value={link.url}
+                      onChange={(e) => handleLinkChange(index, 'url', e.target.value)}
+                      className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-green-500 focus:outline-none text-sm"
+                      placeholder="URL (https://...)"
+                    />
+                    <div className="grid grid-cols-2 gap-2">
+                      <input
+                        type="text"
+                        value={link.icon}
+                        onChange={(e) => handleLinkChange(index, 'icon', e.target.value)}
+                        className="px-3 py-2 rounded-lg border border-gray-300 focus:border-green-500 focus:outline-none text-sm"
+                        placeholder="Icon (emoji)"
+                      />
+                      <input
+                        type="text"
+                        value={link.platform}
+                        onChange={(e) => handleLinkChange(index, 'platform', e.target.value)}
+                        className="px-3 py-2 rounded-lg border border-gray-300 focus:border-green-500 focus:outline-none text-sm"
+                        placeholder="Platform"
+                      />
+                    </div>
+                  </div>
+                ))}
+                <button
+                  type="button"
+                  onClick={addLink}
+                  className="w-full py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-semibold text-sm flex items-center justify-center gap-2"
+                >
+                  <FaPlus /> Add Another Link
+                </button>
+                <p className="text-xs text-green-700 mt-2">
+                  ℹ️ Add multiple links if you want users to choose (Android/iOS/Web)
                 </p>
               </div>
 
               {/* First Page Content */}
               <div className="border-2 border-purple-300 rounded-xl p-4 bg-purple-50">
                 <label className="block text-sm font-bold text-gray-700 mb-2">
-                  📄 First Page Content (Full Details) *
+                  📄 First Page Content *
                 </label>
                 <textarea
                   name="firstPageContent"
                   value={formData.firstPageContent}
                   onChange={handleChange}
-                  rows="10"
+                  rows="8"
                   className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none font-mono text-sm"
-                  placeholder="<h2>Heading</h2><p>Full content with details...</p>"
+                  placeholder="<h2>Heading</h2><p>Content...</p>"
                   required
                 />
-                <p className="text-xs text-purple-700 mt-2 font-semibold">
-                  ✨ Page 1: Shows full content + auto ads for 30 seconds + Continue button
-                </p>
               </div>
 
               {/* Second Page Content */}
-              <div className="border-2 border-green-300 rounded-xl p-4 bg-green-50">
+              <div className="border-2 border-blue-300 rounded-xl p-4 bg-blue-50">
                 <label className="block text-sm font-bold text-gray-700 mb-2">
-                  📝 Second Page Content (Specific Details) *
+                  📝 Second Page Content *
                 </label>
                 <textarea
                   name="secondPageContent"
                   value={formData.secondPageContent}
                   onChange={handleChange}
-                  rows="10"
+                  rows="8"
                   className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none font-mono text-sm"
-                  placeholder="<h2>Specific Details</h2><p>More technical info...</p>"
+                  placeholder="<h2>More Details</h2><p>Content...</p>"
                   required
                 />
-                <p className="text-xs text-green-700 mt-2 font-semibold">
-                  ✨ Page 2: Shows specific details + ads + "Participate Now" button
-                </p>
               </div>
 
               {/* Category & Read Time */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-2">Category *</label>
+                  <label className="block text-sm font-bold text-gray-700 mb-2">Category</label>
                   <select
                     name="category"
                     value={formData.category}
@@ -231,6 +298,7 @@ export default function AdminPostCreator() {
                     <option>تقنية</option>
                     <option>تسويق</option>
                     <option>تطوير ذاتي</option>
+                    <option>مواقع وأدوات</option>
                   </select>
                 </div>
 
@@ -256,7 +324,7 @@ export default function AdminPostCreator() {
                   value={formData.tags}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none"
-                  placeholder="IELTS, تعلم الإنجليزية, اختبارات"
+                  placeholder="tag1, tag2, tag3"
                 />
               </div>
 
@@ -269,7 +337,6 @@ export default function AdminPostCreator() {
                   value={formData.coverImage}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-purple-500 focus:outline-none"
-                  placeholder="https://images.unsplash.com/..."
                 />
               </div>
 
@@ -343,20 +410,11 @@ export default function AdminPostCreator() {
                   <h3 className="text-2xl font-bold mb-4">📋 Next Steps:</h3>
                   <ol className="space-y-3 text-lg">
                     <li>1. ✅ Copy the generated code</li>
-                    <li>2. 📂 Open <code className="bg-white/20 px-2 py-1 rounded">app/posts/data.js</code></li>
+                    <li>2. 📂 Open app/posts/data.js</li>
                     <li>3. ➕ Add it to the posts array</li>
                     <li>4. 💾 Save the file</li>
-                    <li>5. 🎉 Post will use the 2-page system!</li>
+                    <li>5. 🎉 Done! Your post is ready!</li>
                   </ol>
-                </div>
-
-                <div className="bg-gradient-to-br from-green-600 to-blue-600 rounded-3xl shadow-2xl p-8 text-white">
-                  <h3 className="text-2xl font-bold mb-4">🔄 How it Works:</h3>
-                  <ul className="space-y-3 text-lg">
-                    <li>📄 <strong>Page 1:</strong> Full content + auto ads (30s) + Continue button</li>
-                    <li>📝 <strong>Page 2:</strong> Specific details + ads + Participate button</li>
-                    <li>🔗 <strong>Final:</strong> Opens external link in new tab</li>
-                  </ul>
                 </div>
               </div>
             ) : (
@@ -366,19 +424,9 @@ export default function AdminPostCreator() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     Fill the form
                   </h3>
-                  <p className="text-gray-600 mb-4">
-                    Complete the form and click &quot;Generate Post Code&quot;
+                  <p className="text-gray-600">
+                    Complete the form and click Generate Post Code
                   </p>
-                  <div className="bg-purple-50 rounded-xl p-4 text-right">
-                    <p className="text-sm text-purple-700 font-semibold">
-                      ⚠️ Required fields:
-                    </p>
-                    <ul className="text-sm text-purple-600 mt-2 space-y-1">
-                      <li>✓ External Link (participate)</li>
-                      <li>✓ First Page Content (full)</li>
-                      <li>✓ Second Page Content (specific)</li>
-                    </ul>
-                  </div>
                 </div>
               </div>
             )}

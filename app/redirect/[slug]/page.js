@@ -6,15 +6,18 @@ export default async function RedirectRoute({ params }) {
   const { slug } = await params
   const post = getPostBySlug(slug)
   
-  // Check for both single and multiple link formats
-  const hasLinks = post && (post.externalLink || (post.externalLinks && post.externalLinks.length > 0))
+  // ✅ FIXED: Check for externalLinks first, then fallback to externalLink
+  const hasLinks = post && (
+    (post.externalLinks && post.externalLinks.length > 0) || 
+    post.externalLink
+  )
   
   if (!post || !hasLinks) {
     notFound()
   }
 
-  // Use first link if multiple, or single link
-  const targetUrl = post.externalLinks && post.externalLinks.length > 0 
+  // ✅ FIXED: Prioritize externalLinks[0], fallback to externalLink
+  const targetUrl = (post.externalLinks && post.externalLinks.length > 0)
     ? post.externalLinks[0].url 
     : post.externalLink
 
@@ -26,7 +29,10 @@ export async function generateMetadata({ params }) {
   const { slug } = await params
   const post = getPostBySlug(slug)
   
-  const hasLinks = post && (post.externalLink || (post.externalLinks && post.externalLinks.length > 0))
+  const hasLinks = post && (
+    (post.externalLinks && post.externalLinks.length > 0) || 
+    post.externalLink
+  )
   
   if (!post || !hasLinks) {
     return {
@@ -70,7 +76,10 @@ export async function generateMetadata({ params }) {
 export async function generateStaticParams() {
   const { posts } = await import('@/app/posts/data')
   return posts
-    .filter(post => post.externalLink || (post.externalLinks && post.externalLinks.length > 0))
+    .filter(post => 
+      (post.externalLinks && post.externalLinks.length > 0) || 
+      post.externalLink
+    )
     .map((post) => ({
       slug: post.slug,
     }))
