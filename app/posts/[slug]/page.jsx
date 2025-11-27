@@ -21,8 +21,15 @@ export default async function PostPage(props) {
     redirect(`/redirect/${slug}`)
   }
 
-  // ✅ Get related posts (ensure they're filtered properly)
-  const relatedPosts = getRelatedPosts(post.id, post.category, 3)
+  // ✅ FIXED: Get related posts from same category, exclude current post
+  const relatedPosts = posts
+    .filter(p => 
+      p.id !== post.id && // Not the current post
+      p.category === post.category && // Same category
+      !(p.externalLinks && p.externalLinks.length > 0) && // Not external link posts
+      !p.externalLink // Not external link posts
+    )
+    .slice(0, 3) // Limit to 3 posts
 
   return <PostContent post={post} relatedPosts={relatedPosts} />
 }
@@ -76,7 +83,12 @@ export async function generateMetadata(props) {
 // STATIC PARAMS FOR BUILD
 // ===============================
 export async function generateStaticParams() {
-  return posts.map((post) => ({
-    slug: post.slug,
-  }))
+  return posts
+    .filter(post => 
+      !(post.externalLinks && post.externalLinks.length > 0) && 
+      !post.externalLink
+    )
+    .map((post) => ({
+      slug: post.slug,
+    }))
 }

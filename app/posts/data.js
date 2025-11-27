@@ -2226,9 +2226,1287 @@ export const posts = [
   tags: ['إدراك', 'كورسات مجانية', 'Excel', 'الذكاء العاطفي', 'ICDL', 'التسويق الرقمي', 'برمجة Java', 'تعليم عربي', 'شهادات معتمدة'],
   readTime: '18 دقيقة',
   featured: false
+},
+{
+  "id": 12,
+  "slug": "ibm-free-certificates-2025",
+  "title": "🎓 أقوى 9 شهادات مجانية من IBM - عزز سيرتك الذاتية 2025",
+  "excerpt": "احصل على شهادات معتمدة من IBM مجاناً في Cloud Computing، Data Science، Machine Learning، وأكثر - ابدأ السنة الجديدة بقوة!",
+  "externalLinks": [
+    {
+      "label": "☁️ شهادة Cloud Computing",
+      "url": "https://cognitiveclass.ai/courses/course-v1:IBMDeveloperSkillsNetwork+CC0101EN+v1",
+      "icon": "☁️",
+      "platform": "ibm"
+    },
+    {
+      "label": "📊 شهادة Data Science",
+      "url": "https://cognitiveclass.ai/courses/course-v1:BigDataUniversity+DS0101EN+v1",
+      "icon": "📊",
+      "platform": "ibm"
+    },
+    {
+      "label": "🤖 شهادة Machine Learning",
+      "url": "https://cognitiveclass.ai/courses/course-v1:BDU+ML0101EN+v4",
+      "icon": "🤖",
+      "platform": "ibm"
+    },
+    {
+      "label": "🐘 شهادة Hadoop Big Data",
+      "url": "https://cognitiveclass.ai/courses/course-v1:BigDataUniversity+BD0131EN+2016",
+      "icon": "🐘",
+      "platform": "ibm"
+    },
+    {
+      "label": "🧠 شهادة Deep Learning",
+      "url": "https://cognitiveclass.ai/courses/course-v1:DeepLearning.TV+ML0115EN+v2.0",
+      "icon": "🧠",
+      "platform": "ibm"
+    },
+    {
+      "label": "🐳 شهادة Docker",
+      "url": "https://cognitiveclass.ai/courses/course-v1:IBMDeveloperSkillsNetwork+CO0101EN+v1",
+      "icon": "🐳",
+      "platform": "ibm"
+    },
+    {
+      "label": "📈 شهادة Big Data Fundamentals",
+      "url": "https://cognitiveclass.ai/courses/course-v1:CognitiveClass+BD0101EN+v2",
+      "icon": "📈",
+      "platform": "ibm"
+    },
+    {
+      "label": "💬 شهادة Build Your Chatbot",
+      "url": "https://cognitiveclass.ai/courses/course-v1:IBMDeveloperSkillsNetwork+CB0101EN+v1",
+      "icon": "💬",
+      "platform": "ibm"
+    }
+  ],
+  "firstPageContent": `
+    <h2>🌟 لماذا شهادات IBM؟</h2>
+    <p>في عالم التكنولوجيا المتسارع، شهادات <strong>IBM</strong> تعتبر من أقوى الشهادات المعترف بها عالمياً. IBM - عملاق التقنية بخبرة تزيد عن 100 عام - تقدم لك فرصة ذهبية للحصول على شهادات احترافية مجانية تماماً!</p>
+
+    <p>ما يميز شهادات IBM:</p>
+    <ul>
+      <li>✅ <strong>مجانية 100%</strong> - بدون أي تكاليف</li>
+      <li>✅ <strong>معترف بها عالمياً</strong> - من شركة رائدة</li>
+      <li>✅ <strong>شهادات معتمدة</strong> - تضاف لسيرتك الذاتية مباشرة</li>
+      <li>✅ <strong>محتوى احترافي</strong> - من خبراء IBM</li>
+      <li>✅ <strong>مرونة كاملة</strong> - تعلم بالسرعة التي تناسبك</li>
+      <li>✅ <strong>مشاريع عملية</strong> - تطبيق فعلي للمهارات</li>
+    </ul>
+
+    <h2>📚 الشهادات التسعة التي ستغير مسارك المهني</h2>
+
+    <h2>1️⃣ شهادة Cloud Computing ☁️</h2>
+    
+    <h3>🎯 لماذا Cloud Computing؟</h3>
+    <p>الحوسبة السحابية أصبحت <strong>أساس البنية التحتية</strong> لكل الشركات الحديثة. من Netflix إلى Airbnb، الجميع يعتمد على السحابة!</p>
+
+    <h3>📖 ماذا ستتعلم؟</h3>
+    <ul>
+      <li><strong>مفاهيم السحابة:</strong> IaaS, PaaS, SaaS</li>
+      <li><strong>خدمات AWS و Azure و IBM Cloud</strong></li>
+      <li><strong>Storage & Databases:</strong> إدارة البيانات السحابية</li>
+      <li><strong>Security:</strong> أمن المعلومات في السحابة</li>
+      <li><strong>Migration:</strong> نقل الأنظمة للسحابة</li>
+    </ul>
+
+    <h3>💼 الفرص الوظيفية</h3>
+    <ul>
+      <li>Cloud Architect - راتب 5,000-10,000$</li>
+      <li>Cloud Engineer - راتب 4,000-8,000$</li>
+      <li>DevOps Engineer - راتب 4,500-9,000$</li>
+      <li>Solutions Architect - راتب 6,000-12,000$</li>
+    </ul>
+
+    <h3>⏱️ مدة الكورس</h3>
+    <p>6-8 ساعات | مستوى: مبتدئ</p>
+
+    <h2>2️⃣ شهادة Data Science 📊</h2>
+
+    <h3>🔬 لماذا Data Science؟</h3>
+    <p>علم البيانات هو <strong>أكثر المجالات طلباً</strong> في 2025! كل شركة تبحث عن من يحول البيانات إلى قرارات ذكية.</p>
+
+    <h3>📖 ماذا ستتعلم؟</h3>
+    <ul>
+      <li><strong>Python for Data Science:</strong> المكتبات الأساسية</li>
+      <li><strong>Data Analysis:</strong> تحليل البيانات باحترافية</li>
+      <li><strong>Data Visualization:</strong> رسوم بيانية مذهلة</li>
+      <li><strong>Statistics:</strong> الإحصاء التطبيقي</li>
+      <li><strong>SQL:</strong> استخراج البيانات من قواعد البيانات</li>
+    </ul>
+
+    <h3>💰 العوائد المالية</h3>
+    <ul>
+      <li>Data Scientist مبتدئ - 3,000-6,000$</li>
+      <li>Data Scientist محترف - 6,000-12,000$</li>
+      <li>Senior Data Scientist - 10,000-20,000$+</li>
+    </ul>
+
+    <h3>⏱️ مدة الكورس</h3>
+    <p>8-12 ساعة | مستوى: مبتدئ</p>
+
+    <h2>3️⃣ شهادة Machine Learning 🤖</h2>
+
+    <h3>🧠 لماذا Machine Learning؟</h3>
+    <p>التعلم الآلي يشغّل كل شيء من توصيات Netflix إلى السيارات ذاتية القيادة. إنه <strong>مستقبل التكنولوجيا</strong>!</p>
+
+    <h3>📖 ماذا ستتعلم؟</h3>
+    <ul>
+      <li><strong>Supervised Learning:</strong> التصنيف والتنبؤ</li>
+      <li><strong>Unsupervised Learning:</strong> الكشف عن الأنماط</li>
+      <li><strong>Regression:</strong> نماذج التنبؤ</li>
+      <li><strong>Classification:</strong> خوارزميات التصنيف</li>
+      <li><strong>Clustering:</strong> تجميع البيانات</li>
+      <li><strong>Scikit-learn:</strong> مكتبة ML الأشهر</li>
+    </ul>
+
+    <h3>💼 المجالات الوظيفية</h3>
+    <ul>
+      <li>ML Engineer - راتب 5,000-12,000$</li>
+      <li>AI Specialist - راتب 6,000-14,000$</li>
+      <li>Research Scientist - راتب 7,000-15,000$</li>
+    </ul>
+
+    <h3>⏱️ مدة الكورس</h3>
+    <p>10-15 ساعة | مستوى: متوسط</p>
+
+    <h2>4️⃣ شهادة Hadoop Big Data 🐘</h2>
+
+    <h3>📊 لماذا Hadoop؟</h3>
+    <p>Hadoop هو <strong>المعيار الذهبي</strong> لمعالجة البيانات الضخمة. الشركات الكبرى تعالج petabytes من البيانات يومياً!</p>
+
+    <h3>📖 ماذا ستتعلم؟</h3>
+    <ul>
+      <li><strong>HDFS:</strong> نظام الملفات الموزع</li>
+      <li><strong>MapReduce:</strong> معالجة البيانات</li>
+      <li><strong>Hive & Pig:</strong> استعلامات البيانات</li>
+      <li><strong>HBase:</strong> قواعد بيانات NoSQL</li>
+      <li><strong>Spark:</strong> معالجة سريعة</li>
+    </ul>
+
+    <h3>⏱️ مدة الكورس</h3>
+    <p>8-10 ساعات | مستوى: متوسط</p>
+  `,
+  "secondPageContent": `
+    <h2>5️⃣ شهادة Deep Learning 🧠</h2>
+
+    <h3>🚀 لماذا Deep Learning؟</h3>
+    <p>التعلم العميق يقف وراء أعظم التقنيات: <strong>ChatGPT، التعرف على الوجوه، السيارات الذاتية</strong>. إنه قمة الذكاء الاصطناعي!</p>
+
+    <h3>📖 ماذا ستتعلم؟</h3>
+    <ul>
+      <li><strong>Neural Networks:</strong> الشبكات العصبية</li>
+      <li><strong>CNN:</strong> معالجة الصور</li>
+      <li><strong>RNN & LSTM:</strong> تحليل النصوص</li>
+      <li><strong>TensorFlow & Keras:</strong> أشهر المكتبات</li>
+      <li><strong>Transfer Learning:</strong> تقنيات متقدمة</li>
+    </ul>
+
+    <h3>💼 الرواتب</h3>
+    <ul>
+      <li>Deep Learning Engineer - 7,000-15,000$</li>
+      <li>Computer Vision Engineer - 6,000-13,000$</li>
+      <li>NLP Engineer - 6,500-14,000$</li>
+    </ul>
+
+    <h3>⏱️ مدة الكورس</h3>
+    <p>6-8 ساعات | مستوى: متقدم</p>
+
+    <h2>6️⃣ شهادة Docker 🐳</h2>
+
+    <h3>📦 لماذا Docker؟</h3>
+    <p>Docker أحدث ثورة في <strong>تطوير ونشر التطبيقات</strong>. كل شركة تقنية تستخدمه الآن!</p>
+
+    <h3>📖 ماذا ستتعلم؟</h3>
+    <ul>
+      <li><strong>Containers:</strong> الحاويات والصور</li>
+      <li><strong>Docker Images:</strong> إنشاء وإدارة الصور</li>
+      <li><strong>Docker Compose:</strong> تطبيقات متعددة</li>
+      <li><strong>Networking:</strong> ربط الحاويات</li>
+      <li><strong>Volumes:</strong> إدارة البيانات</li>
+    </ul>
+
+    <h3>⏱️ مدة الكورس</h3>
+    <p>6-8 ساعات | مستوى: متوسط</p>
+
+    <h2>7️⃣ شهادة Big Data Fundamentals 📈</h2>
+
+    <h3>💾 لماذا Big Data؟</h3>
+    <p>البيانات الضخمة هي <strong>النفط الجديد</strong>. الشركات تستثمر مليارات لتحليل بياناتها!</p>
+
+    <h3>📖 ماذا ستتعلم؟</h3>
+    <ul>
+      <li><strong>Big Data Concepts:</strong> المفاهيم الأساسية</li>
+      <li><strong>Data Lakes:</strong> بحيرات البيانات</li>
+      <li><strong>ETL Processes:</strong> استخراج وتحويل البيانات</li>
+      <li><strong>Analytics:</strong> التحليلات المتقدمة</li>
+      <li><strong>Tools:</strong> أدوات Big Data الحديثة</li>
+    </ul>
+
+    <h3>⏱️ مدة الكورس</h3>
+    <p>5-7 ساعات | مستوى: مبتدئ</p>
+
+    <h2>8️⃣ شهادة Build Your Chatbot 💬</h2>
+
+    <h3>🤖 لماذا Chatbots؟</h3>
+    <p>الشات بوتس أصبحت <strong>أساسية لخدمة العملاء</strong>. من WhatsApp إلى المواقع - الجميع يستخدمها!</p>
+
+    <h3>📖 ماذا ستتعلم؟</h3>
+    <ul>
+      <li><strong>Watson Assistant:</strong> منصة IBM للشات بوت</li>
+      <li><strong>NLP:</strong> معالجة اللغة الطبيعية</li>
+      <li><strong>Intents & Entities:</strong> فهم النوايا</li>
+      <li><strong>Dialog Flow:</strong> تصميم المحادثات</li>
+      <li><strong>Integration:</strong> ربط البوت بالتطبيقات</li>
+    </ul>
+
+    <h3>⏱️ مدة الكورس</h3>
+    <p>6-8 ساعات | مستوى: مبتدئ-متوسط</p>
+
+    <h2>🎓 كيفية البدء والحصول على الشهادات</h2>
+
+    <h3>الخطوة 1: إنشاء حساب مجاني</h3>
+    <ol>
+      <li>اذهب إلى cognitiveclass.ai</li>
+      <li>اضغط "Sign Up" في الأعلى</li>
+      <li>سجل بالإيميل أو حساب Google/LinkedIn</li>
+      <li>فعّل حسابك</li>
+    </ol>
+
+    <h3>الخطوة 2: اختر الكورس</h3>
+    <p>اضغط على رابط الكورس المناسب من القائمة أعلاه</p>
+
+    <h3>الخطوة 3: ابدأ التعلم</h3>
+    <ul>
+      <li>شاهد الفيديوهات التعليمية</li>
+      <li>اقرأ المواد المرفقة</li>
+      <li>طبّق في Labs العملية</li>
+      <li>حل الاختبارات (Quizzes)</li>
+    </ul>
+
+    <h3>الخطوة 4: احصل على الشهادة</h3>
+    <ul>
+      <li>أكمل جميع الوحدات بنسبة 100%</li>
+      <li>اجتاز الاختبار النهائي بنسبة 80%+</li>
+      <li>حمّل شهادتك الرقمية مجاناً</li>
+      <li>أضفها لـ LinkedIn مباشرة</li>
+    </ul>
+
+    <h2>💡 خطة تعلم مقترحة لـ 2025</h2>
+
+    <h3>للمبتدئين في التقنية:</h3>
+    <ol>
+      <li><strong>الشهر 1:</strong> Cloud Computing (الأساس)</li>
+      <li><strong>الشهر 2:</strong> Big Data Fundamentals</li>
+      <li><strong>الشهر 3:</strong> Data Science</li>
+      <li><strong>الشهر 4:</strong> Build Your Chatbot</li>
+    </ol>
+
+    <h3>للمطورين:</h3>
+    <ol>
+      <li><strong>الشهر 1:</strong> Docker</li>
+      <li><strong>الشهر 2:</strong> Cloud Computing</li>
+      <li><strong>الشهر 3:</strong> Machine Learning</li>
+      <li><strong>الشهر 4:</strong> Deep Learning</li>
+    </ol>
+
+    <h3>لمحللي البيانات:</h3>
+    <ol>
+      <li><strong>الشهر 1:</strong> Data Science</li>
+      <li><strong>الشهر 2:</strong> Big Data Fundamentals</li>
+      <li><strong>الشهر 3:</strong> Hadoop Big Data</li>
+      <li><strong>الشهر 4:</strong> Machine Learning</li>
+    </ol>
+
+    <h2>📊 مقارنة سريعة للشهادات</h2>
+
+    <table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+      <thead>
+        <tr style="background: #f0f0f0;">
+          <th style="padding: 1rem; border: 1px solid #ddd;">الشهادة</th>
+          <th style="padding: 1rem; border: 1px solid #ddd;">المدة</th>
+          <th style="padding: 1rem; border: 1px solid #ddd;">المستوى</th>
+          <th style="padding: 1rem; border: 1px solid #ddd;">الراتب المتوقع</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 1rem; border: 1px solid #ddd;"><strong>Cloud Computing</strong></td>
+          <td style="padding: 1rem; border: 1px solid #ddd;">6-8 ساعات</td>
+          <td style="padding: 1rem; border: 1px solid #ddd;">مبتدئ</td>
+          <td style="padding: 1rem; border: 1px solid #ddd;">4,000-10,000$</td>
+        </tr>
+        <tr>
+          <td style="padding: 1rem; border: 1px solid #ddd;"><strong>Data Science</strong></td>
+          <td style="padding: 1rem; border: 1px solid #ddd;">8-12 ساعة</td>
+          <td style="padding: 1rem; border: 1px solid #ddd;">مبتدئ</td>
+          <td style="padding: 1rem; border: 1px solid #ddd;">3,000-12,000$</td>
+        </tr>
+        <tr>
+          <td style="padding: 1rem; border: 1px solid #ddd;"><strong>Machine Learning</strong></td>
+          <td style="padding: 1rem; border: 1px solid #ddd;">10-15 ساعة</td>
+          <td style="padding: 1rem; border: 1px solid #ddd;">متوسط</td>
+          <td style="padding: 1rem; border: 1px solid #ddd;">5,000-14,000$</td>
+        </tr>
+        <tr>
+          <td style="padding: 1rem; border: 1px solid #ddd;"><strong>Deep Learning</strong></td>
+          <td style="padding: 1rem; border: 1px solid #ddd;">6-8 ساعات</td>
+          <td style="padding: 1rem; border: 1px solid #ddd;">متقدم</td>
+          <td style="padding: 1rem; border: 1px solid #ddd;">6,000-15,000$</td>
+        </tr>
+        <tr>
+          <td style="padding: 1rem; border: 1px solid #ddd;"><strong>Docker</strong></td>
+          <td style="padding: 1rem; border: 1px solid #ddd;">6-8 ساعات</td>
+          <td style="padding: 1rem; border: 1px solid #ddd;">متوسط</td>
+          <td style="padding: 1rem; border: 1px solid #ddd;">4,000-9,000$</td>
+        </tr>
+        <tr>
+          <td style="padding: 1rem; border: 1px solid #ddd;"><strong>Hadoop Big Data</strong></td>
+          <td style="padding: 1rem; border: 1px solid #ddd;">8-10 ساعات</td>
+          <td style="padding: 1rem; border: 1px solid #ddd;">متوسط</td>
+          <td style="padding: 1rem; border: 1px solid #ddd;">4,500-11,000$</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>✨ نصائح ذهبية للنجاح</h2>
+
+    <h3>1. خصص وقتاً يومياً</h3>
+    <ul>
+      <li>ساعة واحدة يومياً أفضل من 7 ساعات أسبوعياً</li>
+      <li>الانتظام هو السر</li>
+    </ul>
+
+    <h3>2. طبّق فوراً</h3>
+    <ul>
+      <li>لا تكتفي بالمشاهدة</li>
+      <li>اعمل مشاريع صغيرة</li>
+      <li>أضف المشاريع لـ GitHub</li>
+    </ul>
+
+    <h3>3. انضم للمجتمع</h3>
+    <ul>
+      <li>تابع IBM على LinkedIn</li>
+      <li>انضم لمجموعات Facebook</li>
+      <li>شارك تقدمك على Twitter</li>
+    </ul>
+
+    <div style="background: linear-gradient(135deg, #0f62fe 0%, #001d6c 100%); padding: 2rem; border-radius: 1rem; color: white; margin: 2rem 0;">
+      <h3 style="color: white; margin-top: 0;">🚀 ابدأ 2025 بقوة!</h3>
+      <p style="font-size: 1.1rem;">
+        9 شهادات من IBM - كلها <strong>مجانية 100%</strong>
+      </p>
+      <ul style="list-style: none; padding: 0;">
+        <li>✅ شهادات معترف بها عالمياً</li>
+        <li>✅ من عملاق التكنولوجيا IBM</li>
+        <li>✅ رواتب تبدأ من 3,000$ شهرياً</li>
+        <li>✅ مشاريع عملية احترافية</li>
+      </ul>
+      <p style="font-size: 1.2rem; font-weight: bold; margin-top: 1rem;">
+        💡 بعد 6 أشهر: إما ستكون حصلت على 3-4 شهادات IBM وغيّرت مسارك، أو ستكون في نفس المكان!
+      </p>
+    </div>
+
+    <p style="text-align: center; font-size: 1.3rem; color: #0f62fe; font-weight: bold; margin-top: 2rem;">
+      اختر شهادتك الآن واضغط الرابط - 2025 عام التحول! 🎯
+    </p>
+  `,
+  "coverImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
+  "author": "Iheb Meftah",
+  "publishedDate": "2024-12-30",
+  "category": "تعليم",
+  "tags": ["IBM", "شهادات مجانية", "Cloud Computing", "Data Science", "Machine Learning", "Deep Learning", "Docker", "Big Data", "Hadoop", "Chatbot", "AI"],
+  "readTime": "15 دقيقة",
+  "featured": true
+},
+
+{
+  "id": 13,
+  "slug": "dalil-shamel-solutions-architect-1-year",
+  "title": "🚀 دليلك الشامل لتصبح Solutions Architect في سنة واحدة - من الصفر للوظيفة",
+  "excerpt": "خطة عملية مكثفة لتصبح Solutions Architect خلال 12 شهرًا بساعتين يوميًا فقط - مع كورسات مجانية ومنصات توظيف في تونس والعالم",
+  "externalLinks": [
+    {
+      "label": "☁️ AWS Skill Builder - كورسات مجانية",
+      "url": "https://aws.amazon.com/training/digital/",
+      "icon": "☁️",
+      "platform": "aws"
+    },
+    {
+      "label": "📺 AWS Solutions Architect Course (14hrs)",
+      "url": "https://www.youtube.com/watch?v=Ia-UEYYR44s",
+      "icon": "📺",
+      "platform": "youtube"
+    },
+    {
+      "label": "🔧 Terraform Tutorials",
+      "url": "https://developer.hashicorp.com/terraform/tutorials",
+      "icon": "🔧",
+      "platform": "hashicorp"
+    },
+    {
+      "label": "🐳 Docker Complete Course",
+      "url": "https://www.youtube.com/watch?v=3c-iBn73dDE",
+      "icon": "🐳",
+      "platform": "youtube"
+    },
+    {
+      "label": "🏗️ AWS Architecture Center",
+      "url": "https://aws.amazon.com/architecture/",
+      "icon": "🏗️",
+      "platform": "aws"
+    },
+    {
+      "label": "📝 ExamTopics - أسئلة AWS SAA مجانية",
+      "url": "https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-associate-saa-c03/",
+      "icon": "📝",
+      "platform": "examtopics"
+    },
+    {
+      "label": "💼 Emploi.tn - وظائف تونس",
+      "url": "https://www.emploi.tn/",
+      "icon": "💼",
+      "platform": "emploi"
+    },
+    {
+      "label": "🌍 LinkedIn Jobs Tunisia",
+      "url": "https://www.linkedin.com/jobs/",
+      "icon": "🌍",
+      "platform": "linkedin"
+    },
+    {
+      "label": "🏢 Tanitjobs",
+      "url": "https://www.tanitjobs.com/",
+      "icon": "🏢",
+      "platform": "tanitjobs"
+    },
+    {
+      "label": "🌐 Upwork - Remote Jobs",
+      "url": "https://www.upwork.com/",
+      "icon": "🌐",
+      "platform": "upwork"
+    },
+    {
+      "label": "💻 We Work Remotely",
+      "url": "https://weworkremotely.com/",
+      "icon": "💻",
+      "platform": "weworkremotely"
+    },
+    {
+      "label": "🎯 Turing - Global Tech Jobs",
+      "url": "https://www.turing.com/",
+      "icon": "🎯",
+      "platform": "turing"
+    }
+  ],
+
+    "firstPageContent": "<h2>💰 لماذا تصبح Solutions Architect؟</h2><p><strong>Solutions Architect</strong> هو المهندس المسؤول عن تصميم البنية التحتية للأنظمة السحابية الحديثة. هذه الوظيفة من أعلى المهن أجرًا في مجال التقنية وتوفر فرصًا ممتازة للعمل عن بعد مع شركات عالمية.</p><h3>💸 الرواتب المتوقعة</h3><div style=\"background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1.5rem; border-radius: 10px; color: white; margin: 1rem 0;\"><p style=\"font-size: 1.1rem; margin: 0;\"><strong>🇹🇳 في تونس (محليًا):</strong></p><ul style=\"margin: 0.5rem 0;\"><li>Junior Cloud/Solutions Architect: <strong>3,000-5,000 TND</strong> شهريًا</li><li>Mid-level: <strong>5,000-8,000 TND</strong> شهريًا</li><li>Senior: <strong>8,000-12,000 TND+</strong> شهريًا</li></ul><p style=\"font-size: 1.1rem; margin: 1rem 0 0.5rem;\"><strong>🌍 عالميًا (Remote):</strong></p><ul style=\"margin: 0.5rem 0 0;\"><li>Junior: <strong>$3,500-$6,000</strong> شهريًا</li><li>Mid-level: <strong>$6,000-$9,000</strong> شهريًا</li><li>Senior: <strong>$9,000-$15,000+</strong> شهريًا</li></ul></div><h3>✨ لماذا هذه المهنة مميزة؟</h3><ul><li>✅ <strong>طلب مستمر:</strong> كل شركة تتحول للسحابة تحتاج Solutions Architects</li><li>✅ <strong>عمل عن بعد:</strong> معظم الوظائف متاحة Remote مع شركات عالمية</li><li>✅ <strong>مستقبل آمن:</strong> الذكاء الاصطناعي لن يستبدل التفكير الاستراتيجي وحل المشاكل المعقدة</li><li>✅ <strong>تطور سريع:</strong> انتقال مباشر من Developer إلى Architect في سنوات قليلة</li><li>✅ <strong>تنوع التحديات:</strong> كل مشروع مختلف وممتع</li></ul><h2>🎯 خلفيتك كمطور تعطيك ميزة كبيرة</h2><p>كونك تعمل كـ <strong>Front-End و Back-End Developer</strong> يعني أنك تمتلك أساسًا قويًا:</p><ul><li><strong>فهم كامل للتطبيقات:</strong> تعرف كيف تعمل الأنظمة من البداية للنهاية</li><li><strong>خبرة عملية:</strong> تعاملت مع APIs، قواعد البيانات، Authentication</li><li><strong>حل المشاكل:</strong> طورت مهارة debugging وتحليل المشاكل</li><li><strong>الانتقال السلس:</strong> فقط تحتاج تعلم Infrastructure والأمان والتوسع</li></ul><h2>📋 الخطة المكثفة: 12 شهرًا من الصفر للوظيفة</h2><p>هذه الخطة مصممة خصيصًا لمن يملك <strong>1-2 ساعة يوميًا فقط</strong>. التركيز هنا على الكفاءة والعمل الذكي!</p><div style=\"background: #fff3cd; border-right: 4px solid #ffc107; padding: 1rem; margin: 1rem 0; border-radius: 5px;\"><p style=\"margin: 0;\"><strong>💡 ملاحظة مهمة:</strong> الالتزام اليومي أهم من عدد الساعات. ساعة واحدة يوميًا لمدة سنة = 365 ساعة من التعلم المركز!</p></div><h2>المرحلة 1️⃣: الأساسيات السحابية (شهر 1-3)</h2><h3>🎯 الهدف الرئيسي</h3><p>فهم المفاهيم الأساسية للحوسبة السحابية وبناء أول تطبيق سحابي كامل</p><h3>📚 ماذا ستتعلم؟</h3><ul><li><strong>اختيار المنصة:</strong> ركز على <strong>AWS</strong> (الأكثر طلبًا في السوق بنسبة 65%+)</li><li><strong>EC2 (Virtual Servers):</strong> إنشاء وإدارة السيرفرات الافتراضية</li><li><strong>S3 (Storage):</strong> تخزين الملفات والصور في السحابة</li><li><strong>RDS (Databases):</strong> قواعد بيانات مُدارة (PostgreSQL, MySQL)</li><li><strong>VPC (Networking):</strong> إنشاء شبكات آمنة ومعزولة</li><li><strong>IAM (Security):</strong> إدارة الصلاحيات والأمان</li><li><strong>Load Balancers:</strong> توزيع الحمل على السيرفرات</li></ul><h3>📺 جدول الدروس التفصيلي (10 جلسات × 8-10 ساعات)</h3><div style=\"background: #e7f3ff; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #007bff;\"><h4>🎓 الجلسة 1: مقدمة Cloud Computing + AWS Basics (9 ساعات)</h4><ul><li>📺 <a href=\"https://www.youtube.com/watch?v=3hLmDS179YE\" target=\"_blank\">AWS Tutorial for Beginners (Simplilearn - 10hrs)</a> - الساعات 0-4</li><li>📺 <a href=\"https://www.youtube.com/watch?v=ulprqHHWlng\" target=\"_blank\">Cloud Computing Full Course (Intellipaat - 11hrs)</a> - الساعات 0-4</li><li>📺 <a href=\"https://explore.skillbuilder.aws/learn/course/134/introduction-to-cloud-101\" target=\"_blank\">AWS Cloud Practitioner Essentials (AWS Skill Builder - 6hrs)</a> - ساعة واحدة</li><li><strong>الممارسة:</strong> إنشاء AWS Free Tier Account + تفعيل MFA + استكشاف Console</li></ul></div><div style=\"background: #e7f3ff; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #007bff;\"><h4>🎓 الجلسة 2: EC2 + Security Groups + SSH (8 ساعات)</h4><ul><li>📺 <a href=\"https://www.youtube.com/watch?v=iHX-jtKIVNA\" target=\"_blank\">AWS EC2 Tutorial for Beginners (TechWorld with Nana - 1hr)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=T5mQrNAY5hk\" target=\"_blank\">EC2 Deep Dive (Be A Better Dev - 3hrs)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=8UqtMcX_kg0\" target=\"_blank\">Linux Command Line for Beginners (FreeCodeCamp - 4hrs)</a></li><li><strong>الممارسة:</strong> إطلاق EC2 + تثبيت NGINX + ربط Elastic IP + Security Groups</li></ul></div><div style=\"background: #e7f3ff; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #007bff;\"><h4>🎓 الجلسة 3: S3 + CloudFront + Static Website Hosting (8 ساعات)</h4><ul><li>📺 <a href=\"https://www.youtube.com/watch?v=e6w9LwZJFIA\" target=\"_blank\">AWS S3 Tutorial (Simplilearn - 1hr)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=oaZ3R4NCRu8\" target=\"_blank\">Host Static Website on S3 (AWS - 30min)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=AT-nHW3_SVI\" target=\"_blank\">CloudFront CDN Complete Guide (StephaneMaarek - 2hrs)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=rfscVS0vtbw\" target=\"_blank\">Learn Python (Programming with Mosh - 6hrs)</a> - الساعات 0-4 (إذا كنت تحتاج Python للمشاريع)</li><li><strong>الممارسة:</strong> رفع موقع React/Vue على S3 + ربطه بـ CloudFront + Custom Domain</li></ul></div><div style=\"background: #e7f3ff; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #007bff;\"><h4>🎓 الجلسة 4: RDS + Database Management (9 ساعات)</h4><ul><li>📺 <a href=\"https://www.youtube.com/watch?v=HXV3zeQKqGY\" target=\"_blank\">SQL Tutorial Full Course (FreeCodeCamp - 4hrs)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=KlUKZhH_vks\" target=\"_blank\">AWS RDS Tutorial (TechWorld with Nana - 1hr)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=KBZA1x5hWPQ\" target=\"_blank\">PostgreSQL Tutorial (Amigoscode - 4hrs)</a></li><li><strong>الممارسة:</strong> إنشاء RDS PostgreSQL + الاتصال من EC2 + Backup & Restore</li></ul></div><div style=\"background: #e7f3ff; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #007bff;\"><h4>🎓 الجلسة 5: VPC + Networking Fundamentals (10 ساعات)</h4><ul><li>📺 <a href=\"https://www.youtube.com/watch?v=FTUV0t6JaDA\" target=\"_blank\">Networking Concepts for Beginners (PowerCert - 1hr)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=g2JOHLHh4rI\" target=\"_blank\">AWS VPC Beginner to Pro (StephaneMaarek - 3hrs)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=hiKPPy584Mg\" target=\"_blank\">AWS VPC Deep Dive (Be A Better Dev - 2hrs)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=qiQR5rTSshw\" target=\"_blank\">Subnets, CIDR, NAT Explained (NetwoerkChuck - 1hr)</a></li><li>📺 <a href=\"https://explore.skillbuilder.aws/learn/course/79/vpc-basics\" target=\"_blank\">VPC Basics (AWS Skill Builder - 3hrs)</a></li><li><strong>الممارسة:</strong> إنشاء VPC كامل: Public/Private Subnets + NAT Gateway + Route Tables</li></ul></div><div style=\"background: #e7f3ff; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #007bff;\"><h4>🎓 الجلسة 6: IAM + Security Best Practices (8 ساعات)</h4><ul><li>📺 <a href=\"https://www.youtube.com/watch?v=ExjW3HCFVB4\" target=\"_blank\">AWS IAM Tutorial (TechWorld with Nana - 45min)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=Ul6FW4UANGc\" target=\"_blank\">AWS Security Best Practices (AWS - 3hrs)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=iDoXM7rPPSg\" target=\"_blank\">IAM Policies Deep Dive (StephaneMaarek - 2hrs)</a></li><li>📺 <a href=\"https://explore.skillbuilder.aws/learn/course/120/aws-security-fundamentals\" target=\"_blank\">AWS Security Fundamentals (AWS Skill Builder - 2hrs)</a></li><li><strong>الممارسة:</strong> إنشاء IAM Users/Groups/Roles + Policies + MFA لكل الحسابات</li></ul></div><div style=\"background: #e7f3ff; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #007bff;\"><h4>🎓 الجلسة 7: Load Balancers + Auto Scaling (9 ساعات)</h4><ul><li>📺 <a href=\"https://www.youtube.com/watch?v=VIgAT67WpLs\" target=\"_blank\">Load Balancing Explained (PowerCert - 10min)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=gv_7MUgMbPg\" target=\"_blank\">AWS Load Balancers (StephaneMaarek - 3hrs)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=hnPVSqXe2BE\" target=\"_blank\">Auto Scaling Groups Tutorial (TechWorld with Nana - 1hr)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=dhB7vvVLdh8\" target=\"_blank\">High Availability Architecture (Be A Better Dev - 2hrs)</a></li><li>📺 <a href=\"https://explore.skillbuilder.aws/learn/course/193/elastic-load-balancing-basics\" target=\"_blank\">ELB Basics (AWS Skill Builder - 2hrs)</a></li><li><strong>الممارسة:</strong> ALB + Target Groups + Auto Scaling Group + Health Checks</li></ul></div><div style=\"background: #e7f3ff; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #007bff;\"><h4>🎓 الجلسة 8: Route 53 + DNS + SSL/TLS (8 ساعات)</h4><ul><li>📺 <a href=\"https://www.youtube.com/watch?v=Pv2yNDYQ5Fk\" target=\"_blank\">DNS Explained (PowerCert - 10min)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=e2xLV7pCOLI\" target=\"_blank\">AWS Route 53 Tutorial (StephaneMaarek - 2hrs)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=T4Df5_cojAs\" target=\"_blank\">SSL/TLS Explained (ByteByteGo - 15min)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=a21gYgJKkPc\" target=\"_blank\">AWS Certificate Manager (AWS - 1hr)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=GZvSYJDk-us\" target=\"_blank\">Complete DNS & Routing (Be A Better Dev - 4hrs)</a></li><li><strong>الممارسة:</strong> شراء Domain + ربطه بـ Route 53 + SSL Certificate + HTTPS</li></ul></div><div style=\"background: #e7f3ff; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #007bff;\"><h4>🎓 الجلسة 9: CloudWatch + Monitoring + Logging (8 ساعات)</h4><ul><li>📺 <a href=\"https://www.youtube.com/watch?v=a4dhoTQCyRA\" target=\"_blank\">AWS CloudWatch Tutorial (TechWorld with Nana - 1hr)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=g0f9fiJp2bE\" target=\"_blank\">CloudWatch Deep Dive (StephaneMaarek - 3hrs)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=YourVideoId\" target=\"_blank\">AWS CloudTrail & Config (AWS - 2hrs)</a></li><li>📺 <a href=\"https://explore.skillbuilder.aws/learn/course/106/monitoring-and-observability\" target=\"_blank\">Monitoring Best Practices (AWS Skill Builder - 2hrs)</a></li><li><strong>الممارسة:</strong> إعداد Alarms + Dashboards + Log Groups + SNS Notifications</li></ul></div><div style=\"background: #e7f3ff; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #007bff;\"><h4>🎓 الجلسة 10: المشروع النهائي - Full Stack Deployment (10 ساعات)</h4><ul><li>📺 <a href=\"https://www.youtube.com/watch?v=zN20eAcB7cE\" target=\"_blank\">Deploy Full Stack App on AWS (Traversy Media - 1hr)</a></li><li>📺 <a href=\"https://www.youtube.com/watch?v=7m_q1ldzw0U\" target=\"_blank\">AWS Production Best Practices (Be A Better Dev - 2hrs)</a></li><li><strong>المشروع الكامل (7 ساعات عمل):</strong><ul><li>Frontend (React/Vue): S3 + CloudFront + Custom Domain + HTTPS</li><li>Backend (Node.js/Python): EC2 في Auto Scaling Group + ALB</li><li>Database: RDS PostgreSQL Multi-AZ</li><li>Networking: VPC مخصص مع Public/Private Subnets</li><li>Security: IAM Roles + Security Groups محكمة</li><li>Monitoring: CloudWatch + SNS للتنبيهات</li><li>Documentation: Architecture Diagram + README كامل</li></ul></li></ul></div><h3>🛠️ المشروع العملي النهائي</h3><p><strong>انشر تطبيق Full-Stack على AWS:</strong></p><ul><li>Frontend (React/Vue) على S3 + CloudFront</li><li>Backend (Node.js/Python) على EC2</li><li>Database على RDS</li><li>Domain مخصص مع Route 53</li><li>SSL Certificate مع AWS Certificate Manager</li><li>Monitoring مع CloudWatch</li><li>Auto Scaling + Load Balancer</li></ul><h3>📚 الموارد المجانية الإضافية</h3><ul><li><strong>AWS Skill Builder:</strong> المنصة الرسمية من AWS - كورسات مجانية 100%</li><li><strong>FreeCodeCamp AWS:</strong> مقالات وشروحات عملية</li><li><strong>A Cloud Guru YouTube:</strong> فيديوهات تعليمية مجانية</li><li><strong>AWS Documentation:</strong> أفضل مرجع تقني</li></ul><h3>⏱️ الوقت الإجمالي للمرحلة 1</h3><p><strong>10 جلسات × 8-10 ساعات = 85-90 ساعة إجمالي</strong></p><p>بمعدل <strong>1.5 ساعة يوميًا = 60 يومًا (شهرين)</strong></p>",
+   "secondPageContent": `<h2>المرحلة 2️⃣: الأتمتة والبنية التحتية كـ Code (شهر 4-6)</h2>
+
+<h3>🎯 الهدف الرئيسي</h3>
+<p>أتمتة كل شيء وبناء CI/CD pipelines احترافية</p>
+
+<h3>📚 ماذا ستتعلم؟</h3>
+
+<h4>Terraform (Infrastructure as Code)</h4>
+<ul>
+  <li><strong>Providers & Resources:</strong> التعامل مع موارد AWS</li>
+  <li><strong>Variables & Outputs:</strong> جعل الكود قابل لإعادة الاستخدام</li>
+  <li><strong>State Management:</strong> إدارة حالة البنية التحتية</li>
+  <li><strong>Modules:</strong> إنشاء مكونات قابلة للمشاركة</li>
+</ul>
+
+<h4>Docker (Containerization)</h4>
+<ul>
+  <li><strong>Images & Containers:</strong> فهم الحاويات</li>
+  <li><strong>Dockerfile:</strong> إنشاء صور مخصصة</li>
+  <li><strong>Docker Compose:</strong> إدارة تطبيقات متعددة</li>
+  <li><strong>Best Practices:</strong> تقليل حجم الصور والأمان</li>
+</ul>
+
+<h4>CI/CD (GitHub Actions)</h4>
+<ul>
+  <li><strong>Workflows:</strong> أتمتة الاختبارات والنشر</li>
+  <li><strong>Testing Automation:</strong> اختبارات تلقائية</li>
+  <li><strong>Deployment Strategies:</strong> Blue/Green, Canary</li>
+</ul>
+
+<h3>📺 جدول الدروس التفصيلي (10 جلسات × 8-10 ساعات)</h3>
+
+<div style="background: #fff3e0; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #ff9800;">
+  <h4>🎓 الجلسة 1: Terraform Basics + HCL Syntax (9 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=SLB_c_ayRMo" target="_blank">Terraform Course for Beginners (FreeCodeCamp - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=7xngnjfIlK4" target="_blank">Complete Terraform Course (DevOps Directive - 3.5hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=nvNqfgojocs" target="_blank">Terraform Crash Course (TechWorld with Nana - 1hr)</a></li>
+    <li>📺 <a href="https://developer.hashicorp.com/terraform/tutorials/aws-get-started" target="_blank">AWS Get Started (HashiCorp Official - 2hrs)</a></li>
+    <li><strong>الممارسة:</strong> تثبيت Terraform + إنشاء أول EC2 بـ Terraform + فهم State</li>
+  </ul>
+</div>
+
+<div style="background: #fff3e0; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #ff9800;">
+  <h4>🎓 الجلسة 2: Terraform Variables, Outputs & Data Sources (8 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=W5qT6aGaEHc" target="_blank">Terraform Variables Deep Dive (Cloud Advocate - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=bWFGnJbKk7s" target="_blank">Terraform Best Practices (Anton Putra - 2hrs)</a></li>
+    <li>📺 <a href="https://developer.hashicorp.com/terraform/tutorials/configuration-language" target="_blank">Configuration Language (HashiCorp - 4hrs)</a></li>
+    <li><strong>الممارسة:</strong> إعادة كتابة Infrastructure المرحلة 1 بـ Terraform مع Variables</li>
+  </ul>
+</div>
+
+<div style="background: #fff3e0; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #ff9800;">
+  <h4>🎓 الجلسة 3: Terraform Modules + State Management (9 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=HmxkYNv1ksg" target="_blank">Terraform Modules Explained (TechWorld with Nana - 1hr)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=gxPykhPxRW0" target="_blank">Terraform State Management (Sid Palas - 2hrs)</a></li>
+    <li>📺 <a href="https://developer.hashicorp.com/terraform/tutorials/modules" target="_blank">Reuse Configuration with Modules (HashiCorp - 3hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=YcJ9IeukJL8" target="_blank">Remote State with S3 (DevOps Journey - 1hr)</a></li>
+    <li><strong>الممارسة:</strong> إنشاء Module قابل لإعادة الاستخدام (VPC/EC2/RDS) + Remote State على S3</li>
+  </ul>
+</div>
+
+<div style="background: #fff3e0; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #ff9800;">
+  <h4>🎓 الجلسة 4: Docker Fundamentals (10 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=3c-iBn73dDE" target="_blank">Docker Tutorial for Beginners (TechWorld with Nana - 3hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=fqMOX6JJhGo" target="_blank">Docker Complete Course (FreeCodeCamp - 3hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=pg19Z8LL06w" target="_blank">Docker Deep Dive (Bret Fisher - 4hrs)</a></li>
+    <li><strong>الممارسة:</strong> تثبيت Docker + إنشاء Dockerfile للـ Backend + بناء Image + تشغيل Container</li>
+  </ul>
+</div>
+
+<div style="background: #fff3e0; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #ff9800;">
+  <h4>🎓 الجلسة 5: Docker Compose + Multi-Container Apps (8 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=SXwC9fSwct8" target="_blank">Docker Compose Tutorial (TechWorld with Nana - 1hr)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=Qw9zlE3t8Ko" target="_blank">Docker Compose in 12 Minutes (Jake Wright - 15min)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=DM65_JyGxCo" target="_blank">Full Stack Docker Tutorial (Programming with Mosh - 3hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=0H2miBK_gAk" target="_blank">Docker Best Practices (Bret Fisher - 2hrs)</a></li>
+    <li><strong>الممارسة:</strong> Docker Compose لـ (Frontend + Backend + PostgreSQL + Redis)</li>
+  </ul>
+</div>
+
+<div style="background: #fff3e0; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #ff9800;">
+  <h4>🎓 الجلسة 6: AWS ECS/ECR + Container Orchestration (9 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=esISkPlnxL0" target="_blank">AWS ECS Tutorial (StephaneMaarek - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=7fFKZg_eqGw" target="_blank">ECS Fargate Complete Guide (Be A Better Dev - 3hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=zs3tyVgiBQQ" target="_blank">Deploy Docker to AWS (TechWorld with Nana - 2hrs)</a></li>
+    <li>📺 <a href="https://explore.skillbuilder.aws/learn/course/91/amazon-ecs-primer" target="_blank">ECS Primer (AWS Skill Builder - 2hrs)</a></li>
+    <li><strong>الممارسة:</strong> رفع Docker Images لـ ECR + نشرهم على ECS Fargate</li>
+  </ul>
+</div>
+
+<div style="background: #fff3e0; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #ff9800;">
+  <h4>🎓 الجلسة 7: Kubernetes Basics (Optional but Recommended) (10 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=X48VuDVv0do" target="_blank">Kubernetes Tutorial for Beginners (TechWorld with Nana - 4hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=s_o8dwzRlu4" target="_blank">Kubernetes Course (FreeCodeCamp - 3hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=7bA0gTroJjw" target="_blank">AWS EKS Workshop (AWS - 3hrs)</a></li>
+    <li><strong>الممارسة:</strong> إنشاء EKS Cluster + نشر تطبيق بسيط + فهم Pods/Services/Deployments</li>
+  </ul>
+</div>
+
+<div style="background: #fff3e0; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #ff9800;">
+  <h4>🎓 الجلسة 8: GitHub Actions - CI/CD Basics (8 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=R8_veQiYBjI" target="_blank">GitHub Actions Tutorial (TechWorld with Nana - 1hr)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=mFFXuXjVgkU" target="_blank">Complete GitHub Actions Course (FreeCodeCamp - 3hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=eB0nUzAI7M8" target="_blank">CI/CD Pipeline from Scratch (DevOps Journey - 2hrs)</a></li>
+    <li>📺 <a href="https://docs.github.com/en/actions/learn-github-actions" target="_blank">GitHub Actions Documentation (GitHub - 2hrs reading)</a></li>
+    <li><strong>الممارسة:</strong> إنشاء workflow يعمل: Lint + Test + Build Docker Image</li>
+  </ul>
+</div>
+
+<div style="background: #fff3e0; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #ff9800;">
+  <h4>🎓 الجلسة 9: Advanced CI/CD - Deploy to AWS (9 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=mScd-Pc_pX0" target="_blank">Deploy to AWS with GitHub Actions (Cloud with Raj - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=3c-pT77ZpB4" target="_blank">Complete DevOps Pipeline (DevOps Shack - 3hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=KquC2e6Sa9I" target="_blank">Blue/Green Deployment (AWS - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=Mj4N20OoXPI" target="_blank">Canary Deployments Explained (TechWorld with Nana - 1hr)</a></li>
+    <li><strong>الممارسة:</strong> Pipeline كامل: Test → Build → Push ECR → Deploy ECS</li>
+  </ul>
+</div>
+
+<div style="background: #fff3e0; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #ff9800;">
+  <h4>🎓 الجلسة 10: المشروع النهائي - Full DevOps Pipeline (10 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=U3RhXENX6A4" target="_blank">End-to-End DevOps Project (Cloud Champ - 3hrs)</a></li>
+    <li><strong>المشروع الكامل (7 ساعات عمل):</strong>
+      <ul>
+        <li>كتابة كل Infrastructure بـ Terraform (VPC, ECS, RDS, ALB)</li>
+        <li>Dockerize التطبيق الكامل (Frontend + Backend)</li>
+        <li>GitHub Actions workflow:
+          <ul>
+            <li>Run Unit Tests</li>
+            <li>Build Docker Images</li>
+            <li>Push to ECR</li>
+            <li>Terraform Apply</li>
+            <li>Deploy to ECS</li>
+            <li>Run Integration Tests</li>
+            <li>Send Slack Notification</li>
+          </ul>
+        </li>
+        <li>Documentation كامل</li>
+        <li>Architecture Diagram</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<h3>🛠️ المشروع العملي النهائي</h3>
+<p><strong>Pipeline تلقائي كامل:</strong></p>
+<ol>
+  <li>كتابة Infrastructure بـ Terraform</li>
+  <li>Dockerize التطبيق (Frontend + Backend)</li>
+  <li>إنشاء GitHub Actions workflow:
+    <ul>
+      <li>Run Tests</li>
+      <li>Build Docker Images</li>
+      <li>Push to ECR (AWS Container Registry)</li>
+      <li>Deploy to ECS/EKS</li>
+      <li>Automated Rollback إذا فشل</li>
+    </ul>
+  </li>
+</ol>
+
+<h3>📚 الموارد المجانية الإضافية</h3>
+<ul>
+  <li><strong>Terraform Tutorials:</strong> الدليل الرسمي من HashiCorp</li>
+  <li><strong>Docker Complete Course (YouTube):</strong> شرح كامل من الصفر</li>
+  <li><strong>GitHub Actions Documentation:</strong> أمثلة وتطبيقات عملية</li>
+  <li><strong>AWS DevOps Blog:</strong> مقالات وأمثلة عملية</li>
+</ul>
+
+<h3>⏱️ الوقت الإجمالي للمرحلة 2</h3>
+<p><strong>10 جلسات × 8-10 ساعات = 90 ساعة إجمالي</strong></p>
+<p>بمعدل <strong>1.5 ساعة يوميًا = 60 يومًا (شهرين)</strong></p>
+
+<h2>المرحلة 3️⃣: Architecture Patterns والتصميم المتقدم (شهر 7-9)</h2>
+
+<h3>🎯 الهدف الرئيسي</h3>
+<p>إتقان تصميم الأنظمة الموزعة وفهم Architecture Patterns الحديثة</p>
+
+<h3>📚 ماذا ستتعلم؟</h3>
+
+<h4>Microservices Architecture</h4>
+<ul>
+  <li><strong>Service Decomposition:</strong> تقسيم التطبيقات الكبيرة</li>
+  <li><strong>API Gateway:</strong> نقطة دخول موحدة</li>
+  <li><strong>Service Discovery:</strong> اكتشاف الخدمات تلقائيًا</li>
+  <li><strong>Inter-service Communication:</strong> REST vs gRPC</li>
+</ul>
+
+<h4>Serverless Architecture</h4>
+<ul>
+  <li><strong>AWS Lambda:</strong> تشغيل الكود بدون سيرفرات</li>
+  <li><strong>API Gateway:</strong> إنشاء REST APIs</li>
+  <li><strong>DynamoDB:</strong> قاعدة بيانات NoSQL سريعة</li>
+  <li><strong>Event-driven:</strong> تصميم قائم على الأحداث</li>
+</ul>
+
+<h4>High Availability & Scalability</h4>
+<ul>
+  <li><strong>Auto Scaling:</strong> تكبير/تصغير تلقائي حسب الحمل</li>
+  <li><strong>Load Balancing:</strong> ALB, NLB, CLB</li>
+  <li><strong>Multi-AZ Deployment:</strong> توزيع على مناطق متعددة</li>
+  <li><strong>Disaster Recovery:</strong> استراتيجيات النسخ الاحتياطي</li>
+</ul>
+
+<h4>Security Best Practices</h4>
+<ul>
+  <li><strong>Encryption:</strong> at rest & in transit</li>
+  <li><strong>WAF & Shield:</strong> الحماية من الهجمات</li>
+  <li><strong>Secrets Management:</strong> AWS Secrets Manager</li>
+  <li><strong>Compliance:</strong> GDPR, PCI-DSS</li>
+</ul>
+
+<h4>Cost Optimization</h4>
+<ul>
+  <li><strong>Right-sizing:</strong> اختيار الحجم المناسب</li>
+  <li><strong>Reserved Instances:</strong> توفير حتى 70%</li>
+  <li><strong>Cost Monitoring:</strong> AWS Cost Explorer</li>
+</ul>
+
+<h3>📺 جدول الدروس التفصيلي (10 جلسات × 8-10 ساعات)</h3>
+
+<div style="background: #e8f5e9; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #4caf50;">
+  <h4>🎓 الجلسة 1: Microservices Architecture Fundamentals (9 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=CdBtNQZH8a4" target="_blank">Microservices Explained (TechWorld with Nana - 1hr)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=rv4LlmLmVWk" target="_blank">Microservices Architecture (FreeCodeCamp - 3hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=y8OnoxKotPQ" target="_blank">Building Microservices (Martin Fowler - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=8BPdv0eqb5Y" target="_blank">Microservices Best Practices (AWS - 2hrs)</a></li>
+    <li><strong>الممارسة:</strong> تقسيم تطبيق Monolithic إلى Microservices (User/Product/Order)</li>
+  </ul>
+</div>
+
+<div style="background: #e8f5e9; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #4caf50;">
+  <h4>🎓 الجلسة 2: API Gateway + Service Mesh (8 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=vHQqQBYJtLI" target="_blank">AWS API Gateway Tutorial (StephaneMaarek - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=DXQMpfzqYAQ" target="_blank">Service Mesh Explained (IBM - 1hr)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=16fgzklcF7Y" target="_blank">Kong API Gateway (TechWorld with Nana - 1hr)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=QiXK0B9FhO0" target="_blank">Microservices Communication Patterns (DevOps Toolkit - 2hrs)</a></li>
+    <li><strong>الممارسة:</strong> إنشاء API Gateway + Rate Limiting + Authentication + Logging</li>
+  </ul>
+</div>
+
+<div style="background: #e8f5e9; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #4caf50;">
+  <h4>🎓 الجلسة 3: AWS Lambda + Serverless Framework (9 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=eOBq__h4OJ4" target="_blank">AWS Lambda Full Course (FreeCodeCamp - 4hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=71cd5XerKss" target="_blank">Serverless Framework Tutorial (TechWorld with Nana - 1hr)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=Mut-BxoDz7E" target="_blank">Build Serverless App (AWS - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=89cMBVdTI-E" target="_blank">Lambda Best Practices (Be A Better Dev - 2hrs)</a></li>
+    <li><strong>الممارسة:</strong> بناء REST API بـ Lambda + API Gateway + DynamoDB</li>
+  </ul>
+</div>
+
+<div style="background: #e8f5e9; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #4caf50;">
+  <h4>🎓 الجلسة 4: Event-Driven Architecture (SQS, SNS, EventBridge) (10 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=2BTABfHb0FE" target="_blank">AWS SQS Tutorial (StephaneMaarek - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=G-C2kNR5-dU" target="_blank">AWS SNS Complete Guide (Be A Better Dev - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=TXh5oU_yo9M" target="_blank">EventBridge Explained (AWS - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=STKCRSUsyP0" target="_blank">Event-Driven Architecture Patterns (IBM - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=5-Nz6LFQOE8" target="_blank">Building Event-Driven Systems (AWS re:Invent - 1hr)</a></li>
+    <li><strong>الممارسة:</strong> Order Processing System: Order → SQS → Lambda → Payment → SNS → Email</li>
+  </ul>
+</div>
+
+<div style="background: #e8f5e9; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #4caf50;">
+  <h4>🎓 الجلسة 5: Caching Strategies (ElastiCache, CloudFront) (8 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=DUbEzwKAIwA" target="_blank">Redis Crash Course (Web Dev Simplified - 30min)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=OP26Y3NdZFY" target="_blank">AWS ElastiCache Tutorial (StephaneMaarek - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=AT-nHW3_SVI" target="_blank">CloudFront CDN Deep Dive (Be A Better Dev - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=U3RGDt2f10E" target="_blank">Caching Best Practices (AWS - 2hrs)</a></li>
+    <li><strong>الممارسة:</strong> إضافة Redis للـ Sessions + Caching + CloudFront للـ Static Assets</li>
+  </ul>
+</div>
+
+<div style="background: #e8f5e9; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #4caf50;">
+  <h4>🎓 الجلسة 6: High Availability & Disaster Recovery (9 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=8M4A0jZJcng" target="_blank">High Availability on AWS (StephaneMaarek - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=xc_PZ5OPXcc" target="_blank">Disaster Recovery Strategies (AWS - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=7gNXfo5Oku0" target="_blank">Multi-Region Architecture (AWS re:Invent - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=dPdac4LL884" target="_blank">RTO and RPO Explained (Be A Better Dev - 1hr)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=RMrfzR4zyM4" target="_blank">Backup Strategies (AWS - 1hr)</a></li>
+    <li><strong>الممارسة:</strong> تصميم Multi-AZ Architecture + Automated Backups + Failover Testing</li>
+  </ul>
+</div>
+
+<div style="background: #e8f5e9; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #4caf50;">
+  <h4>🎓7: Security Deep Dive (WAF, Secrets Manager, KMS) (9 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=Y1hE1Nkcxs8" target="_blank">AWS Security Best Practices (StephaneMaarek - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=ogVamzF2Dzk" target="_blank">AWS WAF Tutorial (TechWorld with Nana - 1hr)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=hxWvbNvj2lg" target="_blank">AWS Secrets Manager (Be A Better Dev - 1.5hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=plv7PQZICCM" target="_blank">AWS KMS Encryption (AWS - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=pJ3AiKfKeJ8" target="_blank">AWS Security Hub & GuardDuty (AWS re:Invent - 1.5hrs)</a></li>
+    <li>📺 <a href="https://explore.skillbuilder.aws/learn/course/120/aws-security-fundamentals" target="_blank">AWS Security Fundamentals (AWS Skill Builder - 1hr)</a></li>
+    <li><strong>الممارسة:</strong> إعداد WAF Rules + تشفير RDS بـ KMS + Secrets Manager للـ API Keys</li>
+  </ul>
+</div>
+<div style="background: #e8f5e9; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #4caf50;">
+  <h4>🎓 الجلسة 8: Cost Optimization & FinOps (8 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=XQFweGjK_-o" target="_blank">AWS Cost Optimization (AWS - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=1Z4BfRj2FiU" target="_blank">AWS Cost Explorer Tutorial (StephaneMaarek - 1hr)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=7I4dVwk2ARQ" target="_blank">Reserved Instances vs Savings Plans (AWS - 1.5hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=CcspJkc7zqg" target="_blank">AWS Billing & Cost Management (FreeCodeCamp - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=mQ2GzGx8VUs" target="_blank">FinOps Best Practices (Cloud FinOps Foundation - 1.5hrs)</a></li>
+    <li><strong>الممارسة:</strong> إعداد Cost Alerts + تحليل التكاليف + تطبيق Optimization Recommendations</li>
+  </ul>
+</div>
+<div style="background: #e8f5e9; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #4caf50;">
+  <h4>🎓 الجلسة 9: Well-Architected Framework (10 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=gjNgCAjmfro" target="_blank">AWS Well-Architected Framework (AWS - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=MfxF-FYEFjY" target="_blank">5 Pillars Explained (StephaneMaarek - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=9kMp7YqlZvM" target="_blank">Operational Excellence Pillar (AWS - 1.5hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=u6BCVkXkPnM" target="_blank">Security Pillar Deep Dive (AWS - 1.5hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=tLxCYBLvZbU" target="_blank">Reliability & Performance (AWS - 2hrs)</a></li>
+    <li>📺 <a href="https://explore.skillbuilder.aws/learn/course/2045/aws-well-architected" target="_blank">Well-Architected Labs (AWS Skill Builder - 1hr)</a></li>
+    <li><strong>الممارسة:</strong> مراجعة مشروعك السابق بناءً على 5 Pillars + كتابة تقرير تحسينات</li>
+  </ul>
+</div>
+<div style="background: #e8f5e9; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #4caf50;">
+  <h4>🎓 الجلسة 10: المشروع النهائي - Enterprise Architecture (10 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=k1RI5locZE4" target="_blank">Real-World AWS Architecture (AWS re:Invent - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=VvpsxMNrRDw" target="_blank">Enterprise Patterns (AWS Solutions Library - 2hrs)</a></li>
+    <li><strong>المشروع الكامل (6 ساعات عمل):</strong>
+      <ul>
+        <li><strong>E-Commerce Platform كامل:</strong>
+          <ul>
+            <li>Frontend: S3 + CloudFront + Custom Domain</li>
+            <li>Backend Microservices: ECS Fargate (User/Product/Order/Payment)</li>
+            <li>API Gateway مع Rate Limiting & Authentication</li>
+            <li>Databases: RDS Multi-AZ + ElastiCache Redis + DynamoDB</li>
+            <li>Messaging: SQS + SNS للـ Order Processing</li>
+            <li>Security: WAF + Secrets Manager + KMS Encryption</li>
+            <li>Monitoring: CloudWatch + X-Ray Tracing</li>
+            <li>Multi-AZ Deployment للـ High Availability</li>
+            <li>Auto Scaling policies</li>
+            <li>Disaster Recovery Plan</li>
+            <li>Cost Optimization Strategy</li>
+            <li>Complete Architecture Diagram (استخدم draw.io)</li>
+            <li>Well-Architected Review Document</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<h3>⏱️ الوقت الإجمالي للمرحلة 3</h3>
+<p><strong>10 جلسات × 8-10 ساعات = 90 ساعة إجمالي</strong></p>
+<p>بمعدل <strong>1.5 ساعة يوميًا = 60 يومًا (شهرين)</strong></p>
+<h2>المرحلة 4️⃣: الشهادات والتحضير للوظيفة (شهر 10-12)</h2>
+<h3>🎯 الهدف الرئيسي</h3>
+<p>الحصول على AWS Solutions Architect Associate + بناء Portfolio قوي + التقديم على وظائف</p>
+<h3>📚 ماذا ستتعلم؟</h3>
+<h4>AWS Certified Solutions Architect Associate (SAA-C03)</h4>
+<ul>
+  <li><strong>الامتحان:</strong> 65 سؤال، مدة 130 دقيقة، نسبة النجاح 720/1000</li>
+  <li><strong>التكلفة:</strong> $150 (يمكن خصم 50% للطلاب)</li>
+  <li><strong>الصلاحية:</strong> 3 سنوات</li>
+</ul>
+<h3>📺 خطة التحضير للشهادة (8 أسابيع)</h3>
+<div style="background: #fff3cd; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #ffc107;">
+  <h4>🎓 الأسبوع 1-2: الكورس الكامل (40 ساعة)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=Ia-UEYYR44s" target="_blank">AWS SAA Full Course (FreeCodeCamp - 14hrs)</a> - شاهده مرتين</li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=c3Cn4xYfxJY" target="_blank">AWS SAA Complete Guide (Stephane Maarek - 27hrs)</a> - مراجعة شاملة</li>
+    <li>📺 <a href="https://explore.skillbuilder.aws/learn/course/14760/exam-prep-official-practice-question-set-aws-certified-solutions-architect-associate-saa-c03-english" target="_blank">AWS Official Exam Prep (AWS Skill Builder - 3hrs)</a></li>
+    <li><strong>الممارسة:</strong> تدوين ملاحظات + إنشاء Flashcards للمفاهيم المهمة</li>
+  </ul>
+</div>
+<div style="background: #fff3cd; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #ffc107;">
+  <h4>🎓 الأسبوع 3-4: Practice Questions (30 ساعة)</h4>
+  <ul>
+    <li>📝 <a href="https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-associate-saa-c03/" target="_blank">ExamTopics Free Questions (500+ أسئلة مجانية)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=U3RhXENX6A4" target="_blank">Practice Exam Walkthrough (Digital Cloud Training - 3hrs)</a></li>
+    <li>📝 <a href="https://explore.skillbuilder.aws/learn/course/14760/exam-prep-official-practice-question-set-aws-certified-solutions-architect-associate-saa-c03-english" target="_blank">AWS Official Practice Questions (AWS Skill Builder)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=Ji20Mgs1gjI" target="_blank">Common Mistakes to Avoid (Adrian Cantrill - 1hr)</a></li>
+    <li><strong>الاستراتيجية:</strong>
+      <ul>
+        <li>حل 20-30 سؤال يوميًا (1.5 ساعة)</li>
+        <li>مراجعة الإجابات الخاطئة وفهم السبب</li>
+        <li>تدوين المواضيع الضعيفة</li>
+        <li>العودة للكورس لمراجعة المواضيع الصعبة</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div style="background: #fff3cd; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #ffc107;">
+  <h4>🎓 الأسبوع 5-6: Practice Exams (25 ساعة)</h4>
+  <ul>
+    <li>📝 <a href="https://www.whizlabs.com/aws-solutions-architect-associate/" target="_blank">Whizlabs Practice Tests (أول امتحان مجاني)</a></li>
+    <li>📝 <a href="https://www.udemy.com/course/aws-certified-solutions-architect-associate-practice-tests-k/" target="_blank">Tutorials Dojo Practice Tests ($11.99 - يستحق الاستثمار)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=RrKRN9zRBWs" target="_blank">How to Pass AWS SAA Exam (Tips & Tricks - 1hr)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=2iQ7tTB2RLU" target="_blank">Exam Strategies & Time Management (Andrew Brown - 45min)</a></li>
+    <li><strong>الاستراتيجية:</strong>
+      <ul>
+        <li>خذ Practice Exam كامل (130 دقيقة)</li>
+        <li>سجل نتيجتك وحلل الأخطاء</li>
+        <li>راجع المواضيع الضعيفة بعمق</li>
+        <li>كرر حتى تحصل على 80%+ باستمرار</li>
+        <li>تدرب على Time Management</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div style="background: #fff3cd; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #ffc107;">
+  <h4>🎓 الأسبوع 7: المراجعة النهائية (15 ساعة)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=RrKRN9zRBWs" target="_blank">Last Minute SAA Review (StephaneMaarek - 3hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=c3Cn4xYfxJY" target="_blank">AWS Cheat Sheets (Digital Cloud Training - 2hrs)</a></li>
+    <li>📝 <a href="https://digitalcloud.training/category/aws-cheat-sheets/aws-solutions-architect-associate/" target="_blank">AWS SAA Cheat Sheets (Digital Cloud - قراءة 5hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=2iQ7tTB2RLU" target="_blank">Exam Day Preparation (FreeCodeCamp - 1hr)</a></li>
+    <li><strong>المراجعة:</strong>
+      <ul>
+        <li>راجع ملاحظاتك الكاملة</li>
+        <li>راجع Flashcards</li>
+        <li>حل أسئلة سريعة (20 سؤال يومياً)</li>
+        <li>ركز على Well-Architected Framework</li>
+        <li>راجع الخدمات الأساسية: EC2, S3, RDS, VPC, IAM, Lambda, ECS</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div style="background: #fff3cd; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #ffc107;">
+  <h4>🎓 الأسبوع 8: حجز وإجراء الامتحان (10 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=dePD91nJPgE" target="_blank">AWS Certification Exam Day Tips (TechWorld with Nana - 30min)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=HKk-TEkBxhc" target="_blank">Pearson VUE Online Exam Guide (AWS - 15min)</a></li>
+    <li><strong>الخطوات:</strong>
+      <ul>
+        <li>احجز الامتحان على aws.training</li>
+        <li>اختر بين Online (من المنزل) أو Test Center</li>
+        <li>جهز مكان هادئ إذا اخترت Online</li>
+        <li>نم جيداً قبل الامتحان</li>
+        <li>خذ Practice Exam أخير قبل يومين</li>
+        <li>راجع Cheat Sheets صباح الامتحان</li>
+      </ul>
+    </li>
+    <li><strong>يوم الامتحان:</strong>
+      <ul>
+        <li>ابدأ بالأسئلة السهلة أولاً</li>
+        <li>Flag الأسئلة الصعبة وارجع لها</li>
+        <li>استخدم Process of Elimination</li>
+        <li>تأكد من قراءة كل سؤال بتمعن</li>
+        <li>لا تستعجل - لديك وقت كافٍ</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<h3>📂 بناء Portfolio قوي (شهر 11)</h3>
+<div style="background: #e3f2fd; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #2196f3;">
+  <h4>🎯 الأسبوع 1-2: إنشاء GitHub Portfolio (20 ساعة)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=RGOj5yH7evk" target="_blank">How to Build Portfolio (freeCodeCamp - 1hr)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=M2IrPFMFwx8" target="_blank">GitHub Profile README (Coding Garden - 1hr)</a></li>
+    <li><strong>المشاريع المطلوبة:</strong>
+      <ul>
+        <li><strong>Project 1:</strong> Three-Tier Web Application على AWS
+          <ul>
+            <li>Frontend: S3 + CloudFront</li>
+            <li>Backend: EC2 Auto Scaling + ALB</li>
+            <li>Database: RDS Multi-AZ</li>
+            <li>Infrastructure: كل شيء بـ Terraform</li>
+            <li>CI/CD: GitHub Actions</li>
+            <li>Documentation كامل + Architecture Diagram</li>
+          </ul>
+        </li>
+        <li><strong>Project 2:</strong> Serverless Application
+          <ul>
+            <li>API: Lambda + API Gateway</li>
+            <li>Database: DynamoDB</li>
+            <li>Authentication: Cognito</li>
+            <li>Storage: S3</li>
+            <li>Monitoring: CloudWatch + X-Ray</li>
+          </ul>
+        </li>
+        <li><strong>Project 3:</strong> Microservices Platform
+          <ul>
+            <li>ECS Fargate أو EKS</li>
+            <li>Multiple Services (User, Product, Order)</li>
+            <li>API Gateway</li>
+            <li>Service Mesh (Optional)</li>
+            <li>Monitoring Stack</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div style="background: #e3f2fd; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #2196f3;">
+  <h4>🎯 الأسبوع 3: كتابة Blog Posts التقنية (10 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=YODPgBadj80" target="_blank">Technical Writing for Developers (freeCodeCamp - 1hr)</a></li>
+    <li><strong>المقالات المطلوبة:</strong>
+      <ul>
+        <li>"How I Built a Scalable Web App on AWS with Terraform"</li>
+        <li>"AWS Cost Optimization: How I Reduced Our Bill by 40%"</li>
+        <li>"Implementing CI/CD Pipeline with GitHub Actions and AWS"</li>
+        <li>"Microservices vs Monolith: Real-World Experience"</li>
+      </ul>
+    </li>
+    <li><strong>المنصات:</strong>
+      <ul>
+        <li>Dev.to</li>
+        <li>Hashnode</li>
+        <li>Medium</li>
+        <li>LinkedIn Articles</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div style="background: #e3f2fd; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #2196f3;">
+  <h4>🎯 الأسبوع 4: تحسين LinkedIn و CV (10 ساعات)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=P6fPtQ7-qDU" target="_blank">LinkedIn Profile Optimization (Austin Belcak - 1hr)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=Tt08KmFfIYQ" target="_blank">Tech Resume Tips (Clément Mihailescu - 30min)</a></li>
+    <li><strong>LinkedIn Profile:</strong>
+      <ul>
+        <li>صورة احترافية</li>
+        <li>Headline قوي: "AWS Solutions Architect | Cloud Infrastructure | Terraform | CI/CD"</li>
+        <li>About section مفصل</li>
+        <li>إضافة المشاريع + الشهادة</li>
+        <li>إضافة Skills وطلب Endorsements</li>
+        <li>نشر محتوى تقني أسبوعياً</li>
+      </ul>
+    </li>
+    <li><strong>CV/Resume:</strong>
+      <ul>
+        <li>استخدم قالب ATS-Friendly</li>
+        <li>Skills Section: AWS, Terraform, Docker, Kubernetes, CI/CD</li>
+        <li>Projects Section بدل Experience (إذا كنت مبتدئ)</li>
+        <li>Certifications: AWS SAA-C03</li>
+        <li>استخدم Action Verbs: Designed, Implemented, Automated</li>
+        <li>Quantify Results: "Reduced costs by 40%", "Improved performance by 60%"</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<h3>💼 التقديم على الوظائف (شهر 12)</h3>
+<div style="background: #fce4ec; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #e91e63;">
+  <h4>🎯 الأسبوع 1-2: البحث والتقديم المكثف (30 ساعة)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=GJoVvWVe5po" target="_blank">How to Get Your First Cloud Job (Tech with Lucy - 1hr)</a></li>
+    <li><strong>منصات التوظيف في تونس:</strong>
+      <ul>
+        <li>💼 <a href="https://www.emploi.tn/" target="_blank">Emploi.tn</a></li>
+        <li>🏢 <a href="https://www.tanitjobs.com/" target="_blank">Tanitjobs</a></li>
+        <li>🌍 <a href="https://www.linkedin.com/jobs/" target="_blank">LinkedIn Jobs Tunisia</a></li>
+        <li>🏢 <a href="https://www.keejob.com/" target="_blank">Keejob</a></li>
+      </ul>
+    </li>
+    <li><strong>منصات عالمية (Remote):</strong>
+      <ul>
+        <li>🌐 <a href="https://www.upwork.com/" target="_blank">Upwork</a></li>
+        <li>💻 <a href="https://weworkremotely.com/" target="_blank">We Work Remotely</a></li>
+        <li>🎯 <a href="https://www.turing.com/" target="_blank">Turing</a></li>
+        <li>🌍 <a href="https://remote.co/" target="_blank">Remote.co</a></li>
+        <li>💼 <a href="https://www.toptal.com/" target="_blank">Toptal</a></li>
+        <li>🌐 <a href="https://arc.dev/" target="_blank">Arc.dev</a></li>
+      </ul>
+    </li>
+    <li><strong>الاستراتيجية:</strong>
+      <ul>
+        <li>قدم على 5-10 وظائف يومياً</li>
+        <li>ركز على: Junior Cloud Engineer, Junior Solutions Architect, DevOps Engineer</li>
+        <li>خصص CV لكل وظيفة (اذكر الكلمات المفتاحية من الإعلان)</li>
+        <li>اكتب Cover Letter شخصي</li>
+        <li>تابع التقديمات بعد أسبوع</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div style="background: #fce4ec; padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border-right: 4px solid #e91e63;">
+  <h4>🎯 الأسبوع 3-4: التحضير للمقابلات (20 ساعة)</h4>
+  <ul>
+    <li>📺 <a href="https://www.youtube.com/watch?v=FFCdG3kVrRU" target="_blank">AWS Interview Questions (Simplilearn - 2hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=rPHI7MdLdlg" target="_blank">System Design Interview (Exponent - 3hrs)</a></li>
+    <li>📺 <a href="https://www.youtube.com/watch?v=GJdiM-muYqc" target="_blank">Behavioral Interview Questions (Jeff Su - 30min)</a></li>
+    <li><strong>الأسئلة التقنية الشائعة:</strong>
+      <ul>
+        <li>"Explain VPC and Subnets"</li>
+        <li>"Difference between ECS and EKS"</li>
+        <li>"How do you design a highly available architecture?"</li>
+        <li>"What is the difference between ALB and NLB?"</li>
+        <li>"How do you secure an AWS environment?"</li>
+        <li>"Explain your CI/CD pipeline"</li>
+        <li>"How do you optimize AWS costs?"</li>
+      </ul>
+    </li>
+    <li><strong>الأسئلة السلوكية (STAR Method):</strong>
+      <ul>
+        <li>"Tell me about a challenging project"</li>
+        <li>"How do you handle tight deadlines?"</li>
+        <li>"Describe a time you failed and what you learned"</li>
+        <li>"Why do you want to be a Solutions Architect?"</li>
+      </ul>
+    </li>
+    <li><strong>التدريب:</strong>
+      <ul>
+        <li>تدرب مع صديق</li>
+        <li>سجل نفسك وأنت تجيب</li>
+        <li>استخدم Pramp للـ Mock Interviews</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<h3>⏱️ الوقت الإجمالي للمرحلة 4</h3>
+<p><strong>الشهادة (8 أسابيع): 130 ساعة</strong></p>
+<p><strong>Portfolio (شهر): 40 ساعة</strong></p>
+<p><strong>التوظيف (شهر): 50 ساعة</strong></p>
+<p><strong>إجمالي: 220 ساعة = 3 أشهر بمعدل 1.5-2 ساعة يومياً</strong></p>
+<h2>📊 ملخص الخطة الكاملة</h2>
+<table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+  <thead>
+    <tr style="background: #f0f0f0;">
+      <th style="padding: 1rem; border: 1px solid #ddd;">المرحلة</th>
+      <th style="padding: 1rem; border: 1px solid #ddd;">المدة</th>
+      <th style="padding: 1rem; border: 1px solid #ddd;">الساعات</th>
+      <th style="padding: 1rem; border: 1px solid #ddd;">الهدف</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 1rem; border: 1px solid #ddd;"><strong>المرحلة 1</strong></td> `,
+  "coverImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
+  "author": "Iheb Meftah",
+  "publishedDate": "2024-12-30",
+  "category": "تعليم",
+  "tags": ["IBM", "شهادات مجانية", "Cloud Computing", "Data Science", "Machine Learning", "Deep Learning", "Docker", "Big Data", "Hadoop", "Chatbot", "AI"],
+  "readTime": "15 دقيقة",
+  "featured": true
+},
+{
+id: 1,
+slug: 'minimax-ai-video-generator-2024',
+title: '🎬 MiniMax AI: أقوى أداة مجانية لإنشاء فيديوهات بالذكاء الاصطناعي',
+excerpt: 'اكتشف MiniMax (Hailuo AI) - الأداة الثورية التي تحول النصوص والصور إلى فيديوهات احترافية خلال دقائق، مجاناً وبجودة عالية!',
+externalLinks: [
+{
+label: '🎥 MiniMax - إنشاء فيديو من نص',
+url: 'https://www.minimax.io/',
+icon: '🎥',
+platform: 'minimax'
+},
+{
+label: '🚀 Hailuo AI - المنصة البديلة',
+url: 'https://hailuoai.video/',
+icon: '🚀',
+platform: 'hailuo'
 }
+],
+firstPageContent: `
+<h2>🌟 ما هو MiniMax AI؟</h2>
+<p><strong>MiniMax</strong> (المعروف أيضاً بـ Hailuo AI) هو أداة ذكاء اصطناعي صينية متقدمة تحول أفكارك إلى فيديوهات احترافية في ثوانٍ! سواء كنت صانع محتوى، مسوق رقمي، أو مجرد شخص يحب الإبداع - هذه الأداة ستغير طريقة عملك.</p>
+<h2>✨ المميزات الرئيسية</h2>
+<ul>
+  <li>🎯 <strong>مجاني 100%</strong> - بدون بطاقة ائتمان</li>
+  <li>📝 <strong>من نص إلى فيديو</strong> - اكتب وصف واحصل على فيديو</li>
+  <li>🖼️ <strong>من صورة إلى فيديو</strong> - حرك أي صورة</li>
+  <li>⚡ <strong>سريع جداً</strong> - فيديو 5-6 ثواني في دقائق</li>
+  <li>🎨 <strong>جودة عالية</strong> - دقة ممتازة وحركات طبيعية</li>
+  <li>🌍 <strong>دعم اللغة العربية</strong> - اكتب بالعربي مباشرة</li>
+</ul>
 
+<h2>🎬 كيف تستخدم MiniMax؟</h2>
 
+<h3>طريقة 1: نص إلى فيديو</h3>
+<ol>
+  <li>افتح الموقع واضغط "Create Video"</li>
+  <li>اكتب وصف الفيديو (مثال: "قط يلعب بكرة في حديقة مشمسة")</li>
+  <li>اضغط "Generate"</li>
+  <li>انتظر 2-3 دقائق وحمّل الفيديو!</li>
+</ol>
+
+<h3>طريقة 2: صورة إلى فيديو</h3>
+<ol>
+  <li>ارفع صورتك</li>
+  <li>اكتب وصف الحركة المطلوبة</li>
+  <li>اضغط "Generate"</li>
+  <li>شاهد صورتك تتحرك!</li>
+</ol>
+
+<h2>💡 استخدامات عملية</h2>
+<ul>
+  <li>📱 <strong>محتوى السوشيال ميديا</strong> - فيديوهات جذابة لـ TikTok, Instagram, YouTube Shorts</li>
+  <li>🎓 <strong>المحتوى التعليمي</strong> - اشرح أفكارك بالفيديو</li>
+  <li>📢 <strong>الإعلانات</strong> - إعلانات سريعة وجذابة</li>
+  <li>🎨 <strong>الفن والإبداع</strong> - حول خيالك لواقع</li>
+  <li>📖 <strong>القصص</strong> - أنشئ قصص مصورة متحركة</li>
+</ul>
+
+<h2>⚠️ نصائح مهمة</h2>
+<ul>
+  <li>✅ اكتب وصف واضح ومفصل للحصول على أفضل نتائج</li>
+  <li>✅ جرب عدة مرات - كل توليد مختلف!</li>
+  <li>✅ استخدم الإنجليزية للنتائج الأفضل حالياً</li>
+  <li>⏱️ الفيديوهات قصيرة (5-6 ثواني) - خطط محتواك</li>
+  <li>🚫 الموقع قد يكون بطيء أحياناً بسبب الزحام</li>
+</ul>`,
+secondPageContent:` 
+<h2>🆚 MiniMax vs الأدوات الأخرى</h2>
+<table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+  <thead>
+    <tr style="background: #f0f0f0;">
+      <th style="padding: 1rem; border: 1px solid #ddd;">الميزة</th>
+      <th style="padding: 1rem; border: 1px solid #ddd;">MiniMax</th>
+      <th style="padding: 1rem; border: 1px solid #ddd;">Runway</th>
+      <th style="padding: 1rem; border: 1px solid #ddd;">Pika</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 1rem; border: 1px solid #ddd;"><strong>السعر</strong></td>
+      <td style="padding: 1rem; border: 1px solid #ddd;">مجاني ✅</td>
+      <td style="padding: 1rem; border: 1px solid #ddd;">من $12/شهر</td>
+      <td style="padding: 1rem; border: 1px solid #ddd;">من $10/شهر</td>
+    </tr>
+    <tr>
+      <td style="padding: 1rem; border: 1px solid #ddd;"><strong>الجودة</strong></td>
+      <td style="padding: 1rem; border: 1px solid #ddd;">ممتازة</td>
+      <td style="padding: 1rem; border: 1px solid #ddd;">ممتازة جداً</td>
+      <td style="padding: 1rem; border: 1px solid #ddd;">جيدة</td>
+    </tr>
+    <tr>
+      <td style="padding: 1rem; border: 1px solid #ddd;"><strong>السرعة</strong></td>
+      <td style="padding: 1rem; border: 1px solid #ddd;">سريع</td>
+      <td style="padding: 1rem; border: 1px solid #ddd;">سريع</td>
+      <td style="padding: 1rem; border: 1px solid #ddd;">متوسط</td>
+    </tr>
+    <tr>
+      <td style="padding: 1rem; border: 1px solid #ddd;"><strong>سهولة الاستخدام</strong></td>
+      <td style="padding: 1rem; border: 1px solid #ddd;">سهل جداً ✅</td>
+      <td style="padding: 1rem; border: 1px solid #ddd;">متوسط</td>
+      <td style="padding: 1rem; border: 1px solid #ddd;">سهل</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>🎯 أمثلة عملية</h2>
+
+<h3>مثال 1: محتوى طبخ</h3>
+<p><strong>النص:</strong> "طاهي يقلب الخضار في مقلاة ساخنة، دخان خفيف، إضاءة دافئة، مطبخ احترافي"</p>
+<p><strong>النتيجة:</strong> فيديو سينمائي لعملية الطبخ ✨</p>
+
+<h3>مثال 2: محتوى سياحي</h3>
+<p><strong>النص:</strong> "منظر جوي لشاطئ استوائي، أمواج تتكسر، شمس غروب ذهبية، نخيل يتمايل"</p>
+<p><strong>النتيجة:</strong> فيديو خيالي للسفر 🏝️</p>
+
+<h3>مثال 3: محتوى تقني</h3>
+<p><strong>الصورة:</strong> صورة لابتوب + <strong>النص:</strong> "الشاشة تضيء وتظهر كود برمجي يكتب تلقائياً"</p>
+<p><strong>النتيجة:</strong> فيديو احترافي لمحتوى تقني 💻</p>
+
+<h2>💰 هل يستحق الاستثمار؟</h2>
+
+<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; border-radius: 1rem; color: white; margin: 2rem 0;">
+  <h3 style="color: white; margin-top: 0;">✅ نعم، 100%!</h3>
+  <p style="font-size: 1.1rem;">
+    MiniMax هو أداة <strong>مجانية تماماً</strong> ومنافسة قوية للأدوات المدفوعة. الجودة ممتازة، الاستخدام سهل، والنتائج مبهرة!
+  </p>
+  <ul style="list-style: none; padding: 0; margin: 1rem 0;">
+    <li>✅ مثالي للمبتدئين</li>
+    <li>✅ يوفر مئات الدولارات شهرياً</li>
+    <li>✅ نتائج احترافية بدون خبرة</li>
+    <li>✅ يعمل على أي جهاز</li>
+  </ul>
+</div>
+
+<h2>🚀 ابدأ الآن!</h2>
+
+<p style="font-size: 1.1rem; line-height: 1.8;">
+  لا تضيع الوقت! <strong>MiniMax AI</strong> متاح مجاناً وجاهز للاستخدام فوراً. جرّبه الآن وشاهد كيف يمكنك إنشاء محتوى مذهل في دقائق معدودة!
+</p>
+
+<p style="text-align: center; font-size: 1.2rem; font-weight: bold; margin-top: 2rem;">
+  🎬 اضغط على الرابط أعلاه وابدأ رحلة الإبداع! 🚀
+</p>
+
+<hr style="margin: 2rem 0; border: none; border-top: 2px solid #eee;">
+
+<p style="color: #666; font-size: 0.9rem; text-align: center;">
+  💡 <strong>نصيحة أخيرة:</strong> جرب الأداة الآن قبل أن تصبح مدفوعة مستقبلاً! العديد من الأدوات المجانية تتحول لمدفوعة بعد فترة.
+</p>`,
+coverImage: 'https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=800&q=80',
+author: 'Iheb Meftah',
+publishedDate: '2024-11-27',
+category: 'ذكاء اصطناعي',
+tags: ['MiniMax AI', 'Hailuo AI', 'توليد فيديو', 'ذكاء اصطناعي', 'مجاني', 'صناعة المحتوى', 'نص إلى فيديو', 'أدوات AI'],
+readTime: '5 دقائق',
+featured: true
+}
 
 
 ]
