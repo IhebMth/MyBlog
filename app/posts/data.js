@@ -3350,7 +3350,7 @@ export const posts = [
   "featured": true
 },
 {
-id: 1,
+id: 14,
 slug: 'minimax-ai-video-generator-2024',
 title: '🎬 MiniMax AI: أقوى أداة مجانية لإنشاء فيديوهات بالذكاء الاصطناعي',
 excerpt: 'اكتشف MiniMax (Hailuo AI) - الأداة الثورية التي تحول النصوص والصور إلى فيديوهات احترافية خلال دقائق، مجاناً وبجودة عالية!',
@@ -3506,6 +3506,853 @@ category: 'ذكاء اصطناعي',
 tags: ['MiniMax AI', 'Hailuo AI', 'توليد فيديو', 'ذكاء اصطناعي', 'مجاني', 'صناعة المحتوى', 'نص إلى فيديو', 'أدوات AI'],
 readTime: '5 دقائق',
 featured: true
+},
+{
+  id: 15,
+  slug: 'talm-apis-ma-react-fy-asbwayn',
+  title: 'اتقن بناء والتعامل مع APIs في React خلال أسبوعين فقط! 🚀',
+  excerpt: 'دليل شامل لتعلم إنشاء APIs والتعامل معها ونشرها باستخدام React في 14 يوم مع فيديوهات يوتيوب مجانية لكل جلسة',
+  externalLink: 'https://satr.codes/',
+
+  firstPageContent: `
+    <h2>اتقن APIs مع React في أسبوعين! 🚀</h2>
+    <p>المهارة اللي كل شركة بتدور عليها هتتعلمها في 14 يوم بس، وما أدراك ما بعد ما تتقنها!</p>
+    
+    <p>لو اتقنت التعامل مع APIs وبناءها باستخدام React، هتقدر تشتغل كـ Full Stack Developer براتب يبدأ من 3,000$ ويوصل لـ8,000$ شهرياً!</p>
+
+    <p>الخطة دي مقسمة على أسبوعين، كل يوم فيهم جلسة تعليمية مع فيديوهات يوتيوب مجانية هتساعدك تتقن كل حاجة بالتفصيل.</p>
+
+    <h2>ليه تعلم APIs مع React مهم؟</h2>
+    <p>APIs هي العمود الفقري لأي تطبيق ويب حديث. تقريباً كل تطبيق بتستخدمه بيعتمد على APIs للتواصل بين Frontend و Backend. React هي أشهر مكتبة JavaScript للبناء واجهات المستخدم، ولما تدمج المهارتين دول هتبقى مطور محترف مطلوب في سوق العمل.</p>
+
+    <h2>📅 الأسبوع الأول: أساسيات APIs والتعامل معها</h2>
+
+    <h3>اليوم 1-2: مقدمة في APIs و REST 🌐</h3>
+    <p><strong>المواضيع:</strong></p>
+    <ul>
+      <li>ما هي APIs وكيف تعمل</li>
+      <li>فهم HTTP Methods (GET, POST, PUT, DELETE)</li>
+      <li>Status Codes والتعامل معها (200, 404, 500...)</li>
+      <li>فهم REST API principles</li>
+      <li>JSON format وأهميته</li>
+    </ul>
+    
+    <h4>فيديوهات اليوتيوب المقترحة:</h4>
+    <ul>
+      <li>📹 <strong>What is an API?</strong> - <a href="https://www.youtube.com/watch?v=s7wmiS2mSXY" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (10 دقائق)</li>
+      <li>📹 <strong>REST API Concepts</strong> - <a href="https://www.youtube.com/watch?v=-mN3VyJuCjM" target="_blank" rel="noopener noreferrer" >شاهد هنا</a> (8 دقائق)</li>
+      <li>📹 <strong>HTTP Methods Explained</strong> - <a href="https://www.youtube.com/watch?v=guYMSP7JVTA" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (15 دقيقة)</li>
+      <li>📹 <strong>JSON for Beginners</strong> - <a href="https://www.youtube.com/watch?v=iiADhChRriM" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (12 دقيقة)</li>
+    </ul>
+    
+    <p><strong>التطبيق العملي:</strong> جرب استخدام Postman لعمل requests لـ APIs عامة مثل JSONPlaceholder</p>
+
+    <h3>اليوم 3-4: Fetch API في JavaScript و React 📡</h3>
+    <p><strong>المواضيع:</strong></p>
+    <ul>
+      <li>استخدام Fetch API في JavaScript</li>
+      <li>التعامل مع Promises و Async/Await</li>
+      <li>عمل GET requests في React</li>
+      <li>استخدام useEffect للـ API calls</li>
+      <li>Error Handling الصحيح</li>
+    </ul>
+    
+    <h4>فيديوهات اليوتيوب المقترحة:</h4>
+    <ul>
+      <li>📹 <strong>Fetch API Tutorial</strong> - <a href="https://www.youtube.com/watch?v=cuEtnrL9-H0" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (20 دقيقة)</li>
+      <li>📹 <strong>Async/Await Explained</strong> - <a href="https://www.youtube.com/watch?v=V_Kr9OSfDeU" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (11 دقيقة)</li>
+      <li>📹 <strong>Fetching Data in React</strong> - <a href="https://www.youtube.com/watch?v=T3Px88x_PsA" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (25 دقيقة)</li>
+      <li>📹 <strong>useEffect Hook Complete Guide</strong> - <a href="https://www.youtube.com/watch?v=0ZJgIjIuY7U" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (30 دقيقة)</li>
+    </ul>
+    
+    <p><strong>التطبيق العملي:</strong> اعمل component في React يجيب بيانات من API ويعرضها</p>
+
+    <h3>اليوم 5-6: Axios Library 🔧</h3>
+    <p><strong>المواضيع:</strong></p>
+    <ul>
+      <li>تثبيت واستخدام Axios</li>
+      <li>الفرق بين Fetch و Axios</li>
+      <li>تكوين Axios instance</li>
+      <li>Interceptors للـ requests و responses</li>
+      <li>التعامل مع Errors بشكل احترافي</li>
+    </ul>
+    
+    <h4>فيديوهات اليوتيوب المقترحة:</h4>
+    <ul>
+      <li>📹 <strong>Axios Crash Course</strong> - <a href="https://www.youtube.com/watch?v=6LyagkoRWYA" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (35 دقيقة)</li>
+      <li>📹 <strong>Axios vs Fetch</strong> - <a href="https://www.youtube.com/watch?v=ZfxlGY7dDMc" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (12 دقيقة)</li>
+      <li>📹 <strong>Axios Interceptors Tutorial</strong> - <a href="https://www.youtube.com/watch?v=FXIXyX2FYW8" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (18 دقيقة)</li>
+      <li>📹 <strong>Error Handling in Axios</strong> - <a href="https://www.youtube.com/watch?v=9yWpuw-hRlg" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (15 دقيقة)</li>
+    </ul>
+    
+    <p><strong>التطبيق العملي:</strong> حول المشروع السابق لاستخدام Axios بدلاً من Fetch</p>
+
+    <h3>اليوم 7: POST, PUT, DELETE Requests 📮</h3>
+    <p><strong>المواضيع:</strong></p>
+    <ul>
+      <li>إرسال بيانات للـ API (POST)</li>
+      <li>تحديث البيانات (PUT/PATCH)</li>
+      <li>حذف البيانات (DELETE)</li>
+      <li>التعامل مع Forms في React</li>
+      <li>Handling Loading States</li>
+    </ul>
+    
+    <h4>فيديوهات اليوتيوب المقترحة:</h4>
+    <ul>
+      <li>📹 <strong>POST Request in React</strong> - <a href="https://www.youtube.com/watch?v=GTmjthNGzlk" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (20 دقيقة)</li>
+      <li>📹 <strong>CRUD Operations in React</strong> - <a href="https://www.youtube.com/watch?v=T8mqZZ0r-RA" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (45 دقيقة)</li>
+      <li>📹 <strong>React Forms Tutorial</strong> - <a href="https://www.youtube.com/watch?v=SdzMBWT2CDQ" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (28 دقيقة)</li>
+    </ul>
+    
+    <p><strong>التطبيق العملي:</strong> اعمل تطبيق To-Do List كامل مع جميع العمليات CRUD</p>
+
+    <h2>📅 الأسبوع الثاني: بناء APIs ومواضيع متقدمة</h2>
+
+    <h3>اليوم 8-9: مقدمة في Node.js و Express 🟢</h3>
+    <p><strong>المواضيع:</strong></p>
+    <ul>
+      <li>تثبيت Node.js و npm</li>
+      <li>إنشاء مشروع Express جديد</li>
+      <li>فهم Middleware</li>
+      <li>إنشاء أول API endpoint</li>
+      <li>Routing في Express</li>
+    </ul>
+    
+    <h4>فيديوهات اليوتيوب المقترحة:</h4>
+    <ul>
+      <li>📹 <strong>Node.js Tutorial for Beginners</strong> - <a href="https://www.youtube.com/watch?v=TlB_eWDSMt4" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (1 ساعة)</li>
+      <li>📹 <strong>Express.js Crash Course</strong> - <a href="https://www.youtube.com/watch?v=L72fhGm1tfE" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (35 دقيقة)</li>
+      <li>📹 <strong>Building REST API with Express</strong> - <a href="https://www.youtube.com/watch?v=pKd0Rpw7O48" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (42 دقيقة)</li>
+      <li>📹 <strong>Express Middleware Explained</strong> - <a href="https://www.youtube.com/watch?v=lY6icfhap2o" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (18 دقيقة)</li>
+    </ul>
+    
+    <p><strong>التطبيق العملي:</strong> ابني API بسيط يخدم بيانات ثابتة (مثل قائمة منتجات)</p>
+
+    <h3>اليوم 10-11: التعامل مع قواعد البيانات 🗄️</h3>
+    <p><strong>المواضيع:</strong></p>
+    <ul>
+      <li>مقدمة في MongoDB</li>
+      <li>تثبيت واستخدام Mongoose</li>
+      <li>إنشاء Models و Schemas</li>
+      <li>CRUD operations مع Database</li>
+      <li>ربط React مع Backend API</li>
+    </ul>
+  `,
+
+  secondPageContent: `
+    <h4>فيديوهات اليوتيوب المقترحة:</h4>
+    <ul>
+      <li>📹 <strong>MongoDB Crash Course</strong> - <a href="https://www.youtube.com/watch?v=-56x56UppqQ" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (30 دقيقة)</li>
+      <li>📹 <strong>Mongoose Tutorial</strong> - <a href="https://www.youtube.com/watch?v=DZBGEVgL2eE" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (40 دقيقة)</li>
+      <li>📹 <strong>MERN Stack Tutorial</strong> - <a href="https://www.youtube.com/watch?v=7CqJlxBYj-M" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (1.5 ساعة)</li>
+      <li>📹 <strong>Connect React to Node Backend</strong> - <a href="https://www.youtube.com/watch?v=w3vs4a03y3I" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (25 دقيقة)</li>
+    </ul>
+    
+    <p><strong>التطبيق العملي:</strong> حول الـ API اللي عملته لتستخدم MongoDB بدل البيانات الثابتة</p>
+
+    <h3>اليوم 12: Authentication & Authorization 🔐</h3>
+    <p><strong>المواضيع:</strong></p>
+    <ul>
+      <li>فهم JWT (JSON Web Tokens)</li>
+      <li>إنشاء نظام Login/Register</li>
+      <li>حماية API endpoints</li>
+      <li>تخزين Tokens في React</li>
+      <li>Protected Routes في React</li>
+    </ul>
+    
+    <h4>فيديوهات اليوتيوب المقترحة:</h4>
+    <ul>
+      <li>📹 <strong>JWT Authentication Tutorial</strong> - <a href="https://www.youtube.com/watch?v=mbsmsi7l3r4" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (50 دقيقة)</li>
+      <li>📹 <strong>React Authentication</strong> - <a href="https://www.youtube.com/watch?v=X3qyxo_UTR4" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (35 دقيقة)</li>
+      <li>📹 <strong>Protected Routes in React</strong> - <a href="https://www.youtube.com/watch?v=2k8NleFjG7I" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (22 دقيقة)</li>
+      <li>📹 <strong>Node.js JWT Auth Complete Guide</strong> - <a href="https://www.youtube.com/watch?v=Ud5xKCYQTjM" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (1 ساعة)</li>
+    </ul>
+    
+    <p><strong>التطبيق العملي:</strong> أضف نظام Authentication للتطبيق اللي بتشتغل عليه</p>
+
+    <h3>اليوم 13: State Management & React Query 🔄</h3>
+    <p><strong>المواضيع:</strong></p>
+    <ul>
+      <li>مشاكل إدارة State في التطبيقات الكبيرة</li>
+      <li>مقدمة في React Query (TanStack Query)</li>
+      <li>Caching و Background Updates</li>
+      <li>Optimistic Updates</li>
+      <li>Pagination و Infinite Scroll</li>
+    </ul>
+    
+    <h4>فيديوهات اليوتيوب المقترحة:</h4>
+    <ul>
+      <li>📹 <strong>React Query Tutorial</strong> - <a href="https://www.youtube.com/watch?v=novnyCaa7To" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (45 دقيقة)</li>
+      <li>📹 <strong>React Query Crash Course</strong> - <a href="https://www.youtube.com/watch?v=lVLz_ASqAio" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (38 دقيقة)</li>
+      <li>📹 <strong>Advanced React Query</strong> - <a href="https://www.youtube.com/watch?v=r8Dg0KVnfMA" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (52 دقيقة)</li>
+      <li>📹 <strong>Pagination with React Query</strong> - <a href="https://www.youtube.com/watch?v=hFaxjijqPCM" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (20 دقيقة)</li>
+    </ul>
+    
+    <p><strong>التطبيق العملي:</strong> حسّن التطبيق باستخدام React Query للحصول على أداء أفضل</p>
+
+    <h3>اليوم 14: Deployment & Best Practices 🚀</h3>
+    <p><strong>المواضيع:</strong></p>
+    <ul>
+      <li>تحضير التطبيق للنشر</li>
+      <li>Environment Variables</li>
+      <li>CORS وإعداداته</li>
+      <li>نشر Backend على Render/Railway</li>
+      <li>نشر Frontend على Vercel/Netlify</li>
+      <li>Best Practices للأمان والأداء</li>
+    </ul>
+    
+    <h4>فيديوهات اليوتيوب المقترحة:</h4>
+    <ul>
+      <li>📹 <strong>Deploy MERN App</strong> - <a href="https://www.youtube.com/watch?v=71wSzpLyW9k" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (40 دقيقة)</li>
+      <li>📹 <strong>Environment Variables Explained</strong> - <a href="https://www.youtube.com/watch?v=17UVejOw3zA" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (12 دقيقة)</li>
+      <li>📹 <strong>CORS Explained</strong> - <a href="https://www.youtube.com/watch?v=4KHiSt0oLJ0" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (15 دقيقة)</li>
+      <li>📹 <strong>Deploy React to Vercel</strong> - <a href="https://www.youtube.com/watch?v=b2bIdtSwDhc" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (10 دقائق)</li>
+      <li>📹 <strong>Deploy Node.js to Render</strong> - <a href="https://www.youtube.com/watch?v=bnCOyGaSe84" target="_blank" rel="noopener noreferrer">شاهد هنا</a> (18 دقيقة)</li>
+    </ul>
+    
+    <p><strong>التطبيق العملي:</strong> انشر التطبيق الكامل (Frontend + Backend) واجعله متاح على الإنترنت!</p>
+
+    <h2>أدوات ومصادر إضافية مهمة 🛠️</h2>
+    <ul>
+      <li>🔧 <strong>Postman:</strong> لاختبار APIs - <a href="https://www.postman.com/">postman.com</a></li>
+      <li>📚 <strong>MDN Web Docs:</strong> مرجع شامل للـ Web APIs - <a href="https://developer.mozilla.org/">developer.mozilla.org</a></li>
+      <li>🎓 <strong>JSONPlaceholder:</strong> API مجاني للتجربة - <a href="https://jsonplaceholder.typicode.com/">jsonplaceholder.typicode.com</a></li>
+      <li>💾 <strong>MongoDB Atlas:</strong> قاعدة بيانات مجانية في السحابة - <a href="https://www.mongodb.com/cloud/atlas">mongodb.com/atlas</a></li>
+      <li>🚀 <strong>Vercel:</strong> لنشر React مجاناً - <a href="https://vercel.com/">vercel.com</a></li>
+      <li>☁️ <strong>Render:</strong> لنشر Node.js مجاناً - <a href="https://render.com/">render.com</a></li>
+    </ul>
+
+    <h2>مشاريع عملية للتطبيق 💻</h2>
+    <p>بعد ما تخلص الأسبوعين، جرب تبني واحد من المشاريع دي:</p>
+    <ul>
+      <li>📝 <strong>Blog Platform:</strong> موقع مدونات كامل مع CRUD</li>
+      <li>🛒 <strong>E-Commerce Store:</strong> متجر إلكتروني بسيط</li>
+      <li>💬 <strong>Social Media App:</strong> تطبيق تواصل اجتماعي مصغر</li>
+      <li>📊 <strong>Dashboard:</strong> لوحة تحكم لإدارة البيانات</li>
+      <li>🎬 <strong>Movie Database:</strong> موقع أفلام يستخدم TMDB API</li>
+      <li>☁️ <strong>Weather App:</strong> تطبيق طقس متقدم</li>
+    </ul>
+
+    <h2>كيف تبدأ رحلتك؟ 🚀</h2>
+    <ol>
+      <li>🎯 <strong>التزم بالخطة:</strong> خصص 2-3 ساعات يومياً للتعلم</li>
+      <li>📚 <strong>شاهد الفيديوهات:</strong> لا تتخطى أي فيديو، كلهم مهمين</li>
+      <li>💻 <strong>مارس بنفسك:</strong> اكتب كل كود بإيدك، لا تنسخ ولصق</li>
+      <li>🔍 <strong>اقرأ Documentation:</strong> عود نفسك تقرأ الـ docs الرسمية</li>
+      <li>🤝 <strong>انضم للمجتمع:</strong> Reddit، Discord، Stack Overflow</li>
+      <li>📈 <strong>ابني Portfolio:</strong> كل مشروع تعمله حطه على GitHub</li>
+    </ol>
+
+    <h2>نصائح مهمة للنجاح 💡</h2>
+    <ul>
+      <li>⏰ <strong>الاستمرارية أهم من السرعة:</strong> لو احتجت 3 أسابيع بدل 2، عادي!</li>
+      <li>🎯 <strong>ركز على الفهم:</strong> مش مجرد حفظ الكود</li>
+      <li>💪 <strong>اعمل Debugging بنفسك:</strong> الأخطاء أحسن طريقة للتعلم</li>
+      <li>📝 <strong>دوّن ملاحظاتك:</strong> اكتب ما تتعلمه بكلماتك الخاصة</li>
+      <li>🌐 <strong>شارك تقدمك:</strong> على LinkedIn أو Twitter</li>
+      <li>❓ <strong>اسأل لما تتعثر:</strong> المجتمع البرمجي دايماً مستعد يساعد</li>
+    </ul>
+
+    <h2>الفرص الوظيفية بعد الإتقان 💼</h2>
+    <ul>
+      <li>⚛️ <strong>React Developer:</strong> راتب 3,000$ - 6,000$ شهرياً</li>
+      <li>🔙 <strong>Backend Developer:</strong> راتب 3,500$ - 7,000$ شهرياً</li>
+      <li>🌐 <strong>Full Stack Developer:</strong> راتب 4,000$ - 10,000$ شهرياً</li>
+      <li>📱 <strong>API Developer:</strong> راتب 3,500$ - 8,000$ شهرياً</li>
+      <li>🏢 <strong>MERN Stack Developer:</strong> راتب 4,500$ - 9,000$ شهرياً</li>
+      <li>💼 <strong>Freelancer:</strong> مشاريع من 500$ - 5,000$ للمشروع الواحد</li>
+    </ul>
+
+    <h2>خطوات ما بعد الأسبوعين 📈</h2>
+    <ol>
+      <li>🎨 <strong>تعلم TypeScript:</strong> لكود أكثر أماناً واحترافية</li>
+      <li>🧪 <strong>Testing:</strong> Jest و React Testing Library</li>
+      <li>🏗️ <strong>Architecture Patterns:</strong> MVC، Clean Architecture</li>
+      <li>⚡ <strong>Performance Optimization:</strong> تحسين سرعة التطبيقات</li>
+      <li>🐳 <strong>Docker & DevOps:</strong> لنشر احترافي</li>
+      <li>📊 <strong>GraphQL:</strong> بديل متقدم لـ REST APIs</li>
+    </ol>
+
+    <h2>مصادر تعلم إضافية مجانية 📚</h2>
+    <ul>
+      <li>🎓 <strong>freeCodeCamp:</strong> كورسات مجانية كاملة</li>
+      <li>📺 <strong>Traversy Media:</strong> قناة يوتيوب ممتازة</li>
+      <li>💻 <strong>The Net Ninja:</strong> شروحات واضحة ومنظمة</li>
+      <li>🌟 <strong>Web Dev Simplified:</strong> مفاهيم معقدة بشكل بسيط</li>
+      <li>📖 <strong>React.dev:</strong> التوثيق الرسمي لـ React</li>
+      <li>📝 <strong>Dev.to:</strong> مقالات ودروس من المجتمع</li>
+    </ul>
+
+    <p><strong>تذكر:</strong> المطور الناجح هو اللي بيتعلم باستمرار ومش بيخاف من التحديات. ابدأ النهاردة وما تستسلمش! 🔥</p>
+
+    <p><strong>الخلاصة:</strong> في أسبوعين بس، هتتحول من مبتدئ لمطور قادر يبني ويتعامل مع APIs بشكل احترافي. المهم الالتزام والممارسة اليومية. بالتوفيق! 🚀💪</p>
+  `,
+
+  coverImage: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&q=80',
+  author: 'Iheb Meftah',
+  publishedDate: '2024-12-25',
+  category: 'تطوير ويب',
+  tags: ['React', 'APIs', 'Node.js', 'Express', 'MongoDB', 'Full Stack', 'JavaScript', 'REST API'],
+  readTime: '25 دقيقة',
+  featured: true
+},
+{
+  id: 16,
+  slug: 'talm-capcut-ala-almobyl-fy-3-ayam',
+  title: 'احترف CapCut على الموبايل في 3 أيام فقط وابدأ تكسب! 📱✨',
+  excerpt: 'دليلك الشامل لتعلم تحرير الفيديوهات باستخدام CapCut على الهاتف في 72 ساعة فقط مع روابط خارجية وفيديوهات مجانية',
+  externalLink: 'https://satr.codes/',
+
+  firstPageContent: `
+    <h2>احترف CapCut في 3 أيام! 📱🎬</h2>
+    <p>التطبيق اللي بيستخدمه ملايين المونتيرين حول العالم هتتعلمه في 3 أيام بس!</p>
+    
+    <p>CapCut هو أقوى تطبيق مونتاج مجاني على الموبايل، وبيستخدمه صناع المحتوى على TikTok و Instagram و YouTube. لو اتقنته، ممكن تشتغل فريلانسر وتكسب من 200$ لـ2,000$ شهرياً من مونتاج الفيديوهات!</p>
+
+    <p>الخطة دي مقسمة على 3 أيام، كل يوم هتتعلم مهارات جديدة مع فيديوهات يوتيوب مجانية وروابط خارجية مفيدة.</p>
+
+    <h2>ليه CapCut أفضل تطبيق مونتاج؟ 🌟</h2>
+    <ul>
+      <li>✅ مجاني 100% بدون علامات مائية</li>
+      <li>✅ سهل الاستخدام للمبتدئين</li>
+      <li>✅ أدوات احترافية مثل البرامج المدفوعة</li>
+      <li>✅ مكتبة ضخمة من الموسيقى والمؤثرات</li>
+      <li>✅ يدعم تصدير بجودة 4K</li>
+      <li>✅ مزامنة تلقائية مع TikTok</li>
+    </ul>
+
+    <h2>📱 قبل ما تبدأ - التحضيرات</h2>
+    <ul>
+      <li>📲 <strong>حمل التطبيق:</strong> <a href="https://www.capcut.com/tools/mobile-video-editor" target="_blank">CapCut للأندرويد والآيفون</a></li>
+      <li>🎵 <strong>موسيقى مجانية:</strong> <a href="https://www.epidemicsound.com/" target="_blank">Epidemic Sound</a> | <a href="https://artlist.io/" target="_blank">Artlist</a></li>
+      <li>🖼️ <strong>صور وفيديوهات مجانية:</strong> <a href="https://www.pexels.com/videos/" target="_blank">Pexels Videos</a> | <a href="https://pixabay.com/videos/" target="_blank">Pixabay</a></li>
+      <li>🎨 <strong>خطوط عربية:</strong> <a href="https://arbfonts.com/" target="_blank">ArbFonts</a></li>
+      <li>📚 <strong>موقع CapCut الرسمي:</strong> <a href="https://www.capcut.com/" target="_blank">CapCut Official</a></li>
+    </ul>
+
+    <h2>📅 اليوم الأول: الأساسيات والواجهة 🎯</h2>
+
+    <h3>الجلسة الأولى: التعرف على الواجهة (صباحاً) ☀️</h3>
+    <p><strong>المواضيع (30 دقيقة):</strong></p>
+    <ul>
+      <li>فتح مشروع جديد واستيراد الفيديوهات</li>
+      <li>فهم Timeline والطبقات (Layers)</li>
+      <li>التحكم في الفيديوهات (قص، تقسيم، حذف)</li>
+      <li>الزووم والتنقل في المشروع</li>
+      <li>حفظ المشروع والتصدير الأساسي</li>
+    </ul>
+    
+ <h4>فيديوهات يوتيوب مقترحة:</h4>
+    <ul>
+      <li>📹 <strong>CapCut Tutorial For Beginners</strong> - <a href="https://www.youtube.com/results?search_query=capcut+tutorial+for+beginners" target="_blank">شاهد هنا</a> (15 دقيقة)</li>
+      <li>📹 <strong>شرح واجهة CapCut بالعربي</strong> - <a href="https://www.youtube.com/results?search_query=شرح+capcut+بالعربي+للمبتدئين" target="_blank">شاهد هنا</a> (12 دقيقة)</li>
+      <li>📹 <strong>How to Use CapCut - Complete Guide</strong> - <a href="https://www.youtube.com/results?search_query=how+to+use+capcut+complete+guide" target="_blank">شاهد هنا</a> (20 دقيقة)</li>
+    </ul>
+
+    <h4>روابط خارجية مفيدة:</h4>
+    <ul>
+      <li>🔗 <strong>CapCut Help Center:</strong> <a href="https://www.capcut.com/resource/help" target="_blank">مركز المساعدة الرسمي</a></li>
+      <li>🔗 <strong>CapCut Community:</strong> <a href="https://www.reddit.com/r/CapCut/" target="_blank">Reddit Community</a></li>
+    </ul>
+    
+    <p><strong>التطبيق العملي:</strong> اعمل فيديو بسيط 30 ثانية بقص وتجميع 3-4 مقاطع مع بعض</p>
+
+    <h3>الجلسة الثانية: المؤثرات الأساسية والنصوص (بعد الظهر) 🌤️</h3>
+    <p><strong>المواضيع (45 دقيقة):</strong></p>
+    <ul>
+      <li>إضافة النصوص والعناوين</li>
+      <li>تنسيق الخطوط والألوان</li>
+      <li>الانيميشن للنصوص (Text Animation)</li>
+      <li>إضافة الملصقات (Stickers)</li>
+      <li>المؤثرات الانتقالية (Transitions)</li>
+      <li>الفلاتر والتأثيرات البصرية</li>
+    </ul>
+    
+    <h4>فيديوهات يوتيوب مقترحة:</h4>
+    <ul>
+      <li>📹 <strong>CapCut Text Effects Tutorial</strong> - <a href="https://www.youtube.com/results?search_query=capcut+text+effects+tutorial" target="_blank">شاهد هنا</a> (18 دقيقة)</li>
+      <li>📹 <strong>Best Transitions in CapCut</strong> - <a href="https://www.youtube.com/results?search_query=capcut+best+transitions+tutorial" target="_blank">شاهد هنا</a> (22 دقيقة)</li>
+      <li>📹 <strong>كيف تضيف نصوص احترافية</strong> - <a href="https://www.youtube.com/results?search_query=capcut+arabic+text+animation" target="_blank">شاهد هنا</a> (14 دقيقة)</li>
+      <li>📹 <strong>CapCut Filters and Effects</strong> - <a href="https://www.youtube.com/results?search_query=capcut+filters+and+effects" target="_blank">شاهد هنا</a> (16 دقيقة)</li>
+    </ul>
+
+    <h4>روابط خارجية مفيدة:</h4>
+    <ul>
+      <li>🔗 <strong>مكتبة Transitions:</strong> <a href="https://www.capcut.com/resource" target="_blank">CapCut Resources</a></li>
+      <li>🔗 <strong>أفكار للنصوص:</strong> <a href="https://www.canva.com/learn/typography-terms/" target="_blank">Typography Guide</a></li>
+    </ul>
+    
+    <p><strong>التطبيق العملي:</strong> اعمل فيديو ريلز 15-30 ثانية مع نصوص متحركة و 3-4 انتقالات مختلفة</p>
+
+    <h3>الجلسة الثالثة: الصوت والموسيقى (مساءً) 🌙</h3>
+    <p><strong>المواضيع (40 دقيقة):</strong></p>
+    <ul>
+      <li>إضافة الموسيقى من المكتبة المدمجة</li>
+      <li>استيراد موسيقى من جهازك</li>
+      <li>قص الصوت ومزامنته مع الفيديو</li>
+      <li>تعديل مستوى الصوت (Volume)</li>
+      <li>Fade In / Fade Out للصوت</li>
+      <li>إضافة المؤثرات الصوتية (Sound Effects)</li>
+      <li>تسجيل Voice Over</li>
+    </ul>
+    
+    <h4>فيديوهات يوتيوب مقترحة:</h4>
+    <ul>
+      <li>📹 <strong>CapCut Audio Editing Guide</strong> - <a href="https://www.youtube.com/results?search_query=capcut+audio+editing+tutorial" target="_blank">شاهد هنا</a> (19 دقيقة)</li>
+      <li>📹 <strong>كيف تضيف موسيقى خلفية مثالية</strong> - <a href="https://www.youtube.com/results?search_query=capcut+موسيقى+خلفية" target="_blank">شاهد هنا</a> (13 دقيقة)</li>
+      <li>📹 <strong>Voice Over Tutorial CapCut</strong> - <a href="https://www.youtube.com/results?search_query=capcut+voice+over+tutorial" target="_blank">شاهد هنا</a> (11 دقيقة)</li>
+    </ul>
+
+    <h4>روابط خارجية مفيدة:</h4>
+    <ul>
+      <li>🔗 <strong>موسيقى مجانية:</strong> <a href="https://www.youtube.com/audiolibrary" target="_blank">YouTube Audio Library</a></li>
+      <li>🔗 <strong>مؤثرات صوتية:</strong> <a href="https://freesound.org/" target="_blank">FreeSound</a></li>
+      <li>🔗 <strong>موسيقى بدون حقوق:</strong> <a href="https://incompetech.com/" target="_blank">Incompetech</a></li>
+    </ul>
+    
+    <p><strong>التطبيق العملي:</strong> اعمل فيديو مع موسيقى خلفية، مؤثرات صوتية، وتعليق صوتي</p>
+
+    <h2>📅 اليوم الثاني: التقنيات المتقدمة 🚀</h2>
+
+    <h3>الجلسة الأولى: Keyframe Animation (صباحاً) ☀️</h3>
+    <p><strong>المواضيع (50 دقيقة):</strong></p>
+    <ul>
+      <li>ما هو Keyframe وكيف يعمل</li>
+      <li>تحريك العناصر (Position)</li>
+      <li>تغيير الحجم والدوران (Scale & Rotation)</li>
+      <li>التحكم في الشفافية (Opacity)</li>
+      <li>عمل انيميشن احترافي للنصوص والعناصر</li>
+      <li>Smooth transitions باستخدام Keyframes</li>
+    </ul>
+    
+    <h4>فيديوهات يوتيوب مقترحة:</h4>
+    <ul>
+      <li>📹 <strong>CapCut Keyframe Tutorial</strong> - <a href="https://www.youtube.com/results?search_query=capcut+keyframe+animation+tutorial" target="_blank">شاهد هنا</a> (25 دقيقة)</li>
+      <li>📹 <strong>Advanced Keyframe Animation</strong> - <a href="https://www.youtube.com/results?search_query=capcut+advanced+keyframe" target="_blank">شاهد هنا</a> (28 دقيقة)</li>
+      <li>📹 <strong>شرح الـ Keyframes بالعربي</strong> - <a href="https://www.youtube.com/results?search_query=capcut+keyframe+بالعربي" target="_blank">شاهد هنا</a> (20 دقيقة)</li>
+    </ul>
+
+    <h4>روابط خارجية مفيدة:</h4>
+    <ul>
+      <li>🔗 <strong>Animation Principles:</strong> <a href="https://www.adobe.com/creativecloud/video/discover/keyframe-animation.html" target="_blank">Adobe Animation Guide</a></li>
+    </ul>
+    
+    <p><strong>التطبيق العملي:</strong> اعمل انترو 5 ثواني لقناتك باستخدام Keyframes فقط</p>
+
+    <h3>الجلسة الثانية: Green Screen وEffects (بعد الظهر) 🌤️</h3>
+    <p><strong>المواضيع (45 دقيقة):</strong></p>
+    <ul>
+      <li>استخدام Chroma Key (Green Screen)</li>
+      <li>إزالة الخلفية بدون Green Screen</li>
+      <li>Overlay وBlending Modes</li>
+      <li>Masking والتحكم في الأشكال</li>
+      <li>Speed Control (Slow Motion & Time Lapse)</li>
+      <li>Reverse Video</li>
+    </ul>
+  `,
+
+  secondPageContent: `
+    <h4>فيديوهات يوتيوب مقترحة:</h4>
+    <ul>
+      <li>📹 <strong>CapCut Green Screen Tutorial</strong> - <a href="https://www.youtube.com/watch?v=mN8p8RWEhjY" target="_blank">شاهد هنا</a> (17 دقيقة)</li>
+      <li>📹 <strong>Remove Background in CapCut</strong> - <a href="https://www.youtube.com/watch?v=TqTNBp5AMnc" target="_blank">شاهد هنا</a> (12 دقيقة)</li>
+      <li>📹 <strong>Masking Effects Tutorial</strong> - <a href="https://www.youtube.com/watch?v=jPLjZqHKxuM" target="_blank">شاهد هنا</a> (19 دقيقة)</li>
+      <li>📹 <strong>Speed Control & Slow Motion</strong> - <a href="https://www.youtube.com/watch?v=OKdvbOY0250" target="_blank">شاهد هنا</a> (14 دقيقة)</li>
+    </ul>
+
+    <h4>روابط خارجية مفيدة:</h4>
+    <ul>
+      <li>🔗 <strong>خلفيات Green Screen:</strong> <a href="https://www.pexels.com/search/green%20screen/" target="_blank">Pexels Green Screen</a></li>
+      <li>🔗 <strong>Overlay Videos:</strong> <a href="https://mixkit.co/free-stock-video/effects/" target="_blank">Mixkit Effects</a></li>
+    </ul>
+    
+    <p><strong>التطبيق العملي:</strong> اعمل فيديو بخلفية متحركة باستخدام Green Screen أو Remove BG</p>
+
+    <h3>الجلسة الثالثة: Color Grading وEffects (مساءً) 🌙</h3>
+    <p><strong>المواضيع (45 دقيقة):</strong></p>
+    <ul>
+      <li>تصحيح الألوان (Color Correction)</li>
+      <li>تحسين الإضاءة والتباين</li>
+      <li>استخدام LUTs الجاهزة</li>
+      <li>إنشاء Look خاص بك</li>
+      <li>HSL adjustments</li>
+      <li>Cinematic Color Grading</li>
+    </ul>
+    
+    <h4>فيديوهات يوتيوب مقترحة:</h4>
+    <ul>
+      <li>📹 <strong>CapCut Color Grading Tutorial</strong> - <a href="https://www.youtube.com/watch?v=Hq5oEWKHtqk" target="_blank">شاهد هنا</a> (22 دقيقة)</li>
+      <li>📹 <strong>Cinematic Look in CapCut</strong> - <a href="https://www.youtube.com/watch?v=8kSK5K5vWnI" target="_blank">شاهد هنا</a> (18 دقيقة)</li>
+      <li>📹 <strong>كيف تصحح ألوان الفيديو</strong> - <a href="https://www.youtube.com/watch?v=D7xwZmZ0kLo" target="_blank">شاهد هنا</a> (16 دقيقة)</li>
+    </ul>
+
+    <h4>روابط خارجية مفيدة:</h4>
+    <ul>
+      <li>🔗 <strong>LUTs مجانية:</strong> <a href="https://www.freepresets.com/product/free-luts/" target="_blank">Free LUTs Download</a></li>
+      <li>🔗 <strong>Color Grading Guide:</strong> <a href="https://www.premiumbeat.com/blog/color-grading-101/" target="_blank">Complete Color Guide</a></li>
+    </ul>
+    
+    <p><strong>التطبيق العملي:</strong> خذ فيديو عادي وحوله لـ Cinematic Look احترافي</p>
+
+    <h2>📅 اليوم الثالث: الاحتراف والنشر 🎓</h2>
+
+    <h3>الجلسة الأولى: Templates والتريندات (صباحاً) ☀️</h3>
+    <p><strong>المواضيع (40 دقيقة):</strong></p>
+    <ul>
+      <li>استخدام القوالب الجاهزة (Templates)</li>
+      <li>تعديل القوالب لتناسب محتواك</li>
+      <li>متابعة التريندات على CapCut</li>
+      <li>Auto Captions (الترجمة التلقائية)</li>
+      <li>Trending Effects و Challenges</li>
+    </ul>
+    
+    <h4>فيديوهات يوتيوب مقترحة:</h4>
+    <ul>
+      <li>📹 <strong>CapCut Templates Tutorial</strong> - <a href="https://www.youtube.com/watch?v=G7RgN9ijwE4" target="_blank">شاهد هنا</a> (15 دقيقة)</li>
+      <li>📹 <strong>Viral CapCut Templates</strong> - <a href="https://www.youtube.com/watch?v=qKxQfj2kMCE" target="_blank">شاهد هنا</a> (20 دقيقة)</li>
+      <li>📹 <strong>Auto Captions Tutorial</strong> - <a href="https://www.youtube.com/watch?v=6lX7Y6RDJZU" target="_blank">شاهد هنا</a> (10 دقائق)</li>
+    </ul>
+
+    <h4>روابط خارجية مفيدة:</h4>
+    <ul>
+      <li>🔗 <strong>CapCut Templates:</strong> <a href="https://www.capcut.com/templates" target="_blank">Official Templates Library</a></li>
+      <li>🔗 <strong>Trending Hashtags:</strong> <a href="https://www.tiktok.com/discover" target="_blank">TikTok Discover</a></li>
+    </ul>
+    
+    <p><strong>التطبيق العملي:</strong> اعمل فيديو باستخدام Template شائع وعدل عليه</p>
+
+    <h3>الجلسة الثانية: مشاريع احترافية (بعد الظهر) 🌤️</h3>
+    <p><strong>المواضيع (60 دقيقة):</strong></p>
+    <ul>
+      <li>تحرير Vlog احترافي</li>
+      <li>عمل Instagram Reel جذاب</li>
+      <li>تحرير فيديو يوتيوب كامل</li>
+      <li>عمل Intro & Outro احترافي</li>
+      <li>تطبيق كل ما تعلمته في مشروع واحد</li>
+    </ul>
+    
+    <h4>فيديوهات يوتيوب مقترحة:</h4>
+    <ul>
+      <li>📹 <strong>Edit Professional Vlogs in CapCut</strong> - <a href="https://www.youtube.com/watch?v=PW3j5zw4YV0" target="_blank">شاهد هنا</a> (30 دقيقة)</li>
+      <li>📹 <strong>Instagram Reels Editing Masterclass</strong> - <a href="https://www.youtube.com/watch?v=A0P1ZfqFPzc" target="_blank">شاهد هنا</a> (25 دقيقة)</li>
+      <li>📹 <strong>YouTube Video Start to Finish</strong> - <a href="https://www.youtube.com/watch?v=5SY8IjA6y9E" target="_blank">شاهد هنا</a> (35 دقيقة)</li>
+    </ul>
+
+    <h4>روابط خارجية مفيدة:</h4>
+    <ul>
+      <li>🔗 <strong>أفكار Vlogs:</strong> <a href="https://www.hubspot.com/marketing-statistics/vlogging" target="_blank">Vlogging Ideas</a></li>
+      <li>🔗 <strong>Instagram Best Practices:</strong> <a href="https://business.instagram.com/instagram-reels" target="_blank">Instagram Reels Guide</a></li>
+    </ul>
+    
+    <p><strong>التطبيق العملي:</strong> حرر فيديو كامل من 1-3 دقائق بكل الاحترافية</p>
+
+    <h3>الجلسة الثالثة: التصدير والنشر (مساءً) 🌙</h3>
+    <p><strong>المواضيع (30 دقيقة):</strong></p>
+    <ul>
+      <li>إعدادات التصدير المثالية</li>
+      <li>اختيار Resolution و Frame Rate المناسب</li>
+      <li>التصدير لـ TikTok، Instagram، YouTube</li>
+      <li>تقليل حجم الملف بدون خسارة الجودة</li>
+      <li>Draft و Cloud Storage</li>
+      <li>مشاركة المشاريع والتعاون</li>
+    </ul>
+    
+    <h4>فيديوهات يوتيوب مقترحة:</h4>
+    <ul>
+      <li>📹 <strong>Best Export Settings CapCut</strong> - <a href="https://www.youtube.com/watch?v=4zvWbZ38jWo" target="_blank">شاهد هنا</a> (12 دقيقة)</li>
+      <li>📹 <strong>Export for All Social Media</strong> - <a href="https://www.youtube.com/watch?v=n2OdAhXF_bI" target="_blank">شاهد هنا</a> (16 دقيقة)</li>
+      <li>📹 <strong>كيف تصدر بأعلى جودة</strong> - <a href="https://www.youtube.com/watch?v=uL98J_Mpg2o" target="_blank">شاهد هنا</a> (10 دقائق)</li>
+    </ul>
+
+    <h4>روابط خارجية مفيدة:</h4>
+    <ul>
+      <li>🔗 <strong>Video Specs Guide:</strong> <a href="https://www.wistia.com/learn/marketing/optimal-export-settings" target="_blank">Export Settings Guide</a></li>
+      <li>🔗 <strong>Social Media Sizes:</strong> <a href="https://sproutsocial.com/insights/social-media-image-sizes-guide/" target="_blank">Social Media Video Sizes</a></li>
+    </ul>
+    
+    <p><strong>التطبيق العملي:</strong> صدر فيديوهاتك بإعدادات مختلفة لكل منصة</p>
+
+    <h2>مصادر تعليمية إضافية 📚</h2>
+    <ul>
+      <li>🎓 <strong>CapCut Academy:</strong> <a href="https://www.capcut.com/resource" target="_blank">دروس رسمية من CapCut</a></li>
+      <li>📺 <strong>قناة CapCut الرسمية:</strong> <a href="https://www.youtube.com/@CapCut" target="_blank">YouTube Channel</a></li>
+      <li>💬 <strong>مجموعة فيسبوك عربية:</strong> <a href="https://www.facebook.com/groups/capcutarabic" target="_blank">CapCut Arabic Community</a></li>
+      <li>🎬 <strong>كورسات مجانية:</strong> <a href="https://www.skillshare.com/browse/capcut" target="_blank">Skillshare CapCut Courses</a></li>
+      <li>📱 <strong>TikTok للتعلم:</strong> ابحث عن #CapCutTutorial</li>
+      <li>🌐 <strong>موقع Envato:</strong> <a href="https://elements.envato.com/video-templates" target="_blank">قوالب جاهزة</a></li>
+    </ul>
+
+    <h2>أدوات مساعدة مجانية 🛠️</h2>
+    <ul>
+      <li>🖼️ <strong>Canva:</strong> <a href="https://www.canva.com/" target="_blank">لتصميم الثامبنيل والجرافيكس</a></li>
+      <li>🎨 <strong>RemoveBG:</strong> <a href="https://www.remove.bg/" target="_blank">إزالة خلفيات الصور</a></li>
+      <li>🎵 <strong>BeatEdit:</strong> <a href="https://www.beatedit.com/" target="_blank">موسيقى حسب الـ BPM</a></li>
+      <li>📊 <strong>VidIQ:</strong> <a href="https://vidiq.com/" target="_blank">تحليل وتحسين الفيديوهات</a></li>
+      <li>🎬 <strong>Shotcut:</strong> <a href="https://shotcut.org/" target="_blank">محرر فيديو للكمبيوتر (بديل مجاني)</a></li>
+    </ul>
+
+    <h2>أفكار مشاريع للتطبيق 💡</h2>
+    <ol>
+      <ol>
+      <li>🎥 <strong>فيديو تعليمي قصير:</strong> اشرح طريقة عمل شيء بسيط في دقيقة</li>
+      <li>🌅 <strong>Time Lapse للغروب:</strong> صور الغروب واعمل له مونتاج مع موسيقى هادئة</li>
+      <li>🍳 <strong>Recipe Video:</strong> صور وصفة طبخ سريعة بأسلوب جذاب</li>
+      <li>🎮 <strong>Gaming Highlights:</strong> اجمع أفضل لحظاتك في لعبة وحررها</li>
+      <li>✈️ <strong>Travel Montage:</strong> اجمع صور وفيديوهات رحلتك في فيديو واحد</li>
+      <li>🎭 <strong>Before & After:</strong> قارن بين شيئين باستخدام Split Screen</li>
+      <li>💪 <strong>Fitness Transformation:</strong> وثق تقدمك الرياضي</li>
+      <li>🎨 <strong>Speed Art:</strong> صور نفسك وأنت ترسم واعمل Time Lapse</li>
+      <li>🎤 <strong>Lip Sync Video:</strong> اعمل فيديو مع أغنية مشهورة</li>
+      <li>📸 <strong>Photo Slideshow:</strong> حول صورك لفيديو احترافي مع موسيقى</li>
+    </ol>
+
+    <h2>نصائح للنجاح في CapCut 🌟</h2>
+    <ul>
+      <li>⏰ <strong>مارس يومياً:</strong> خصص 30 دقيقة على الأقل كل يوم</li>
+      <li>🎬 <strong>شاهد وحلل:</strong> اتفرج على فيديوهات ناجحة وحاول تقلدها</li>
+      <li>🔄 <strong>جرب كل حاجة:</strong> ما تخافش تجرب كل الأدوات والمؤثرات</li>
+      <li>💾 <strong>احفظ مشاريعك:</strong> ارجع للمشاريع القديمة وحسنها</li>
+      <li>📱 <strong>تابع التحديثات:</strong> CapCut بيضيف مميزات جديدة باستمرار</li>
+      <li>👥 <strong>انضم للمجتمع:</strong> شارك شغلك واطلب Feedback</li>
+      <li>🎯 <strong>حدد Niche:</strong> تخصص في نوع معين من المونتاج (Vlogs، Gaming، Travel)</li>
+      <li>📊 <strong>اتعلم من الأرقام:</strong> شوف أي فيديوهاتك حققت مشاهدات أكتر</li>
+    </ul>
+
+    <h2>ازاي تبدأ تكسب من CapCut؟ 💰</h2>
+
+    <h3>1. Freelancing على المنصات العالمية 🌍</h3>
+    <ul>
+      <li>💼 <strong>Fiverr:</strong> <a href="https://www.fiverr.com/" target="_blank">ابدأ بخدمات من 5$</a></li>
+      <li>💼 <strong>Upwork:</strong> <a href="https://www.upwork.com/" target="_blank">شغل مع عملاء كبار</a></li>
+      <li>💼 <strong>Freelancer:</strong> <a href="https://www.freelancer.com/" target="_blank">مشاريع متنوعة</a></li>
+      <li>💼 <strong>PeoplePerHour:</strong> <a href="https://www.peopleperhour.com/" target="_blank">خدمات بالساعة</a></li>
+    </ul>
+    <p><strong>متوسط الأسعار:</strong> من 5$ للفيديو القصير لحد 200$ للمشاريع الكبيرة</p>
+
+    <h3>2. منصات عربية 🇦🇪</h3>
+    <ul>
+      <li>💼 <strong>خمسات:</strong> <a href="https://khamsat.com/" target="_blank">أكبر منصة عربية للخدمات المصغرة</a></li>
+      <li>💼 <strong>مستقل:</strong> <a href="https://mostaql.com/" target="_blank">للمشاريع الكبيرة</a></li>
+      <li>💼 <strong>أريد:</strong> <a href="https://ureed.com/" target="_blank">منصة احترافية</a></li>
+      <li>💼 <strong>نبش:</strong> <a href="https://www.nabbesh.com/" target="_blank">شغل حر في الوطن العربي</a></li>
+    </ul>
+    <p><strong>متوسط الأسعار:</strong> من 5$ لحد 100$ حسب المشروع</p>
+
+    <h3>3. اشتغل مع صناع المحتوى 📹</h3>
+    <ul>
+      <li>🎬 <strong>YouTubers:</strong> تواصل مع يوتيوبرز محليين وقدم خدماتك</li>
+      <li>📱 <strong>TikTokers:</strong> كتير منهم محتاجين مونتير احترافي</li>
+      <li>📸 <strong>Instagrammers:</strong> اعرض عليهم تحرير الريلز</li>
+      <li>🎮 <strong>Streamers:</strong> حرر لهم Highlights من البثوث المباشرة</li>
+    </ul>
+    <p><strong>الأسعار:</strong> 50-500$ شهرياً لكل كلاينت حسب عدد الفيديوهات</p>
+
+    <h3>4. انشئ محتوى خاص بك 🎥</h3>
+    <ul>
+      <li>📺 <strong>قناة يوتيوب:</strong> <a href="https://www.youtube.com/creators/" target="_blank">علم الناس CapCut</a></li>
+      <li>📱 <strong>TikTok/Instagram:</strong> شارك Tips & Tricks يومية</li>
+      <li>💡 <strong>بيع Templates:</strong> <a href="https://creativemarket.com/" target="_blank">Creative Market</a></li>
+      <li>🎓 <strong>كورسات اونلاين:</strong> <a href="https://www.udemy.com/" target="_blank">Udemy</a> | <a href="https://www.skillshare.com/" target="_blank">Skillshare</a></li>
+    </ul>
+    <p><strong>الدخل المحتمل:</strong> من 100$ لحد 5,000$ شهرياً حسب المتابعين</p>
+
+    <h3>5. الشركات المحلية 🏢</h3>
+    <ul>
+      <li>🍕 <strong>المطاعم والكافيهات:</strong> فيديوهات دعائية للسوشيال ميديا</li>
+      <li>🏋️ <strong>الجيمات:</strong> فيديوهات تحفيزية وإعلانات</li>
+      <li>🏪 <strong>المحلات:</strong> عروض المنتجات</li>
+      <li>💒 <strong>صالات الأفراح:</strong> Highlight Videos</li>
+      <li>🏫 <strong>المدارس والمعاهد:</strong> فيديوهات تعريفية</li>
+    </ul>
+    <p><strong>الأسعار:</strong> 50-300$ للفيديو الواحد</p>
+
+    <h2>كيف تسعر خدماتك؟ 💵</h2>
+    
+    <h3>حسب نوع الفيديو:</h3>
+    <ul>
+      <li>📱 <strong>Reels/TikToks (15-30 ثانية):</strong> 5-20$</li>
+      <li>📹 <strong>YouTube Shorts (60 ثانية):</strong> 10-30$</li>
+      <li>🎬 <strong>فيديو يوتيوب (5-10 دقائق):</strong> 50-150$</li>
+      <li>🎥 <strong>Vlog كامل (10-20 دقيقة):</strong> 100-300$</li>
+      <li>🎞️ <strong>فيديو إعلاني احترافي:</strong> 200-500$</li>
+      <li>💍 <strong>Wedding Highlights:</strong> 300-1000$</li>
+    </ul>
+
+    <h3>نصائح للتسعير:</h3>
+    <ul>
+      <li>🎯 ابدأ بأسعار منخفضة لبناء Portfolio</li>
+      <li>📈 زود أسعارك تدريجياً مع زيادة الخبرة</li>
+      <li>💼 اعمل Packages (مثلاً: 4 ريلز شهرياً بـ60$)</li>
+      <li>⚡ اضف Rush Fee للمشاريع العاجلة (50% زيادة)</li>
+      <li>🔄 اعمل Revisions محددة (مثلاً: تعديلين مجاناً)</li>
+    </ul>
+
+    <h2>بناء Portfolio قوي 📂</h2>
+    
+    <h3>خطوات عملية:</h3>
+    <ol>
+      <li>🎬 <strong>اعمل 5-10 فيديوهات نموذجية:</strong> أنواع مختلفة (Vlog، Tutorial، Ad، Reel)</li>
+      <li>📱 <strong>انشئ حساب إنستجرام/TikTok:</strong> اعرض شغلك باستمرار</li>
+      <li>💼 <strong>اعمل موقع بسيط:</strong> استخدم <a href="https://www.wix.com/" target="_blank">Wix</a> أو <a href="https://www.squarespace.com/" target="_blank">Squarespace</a></li>
+      <li>🎥 <strong>اعمل Before/After Videos:</strong> وري العملاء الفرق</li>
+      <li>📊 <strong>Case Studies:</strong> اشرح كيف حققت نتائج لكلاينت معين</li>
+      <li>⭐ <strong>اجمع Reviews:</strong> من كل عميل راضي</li>
+    </ol>
+
+    <h3>منصات لعرض Portfolio:</h3>
+    <ul>
+      <li>🎨 <strong>Behance:</strong> <a href="https://www.behance.net/" target="_blank">للمشاريع الاحترافية</a></li>
+      <li>📹 <strong>Vimeo:</strong> <a href="https://vimeo.com/" target="_blank">جودة عالية للفيديوهات</a></li>
+      <li>💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/" target="_blank">للتواصل المهني</a></li>
+      <li>🌐 <strong>Contra:</strong> <a href="https://contra.com/" target="_blank">Portfolio للفريلانسرز</a></li>
+    </ul>
+
+    <h2>استراتيجية الـ 30 يوم الأولى 📅</h2>
+    
+    <h3>الأسبوع الأول (Days 1-7): التعلم 📚</h3>
+    <ul>
+      <li>✅ اتقن CapCut باستخدام الخطة فوق</li>
+      <li>✅ اعمل 3-5 فيديوهات تدريبية</li>
+      <li>✅ انشئ حسابات على منصات السوشيال ميديا</li>
+    </ul>
+
+    <h3>الأسبوع الثاني (Days 8-14): بناء Portfolio 🎬</h3>
+    <ul>
+      <li>✅ اعمل 10 فيديوهات احترافية</li>
+      <li>✅ انشر فيديو واحد يومياً على TikTok/Instagram</li>
+      <li>✅ ابدأ تجميع Feedback من الأصدقاء</li>
+    </ul>
+
+    <h3>الأسبوع الثالث (Days 15-21): أول عملاء 💼</h3>
+    <ul>
+      <li>✅ سجل على Fiverr وخمسات</li>
+      <li>✅ اعرض خدماتك المجانية على 3-5 صناع محتوى صغار (للحصول على Reviews)</li>
+      <li>✅ تواصل مع 10 محلات/كافيهات محلية</li>
+      <li>✅ انشر في جروبات الفيسبوك المتخصصة</li>
+    </ul>
+
+    <h3>الأسبوع الرابع (Days 22-30): التوسع 📈</h3>
+    <ul>
+      <li>✅ استهدف أول 5 عملاء مدفوعين</li>
+      <li>✅ حسن أسعارك بناءً على الطلب</li>
+      <li>✅ اعمل Packages شهرية</li>
+      <li>✅ ابدأ في بناء علاقات طويلة الأمد مع العملاء</li>
+    </ul>
+
+    <h2>أخطاء يجب تجنبها ⚠️</h2>
+    <ul>
+      <li>❌ <strong>Over-editing:</strong> مش كل حاجة محتاجة 100 مؤثر</li>
+      <li>❌ <strong>موسيقى مزعجة:</strong> اختر موسيقى تناسب المحتوى</li>
+      <li>❌ <strong>نصوص كتير:</strong> النص لازم يكون واضح ومقروء</li>
+      <li>❌ <strong>Transitions عشوائية:</strong> استخدم انتقالات منطقية</li>
+      <li>❌ <strong>جودة منخفضة:</strong> صدر دايماً بأعلى جودة ممكنة</li>
+      <li>❌ <strong>تجاهل Audio:</strong> الصوت 50% من الفيديو</li>
+      <li>❌ <strong>عدم التنظيم:</strong> رتب ملفاتك ومشاريعك كويس</li>
+    </ul>
+
+    <h2>مصادر إلهام يومي 🎨</h2>
+    <ul>
+      <li>📱 <strong>TikTok:</strong> تابع #VideoEditing #CapCutTutorial</li>
+      <li>📸 <strong>Instagram:</strong> @capcut.templates @videoeditingtips</li>
+      <li>📺 <strong>YouTube Channels:</strong>
+        <ul>
+          <li><a href="https://www.youtube.com/@PeterMcKinnon" target="_blank">Peter McKinnon</a> - سينمائي</li>
+          <li><a href="https://www.youtube.com/@Desiignduo" target="_blank">Desiignduo</a> - تعليمي</li>
+          <li><a href="https://www.youtube.com/@HowToFilmmaker" target="_blank">Cinecom</a> - احترافي</li>
+        </ul>
+      </li>
+      <li>🌐 <strong>Reddit:</strong> <a href="https://www.reddit.com/r/VideoEditing/" target="_blank">r/VideoEditing</a></li>
+      <li>💬 <strong>Discord Communities:</strong> ابحث عن Video Editing Servers</li>
+    </ul>
+
+    <h2>أدوات تكميلية للمحترفين 🚀</h2>
+    <ul>
+      <li>🎨 <strong>Adobe Express:</strong> <a href="https://www.adobe.com/express/" target="_blank">تصميم سريع</a></li>
+      <li>🖼️ <strong>Unsplash:</strong> <a href="https://unsplash.com/" target="_blank">صور مجانية عالية الجودة</a></li>
+      <li>🎬 <strong>Coverr:</strong> <a href="https://coverr.co/" target="_blank">فيديوهات Stock مجانية</a></li>
+      <li>🎵 <strong>Uppbeat:</strong> <a href="https://uppbeat.io/" target="_blank">موسيقى لليوتيوب</a></li>
+      <li>🔊 <strong>Voiceover:</strong> <a href="https://www.naturalreaders.com/" target="_blank">Natural Readers</a></li>
+      <li>📊 <strong>TubeBuddy:</strong> <a href="https://www.tubebuddy.com/" target="_blank">أداة تحليل يوتيوب</a></li>
+    </ul>
+
+    <h2>خطة الدخل المتوقع 💰</h2>
+
+    <h3>الشهر الأول: 100-300$ 💵</h3>
+    <ul>
+      <li>5-10 مشاريع صغيرة (Reels/Shorts)</li>
+      <li>أسعار منخفضة لبناء سمعة</li>
+      <li>التركيز على جمع Reviews</li>
+    </ul>
+
+    <h3>الشهر الثاني: 300-600$ 💵</h3>
+    <ul>
+      <li>10-15 مشروع</li>
+      <li>زيادة الأسعار 30-50%</li>
+      <li>أول عميل شهري ثابت</li>
+    </ul>
+
+    <h3>الشهر الثالث: 600-1000$ 💵</h3>
+    <ul>
+      <li>15-20 مشروع</li>
+      <li>2-3 عملاء شهريين ثابتين</li>
+      <li>مشاريع أكبر وأغلى</li>
+    </ul>
+
+    <h3>بعد 6 أشهر: 1000-3000$+ 💵</h3>
+    <ul>
+      <li>5-10 عملاء ثابتين</li>
+      <li>سمعة قوية ومراجعات ممتازة</li>
+      <li>تخصص في Niche معين</li>
+      <li>ممكن توظف مساعدين</li>
+    </ul>
+
+    <h2>نصائح ذهبية للنجاح 🏆</h2>
+    <ol>
+      <li>⏰ <strong>الالتزام:</strong> 2-3 ساعات يومياً أفضل من 20 ساعة مرة واحدة أسبوعياً</li>
+      <li>🎯 <strong>الجودة أولاً:</strong> أحسن تعمل 3 فيديوهات ممتازة من 10 متوسطة</li>
+      <li>📱 <strong>تابع التريندات:</strong> اعرف إيه اللي رايج دلوقتي</li>
+      <li>💬 <strong>التواصل المستمر:</strong> رد بسرعة على العملاء</li>
+      <li>📈 <strong>حلل أدائك:</strong> شوف أي فيديوهات نجحت وليه</li>
+      <li>🤝 <strong>Networking:</strong> اعرف ناس في نفس المجال</li>
+      <li>💪 <strong>طور نفسك دايماً:</strong> CapCut بيتحدث كل شوية</li>
+      <li>😊 <strong>استمتع:</strong> الشغل مش هيكون مرهق لو بتحبه</li>
+    </ol>
+
+    <h2>الخلاصة والبداية 🚀</h2>
+    <p>دلوقتي عندك كل حاجة تحتاجها عشان تبقى محترف CapCut في 3 أيام وتبدأ تكسب منه! الموضوع مش صعب، بس محتاج التزام وممارسة.</p>
+
+    <h3>خطوات البداية الفعلية:</h3>
+    <ol>
+      <li>✅ <strong>حمل CapCut دلوقتي:</strong> <a href="https://www.capcut.com/tools/mobile-video-editor" target="_blank">اضغط هنا</a></li>
+      <li>✅ <strong>ابدأ اليوم الأول بكرة:</strong> خصص 2-3 ساعات</li>
+      <li>✅ <strong>تابع الفيديوهات:</strong> شغل كل اللينكات اللي في الدليل</li>
+      <li>✅ <strong>مارس بإيدك:</strong> طبق كل حاجة تتعلمها</li>
+      <li>✅ <strong>ابدأ تجهز Portfolio:</strong> من أول يوم</li>
+      <li>✅ <strong>سجل على المنصات:</strong> في نهاية اليوم الثالث</li>
+    </ol>
+
+    <p><strong>🎯 هدفك بعد 3 أيام:</strong> تكون قادر تحرر أي نوع فيديو بثقة واحترافية!</p>
+    <p><strong>💰 هدفك بعد 30 يوم:</strong> أول 100-300$ من شغلك!</p>
+    <p><strong>🚀 هدفك بعد 6 شهور:</strong> دخل ثابت 1000$+ شهرياً!</p>
+
+    <p><em>ما تضيعش وقتك في التفكير - ابدأ النهاردة! كل دقيقة تأخير هي فرصة ضايعة. 🔥</em></p>
+
+    <p><strong>تذكر:</strong> كل المشاهير والمحترفين بدأوا من الصفر زيك بالظبط. الفرق الوحيد إنهم بدأوا! 💪</p>
+
+    <div style="text-align: center; margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px;">
+      <h2 style="color: white; margin-bottom: 10px;">🎬 مستعد تبدأ رحلتك؟ 🚀</h2>
+      <p style="color: white; font-size: 18px;"><strong>المستقبل بيبدأ من قرارك النهاردة!</strong></p>
+      <p style="color: white;">شاركنا تقدمك واسألنا أي سؤال على <a href="https://satr.codes/" target="_blank" style="color: #FFD700;">satr.codes</a></p>
+    </div>
+  `,
+
+  coverImage: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80',
+  author: 'Iheb Meftah',
+  publishedDate: '2024-12-15',
+  category: 'مونتاج وإنتاج',
+  tags: ['CapCut', 'مونتاج', 'تحرير فيديو', 'فريلانسر', 'تيك توك', 'إنستجرام', 'يوتيوب', 'ربح أونلاين'],
+  readTime: '25 دقيقة',
+  featured: true
 }
 
 
